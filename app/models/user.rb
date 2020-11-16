@@ -5,5 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Associations 
-  
+  # belongs_to :skillset, required: true
+  # has_many :crimes
+
+  # Validations
+  validates :username, :description, presence: :true
+  validates :username, uniqueness: true
+  validates :description, length: { minimum: 50, maximum: 500 }
+
 end
