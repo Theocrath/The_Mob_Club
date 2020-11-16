@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_154522) do
+ActiveRecord::Schema.define(version: 2020_11_16_215854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "skillsets", force: :cascade do |t|
+    t.integer "close_combat"
+    t.integer "long_range_weapons"
+    t.integer "mid_range_weapons"
+    t.integer "explosives"
+    t.integer "infiltration"
+    t.integer "hacking"
+    t.integer "lockpicking"
+    t.integer "seduction"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
