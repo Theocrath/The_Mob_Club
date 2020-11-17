@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_222331) do
+ActiveRecord::Schema.define(version: 2020_11_17_135130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,12 @@ ActiveRecord::Schema.define(version: 2020_11_16_222331) do
     t.date "date"
     t.string "location"
     t.integer "reward"
-    t.bigint "skillset_id", null: false
     t.bigint "boss_id", null: false
-    t.bigint "right_hand_id", null: false
+    t.bigint "right_hand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["boss_id"], name: "index_crimes_on_boss_id"
     t.index ["right_hand_id"], name: "index_crimes_on_right_hand_id"
-    t.index ["skillset_id"], name: "index_crimes_on_skillset_id"
   end
 
   create_table "skillsets", force: :cascade do |t|
@@ -42,6 +40,20 @@ ActiveRecord::Schema.define(version: 2020_11_16_222331) do
     t.integer "seduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "crime_id"
+    t.index ["crime_id"], name: "index_skillsets_on_crime_id"
+    t.index ["user_id"], name: "index_skillsets_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.boolean "status", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "crime_id", null: false
+    t.index ["crime_id"], name: "index_teams_on_crime_id"
+    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,11 +64,16 @@ ActiveRecord::Schema.define(version: 2020_11_16_222331) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "crimes", "skillsets"
   add_foreign_key "crimes", "users", column: "boss_id"
   add_foreign_key "crimes", "users", column: "right_hand_id"
+  add_foreign_key "skillsets", "crimes"
+  add_foreign_key "skillsets", "users"
+  add_foreign_key "teams", "crimes"
+  add_foreign_key "teams", "users"
 end
