@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   get 'profile', to: 'pages#profile'
-  get 'current_user_json' => 'application#current_user_json'
+  get 'current_user_json' => 'pages#current_user_json'
 end

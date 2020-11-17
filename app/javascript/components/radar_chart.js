@@ -1,7 +1,7 @@
 const chart = (result) => {
   let ctx = document.getElementById('myChart');
-  // ctx.style.width = '200px';
-  // ctx.style.height = '200px';
+  ctx.style.width = '200px';
+  ctx.style.height = '200px';
   new Chart(ctx, {
     type: 'radar',
     data: {
@@ -38,7 +38,7 @@ const chart = (result) => {
 
 const userChart = () => {
   $.get('/current_user_json', function (result) {
-    console.log(result.martial_arts);
+    console.log('testing json responde', result.close_combat);
     chart(result);
   });
 }
