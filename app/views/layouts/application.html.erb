@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheMobClub</title>
+    <title>The Mob Club</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -21,8 +21,9 @@
 
     <% else %>
 
-      <%= render 'shared/navbar' %>
+      <%#= render 'shared/navbar' %>
       <div class="background">
+        <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
         <%= yield %>
       </div>
