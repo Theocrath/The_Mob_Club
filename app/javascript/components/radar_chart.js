@@ -1,7 +1,7 @@
 const chart = (result) => {
   let ctx = document.getElementById('myChart');
-  ctx.style.width = '200px';
-  ctx.style.height = '200px';
+  // ctx.style.width = '200px';
+  // ctx.style.height = '200px';
   new Chart(ctx, {
     type: 'radar',
     data: {
@@ -28,7 +28,7 @@ const chart = (result) => {
         ticks: {
           beginAtZero: true,
           max: 100,
-          stepSize: 10
+          // stepSize: 20
         }
       }
     }
