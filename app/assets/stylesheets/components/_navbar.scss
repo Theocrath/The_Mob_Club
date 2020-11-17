@@ -1,12 +1,24 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  border: 1px solid $gold;
+  color: $gold;
+  margin-bottom: 30px;
+  // background-color: white; original navbar
+}
+
+.navbar-lewagon i {
+  color: $gold;
+  font-size: 36px;
+  font-weight: normal;
+  // background-color: white; original navbar
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+// if you want to rever to the old navbar just uncomment and delete stuff

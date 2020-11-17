@@ -1,0 +1,37 @@
+// used in the Mob Club homepage
+
+#hero-banner {
+  height: 100vh;
+  background-color: $dark-brown;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero-banner h1 {
+  font-size: 64px;
+}
+
+#hero-banner h2 {
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+#hero-banner i {
+  font-size: 48px;
+  font-weight: normal;
+  color: $gold;
+  margin-top: 15px;
+  // animation: spin 4s linear infinite;
+}
+
+#hero-banner i:hover {
+  color: $light-gold;
+  transition: 0.3s;
+
+  // animation: spin 4s linear infinite;
+}
+
+

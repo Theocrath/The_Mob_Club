@@ -1,0 +1,41 @@
+// use it as our default action/submit button:
+
+.act-button {
+  display: inline;
+  background-color: $gold;
+  color: $black;
+  font-size: 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 10px 30px;
+  border: 2px solid $gold;
+}
+
+.act-button:hover {
+  text-decoration: none;
+  background-color: $light-gold;
+  color: $black;
+  border: 2px solid $light-gold;
+  transition: 0.3s;
+}
+
+// below, use this as back or cancel button
+
+.cancel-button {
+  display: inline;
+  color: $gold;
+  font-size: 18px;
+  border: 2px solid $gold;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 10px 30px;
+}
+
+.cancel-button:hover {
+  text-decoration: none;
+  color: $light-gold;
+  border: 2px solid $light-gold;
+  transition: 0.3s;
+}
+
+

@@ -1,0 +1,30 @@
+h1 {
+  font-size: 36px;
+  color: $light-gold;
+}
+
+h2 {
+  font-size: 24px;
+  color: $light-gold;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+  color: $white;
+  font-weight: medium;
+}
+
+a {
+  font-size: 18px;
+  color: $gold;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $light-gold;
+  transition: 0.3s;
+}
+
+
