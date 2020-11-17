@@ -41,4 +41,4 @@ crime_s4 = Skillset.create!(close_combat: rand(1..10), long_range_weapons: rand(
 crime_s5 = Skillset.create!(close_combat: rand(1..10), long_range_weapons: rand(1..10), mid_range_weapons: rand(1..10), explosives: rand(1..10), infiltration: rand(1..10), lockpicking: rand(1..10), seduction: rand(1..10), hacking: rand(1..10), crime_id: c5.id)
 
 
-puts "skillsets created"
+puts "skillsets created!"
