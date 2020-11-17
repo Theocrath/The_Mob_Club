@@ -11,8 +11,7 @@ class User < ApplicationRecord
   has_many :teams
 
   # Validations
-  validates :username, :description, presence: :true
-  validates :username, uniqueness: true
+  validates :username, presence: true, uniqueness: true
   # Change minimum length to 50 in production
-  validates :description, length: { minimum: 5, maximum: 500 }
+  validates :description, length: { minimum: 5, maximum: 500 }, allow_blank: true
 end
