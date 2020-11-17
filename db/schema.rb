@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_135130) do
     t.string "location"
     t.integer "reward"
     t.bigint "boss_id", null: false
-    t.bigint "right_hand_id", null: false
+    t.bigint "right_hand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["boss_id"], name: "index_crimes_on_boss_id"
