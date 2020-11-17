@@ -10,15 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_135128) do
+ActiveRecord::Schema.define(version: 2020_11_17_135130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "teams", force: :cascade do |t|
-    t.boolean "status", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   create_table "crimes", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -45,9 +41,19 @@ ActiveRecord::Schema.define(version: 2020_11_17_135128) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.index ["user_id"], name: "index_skillsets_on_user_id"
     t.bigint "crime_id"
     t.index ["crime_id"], name: "index_skillsets_on_crime_id"
+    t.index ["user_id"], name: "index_skillsets_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.boolean "status", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "crime_id", null: false
+    t.index ["crime_id"], name: "index_teams_on_crime_id"
+    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,8 +70,10 @@ ActiveRecord::Schema.define(version: 2020_11_17_135128) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "skillsets", "users"
   add_foreign_key "crimes", "users", column: "boss_id"
   add_foreign_key "crimes", "users", column: "right_hand_id"
   add_foreign_key "skillsets", "crimes"
+  add_foreign_key "skillsets", "users"
+  add_foreign_key "teams", "crimes"
+  add_foreign_key "teams", "users"
 end

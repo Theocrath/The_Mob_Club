@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one :skillset
   has_many :crimes, foreign_key: 'boss'
   has_many :crimes, foreign_key: 'right_hand'
+  has_many :teams
 
   # Validations
   validates :username, :description, presence: :true
