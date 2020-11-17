@@ -1,0 +1,16 @@
+.footer {
+  background-color: $dark-brown;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+
+}
+
+.footer p {
+  color: black;
+  font-size: 12px;
+  margin-bottom: 0;
+}
