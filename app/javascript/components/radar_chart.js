@@ -6,6 +6,7 @@ const chart = (result) => {
     type: 'radar',
     data: {
       labels: ['Close Combat', 'Long Range Weapons', 'Mid Range Weapons', 'Explosives', 'Infiltration', 'Hacking', 'Lockpicking', 'Seduction'],
+      
       datasets: [{
         label: 'Skillset',
         data: [
@@ -28,9 +29,16 @@ const chart = (result) => {
         ticks: {
           beginAtZero: true,
           max: 100,
-          // stepSize: 20
+          backdropColor: ['rgba(218,165,32, 0)'],
+          stepSize: 25
         }
       }
+      // legend: {
+      //   display: true,
+      //   labels: {
+      //     fontColor: 'rgb(255, 99, 132)' // legend on top
+      //   }
+      // }
     }
   });
 };
