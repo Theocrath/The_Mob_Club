@@ -7,7 +7,7 @@ class CreateCrimes < ActiveRecord::Migration[6.0]
       t.string :location
       t.integer :reward
       t.references :boss, null: false, foreign_key: { to_table: 'users' }
-      t.references :right_hand, null: false, foreign_key: { to_table: 'users' }
+      t.references :right_hand, foreign_key: { to_table: 'users' }
 
       t.timestamps
     end
