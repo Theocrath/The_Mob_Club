@@ -1,0 +1,13 @@
+<h1>Crimes Index</h1>
+
+<ul>
+  <% @crimes.each do |crime| %>
+    <li><%= crime.title %></li>
+    <li><%= crime.description %></li>
+    <li><%= crime.date %></li>
+    <li><%= crime.location %></li>
+    <li><%= crime.reward %>$</li>
+    <li>Skillset?<%#= crime.skillset %></li>
+    <br>
+  <% end %>
+</ul>
