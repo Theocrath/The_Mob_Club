@@ -2,7 +2,9 @@
 
 #create-event-btn {
   align-self: baseline;
-  justify-self: flex-end; //unsure of the correct property to use in order to put the button on the right
+  justify-self: flex-end; 
+  position: relative;
+  //unsure of the correct propertys to use in order to put the button on the right
 }
 
 #create-event-page {
