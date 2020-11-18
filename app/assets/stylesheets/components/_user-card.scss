@@ -2,24 +2,31 @@
 
 .profile-info {
   margin-top: 16px;
-  height: 80vh;
+  padding: 30px;
+  height: 85vh;
+  text-align: center;
 }
 
 // User info
 
 .user-info {
-  height: 95%;
+  height: 60%;
   background-color: green;
-  margin-bottom: 30px;
   font-size: 16px;
 }
 
 .user-info a {
   font-size: 16px;
   font-weight: normal;
+  text-decoration: none;
 }
 
 .avatar-container {
   background-color: yellow;
+  height: 50%;
+}
+
+.links-container {
+  background-color: lightgreen;
   height: 30%;
 }
