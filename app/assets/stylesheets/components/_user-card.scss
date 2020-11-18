@@ -1,3 +1,14 @@
+// Main container
+
 .profile-info {
-  min-height: fit-content;
+  padding: 16px;
+  height: 80vh;
+}
+
+// User info
+
+.user-info {
+  height: 50%;
+  background-color: green;
+  margin-bottom: 30px;
 }

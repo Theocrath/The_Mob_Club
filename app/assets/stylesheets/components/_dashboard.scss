@@ -1,7 +1,7 @@
 // Containers
 
 .dashboard {
-  min-height: 500px;
+  min-height: 70vh;
   background-color: red;
 }
 
@@ -20,12 +20,13 @@
   text-decoration: none;
   font-size: 20px;
   font-weight: lighter;
-  transition: color 2s ease-in 2s;
+  transition: color 0.05s ease-in 0.05s;
 }
 
 .tab:hover {
-  color:  #555555;
-  transition: color 0.3s ease 0s;
+  color: $gold;
+  font-weight: normal;
+  transition: color 0.05s ease 0s;
   text-decoration: none;
 }
 
@@ -33,6 +34,20 @@
   color: $gold;
   border-bottom: 3px solid $gold;
   font-weight: normal;
-  transition: color 2s ease-in 2s;
+  transition: color 1s ease-in 1s;
+}
+
+// Create event
+
+#create-event-btn {
+  align-self: baseline;
+  // justify-self: end; unsure of the correct property to use in order to put the button on the right
+}
+
+#create-event-page {
+  height: 80vh;
+  width: 90%;
+  background-color: aqua;
+  margin: 0 auto;
 
 }

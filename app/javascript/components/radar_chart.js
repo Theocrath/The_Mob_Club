@@ -30,9 +30,8 @@ const chart = (userStats) => {
           backdropColor: ['rgba(218,165,32, 0)'],
           stepSize: 25
         }
-      }
-      // legend: {
-      //   display: true,
+      },
+      legend: { display: false }
       //   labels: {
       //     fontColor: 'rgb(255, 99, 132)' // legend on top
       //   }

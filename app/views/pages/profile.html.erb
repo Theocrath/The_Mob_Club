@@ -9,33 +9,40 @@
 
     <div class="col-sm-12 col-md-12 col-lg-4 bg-white">
       <div class="profile-info">
-      USER PART
+        <div class="user-info">
+        </div>
         <div class="chart">
-          <canvas id="myChart" style="display: block; width: 200px; height: 200px;"></canvas>
+          <canvas id="myChart"></canvas>
         </div>
       </div>
     </div>
 
     <div class="col-sm-12 col-md-12 col-lg-8 bg-white">
-      DASHBOARD
         <div id="nav" class="tabs">
           <a href="#jobs" class="tab active">Current jobs</a>
           <a href="#pending" class="tab">Pending requests</a>
           <a href="#event-manager" class="tab">Event manager</a>
+          <button class="act-button" id="create-event">Organize Crime</button>
         </div>
 
         <div id="jobs" class="toggle" style="display:show">
-          <div class="dashboard"></div>
+          <div class="dashboard">TEST 1</div>
         </div>
 
         <div id="pending" class="toggle" style="display:none">
-          <div class="dashboard"></div>
+          <div class="dashboard">TEST 2</div>
         </div>
 
         <div id="event-manager" class="toggle" style="display:none">
-          <div class="dashboard"></div>
+          <div class="dashboard"> TEST 3</div>
         </div>
     </div>
 
   </div>
+</div>
+
+<%# Create event pop up %>
+
+<div id="create-event-page" style="display:none">
+  CREATE EVENT PAGE
 </div>
