@@ -1,0 +1,11 @@
+<%= simple_form_for [current_user, @skillset] do |f| %>
+<%= f.input :close_combat, as: :range %>
+<%= f.input :long_range_weapons, as: :range %>
+<%= f.input :mid_range_weapons, as: :range %>
+<%= f.input :explosives, as: :range %>
+<%= f.input :infiltration, as: :range %>
+<%= f.input :hacking, as: :range %>
+<%= f.input :lockpicking, as: :range %>
+<%= f.input :seduction, as: :range %>
+<%= f.button :submit %>
+<% end %>
