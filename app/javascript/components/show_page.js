@@ -6,4 +6,12 @@ const toggleNewEventPage = () => {
   });
 }
 
-export { toggleNewEventPage };
+const toggleDashboard = () => {
+  $('#dashboard-btn').click(function (e) {
+    e.preventDefault();
+    $('.chart').toggle();
+    $('#dashboard-main').slideToggle();
+  });
+}
+
+export { toggleNewEventPage, toggleDashboard };

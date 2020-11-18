@@ -10,14 +10,18 @@
     <div class="col-sm-12 col-md-12 col-lg-4 bg-white">
       <div class="profile-info">
         <div class="user-info">
-        </div>
-        <div class="chart">
-          <canvas id="myChart"></canvas>
+          <div class="avatar-container"></div>
+           <p><%= @user.description %></p>
+          <div><a href="#" id="dashboard-btn">Dashboard</div>
+          <div><%= link_to 'Edit profile', edit_user_registration_path %></div>
+          <div><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></div>
         </div>
       </div>
     </div>
 
     <div class="col-sm-12 col-md-12 col-lg-8 bg-white">
+
+      <div id="dashboard-main" style="display:none">
         <div id="nav" class="tabs">
           <a href="#jobs" class="tab active">Current jobs</a>
           <a href="#pending" class="tab">Pending requests</a>
@@ -36,7 +40,15 @@
         <div id="event-manager" class="toggle" style="display:none">
           <div class="dashboard"> TEST 3</div>
         </div>
+      </div>
+
+      <div class="chart" style="display:show">
+        <canvas id="myChart"></canvas>
+      </div>
+
+
     </div>
+
 
   </div>
 </div>
