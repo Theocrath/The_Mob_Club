@@ -10,7 +10,10 @@
     <div class="col-sm-12 col-md-4 col-lg-4 bg-white">
       <div class="profile-info">
         <div class="user-info">
-          <div class="avatar-container"><p>AVATAR</p></div>
+          <div class="avatar-container">
+            <p>AVATAR</p>
+            USERNAME <%= @user.username %>
+          </div>
           <p>USER DESCRIPTION</p>
           <p><%= @user.description %></p>
         </div>
