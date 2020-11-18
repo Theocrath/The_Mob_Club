@@ -27,6 +27,10 @@
 }
 
 .links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
   background-color: lightgreen;
   height: 30%;
 }
