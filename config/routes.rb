@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :crimes do
-    resources :teams, only: [:create, :index]
+    resources :teams, only: [:create]
   end
+
+  get 'profile/teams', to: 'teams#index'
 
 
   get 'profile', to: 'pages#profile'
