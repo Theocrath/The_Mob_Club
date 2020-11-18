@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @crimes = Crime.where(boss_id: @user.id)
   end
 
   def current_user_json

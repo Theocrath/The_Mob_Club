@@ -9,7 +9,6 @@
       <div id="crime-form-2" style="display:none;">
         <%= f.input :date %>
         <%= f.input :reward %>
-        <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
         <a href="#" class="crime-form-btn">Back</a>
         <%= f.button :submit %>
         <% end %>

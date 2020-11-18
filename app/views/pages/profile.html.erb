@@ -44,9 +44,24 @@
         </div>
 
         <div id="event-manager" class="toggle" style="display:none">
-          <div class="dashboard">Event manager</div>
+          <div class="dashboard">
+            <% @crimes.to_a.each do |crime| %>
+              <%= crime.title %>
+              <%= crime.reward %>
+              <% if crime.right_hand.present? %>
+                <%= crime.right_hand.username %>
+                <%= simple_form_for crime do |f| %>
+                  <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
+                <% end %>
+              <% else %>
+                <%= simple_form_for crime do |f| %>
+                  <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
+                <% end %>
+              <% end %>
+            <% end %>
         </div>
       </div>
+    </div>
 
       <div class="chart" style="display:show">
         <canvas id="myChart"></canvas>
