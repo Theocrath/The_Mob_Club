@@ -27,7 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { userChart } from '../components/radar_chart';
+import { toggleTabs, activateTab } from '../components/toggle_tabs'
 
 document.addEventListener('turbolinks:load', () => {
   userChart();
+  toggleTabs();
+  activateTab();
 });
