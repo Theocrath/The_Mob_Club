@@ -1,0 +1,9 @@
+<%= simple_form_for @crime do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :date %>
+<%= f.input :location %>
+<%= f.input :reward %>
+<%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
+<%= f.button :submit %>
+<% end %>
