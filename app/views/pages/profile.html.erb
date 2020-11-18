@@ -1,5 +1,41 @@
-<h1>Chart test</h1>
+  <% if notice.present? %>
+    <span class="notice-box mt-4" role="alert">
+      <%= notice.html_safe %>
+    </span>
+  <% end %>
 
-<div class="chart">
-  <canvas id="myChart"></canvas>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 col-md-12 col-lg-4 bg-white">
+      <div class="profile-info">
+      USER PART
+        <div class="chart">
+          <canvas id="myChart" style="display: block; width: 200px; height: 200px;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-8 bg-white">
+      DASHBOARD
+        <div id="nav" class="tabs">
+          <a href="#jobs" class="tab active">Current jobs</a>
+          <a href="#pending" class="tab">Pending requests</a>
+          <a href="#event-manager" class="tab">Event manager</a>
+        </div>
+
+        <div id="jobs" class="toggle" style="display:show">
+          <div class="dashboard"></div>
+        </div>
+
+        <div id="pending" class="toggle" style="display:show">
+          <div class="dashboard"></div>
+        </div>
+
+        <div id="event-manager" class="toggle" style="display:show">
+          <div class="dashboard"></div>
+        </div>
+    </div>
+
+  </div>
 </div>
