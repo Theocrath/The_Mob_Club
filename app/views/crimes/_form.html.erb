@@ -1,16 +1,16 @@
 <div class="crime-form-container">
-      <div id="crime-form-1" style="display:none;">
+      <div id="crime-form-1" style="display:show;">
         <%= simple_form_for @crime do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :location %>
-        <a href="#" id="crime-form-next">Next</a>
+        <a href="#" class="crime-form-btn">Next</a>
       </div>
-      <div id="crime-form-2" style="display:show;">
-        <%= f.input :date, min: Date.today %>
+      <div id="crime-form-2" style="display:none;">
+        <%= f.input :date %>
         <%= f.input :reward %>
         <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
-        <a href="#" id="crime-form-back">Back</a>
+        <a href="#" class="crime-form-btn">Back</a>
         <%= f.button :submit %>
         <% end %>
       </div>
