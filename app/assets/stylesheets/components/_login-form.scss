@@ -1,4 +1,37 @@
-.container {
+.devise-form-container {
   margin: 50px auto;
   max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 50px;
+
+  h2 {
+    text-shadow: 3px 0 0 black;
+  }
 }
+
+.devise-input-container {
+  padding-top: 20px;
+}
+
+.devise-input-field {
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.devise-input-field::placeholder {
+  color: white;
+}
+
+.devise-input-field:focus {
+  background: inherit;
+  box-shadow: none;
+  border-bottom: 2px solid $light-gold;
+}
+
+.password-position {
+  position: absolute;
+  margin-bottom: 15px;
+}
+
