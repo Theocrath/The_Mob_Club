@@ -1,0 +1,7 @@
+<h1>List of Teams </h1>
+
+<% @teams.each do |team| %>
+  <h2>Team for: <%= team.crime.title %></h2>
+  <p>Due date: <%= team.crime.date %>; Location: <%= team.crime.location %></p>
+  <p><%= team.user.username %></p>
+<% end %>

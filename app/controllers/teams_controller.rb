@@ -12,6 +12,10 @@ class TeamsController < ApplicationController
     end
   end
 
+  def index
+    @teams = Team.all
+  end
+
   private
 
   def team_params

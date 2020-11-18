@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :crimes do
-    resources :teams, only: [:create]
+    resources :teams, only: [:create, :index]
   end
 
 
