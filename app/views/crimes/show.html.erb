@@ -3,7 +3,11 @@
 <p><%= @crime.location %></p>
 <br>
 <p><%= @crime.description %></p>
+
+<% if !@crime.right_hand.nil? %>
 <p><%= @crime.right_hand.username %></p>
+<% end %>
+
 <p><%= @crime.reward %>$</p>
 <br>
 <ul>
@@ -13,3 +17,8 @@
     <% end %>
   <% end %>
 </ul>
+
+<%#= link_to 'Enter team', crime_teams_path(@crime, @team), method: :post %>
+<div style="background-color: white">
+<%= render "teams/new" %>
+</div>
