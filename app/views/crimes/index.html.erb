@@ -1,0 +1,17 @@
+<h1>Crimes Index</h1>
+
+<ul style="background-color: white">
+  <% @crimes.each do |crime| %>
+    <%= link_to crime_path(crime) do  %>
+    <li><%= crime.title %></li>
+    <% end %>
+    <li><%= crime.description %></li>
+    <li><%= crime.date %></li>
+    <li><%= crime.location %></li>
+    <li><%= crime.reward %>$</li>
+    <li>Skillset?<%#= crime.skillset %></li>
+    <br>
+  <% end %>
+</ul>
+
+

@@ -1,5 +1,77 @@
-<h1>Chart test</h1>
+<div class="container" id="profile-container" style="display: show">
+  <div class="row">
 
-<div class="chart">
-  <canvas id="myChart"></canvas>
+    <div class="col-sm-12 col-md-4 col-lg-4 bg-white">
+      <div class="profile-info">
+        <div class="user-info">
+          <div class="avatar-container">
+            <img src="assets/profile-picture.jpg" alt="Profile picture" class="profile-avatar">
+          </div>
+          <p><small>Username: </small><%= current_user.username %></p>
+          <p>"<%= current_user.description %>"</p>
+        </div>
+        <div class="links-container">
+          <div><a href="#" id="dashboard-btn">Dashboard</div>
+          <div><%= link_to 'Edit profile', edit_user_registration_path %></div>
+          <div><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-8 col-lg-8 bg-white">
+
+      <div id="dashboard-main" style="display:none">
+        <div id="nav" class="tabs">
+          <a href="#jobs" class="tab active">Current jobs</a>
+          <a href="#pending" class="tab">Pending requests</a>
+          <a href="#event-manager" class="tab">Event manager</a>
+          <button class="tab act-button" id="create-event-btn">Organize Crime</button>
+        </div>
+
+        <div id="jobs" class="toggle" style="display:show">
+          <div class="dashboard">Current jobs</div>
+        </div>
+
+        <div id="pending" class="toggle" style="display:none">
+          <div class="dashboard">Pending requests</div>
+        </div>
+
+        <div id="event-manager" class="toggle" style="display:none">
+          <div class="dashboard">
+            <ul>
+              <% @crimes.to_a.each do |crime| %>
+                <li>
+                  <%= crime.title %>
+                  <%= crime.reward %>
+                  <% if crime.right_hand.present? %>
+                    <%= crime.right_hand.username %>
+                  <% else %>
+                    <%= simple_form_for @crime do |f| %>
+                      <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
+                      <%= f.submit %>
+                    <% end %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart" style="display:show">
+        <canvas id="myChart"></canvas>
+      </div>
+
+    </div>
+
+  </div>
 </div>
+
+<%# Create event pop up %>
+
+<div class="container" id="create-event-page" style="display:none">
+  <%= render 'form' %>
+</div>
+
+<%# End of create event pop up %>
+
