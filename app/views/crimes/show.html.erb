@@ -12,16 +12,16 @@
 <br>
 
 <% if @crime.skillset.nil? %>
-<p> You need to add a skillset to your crime!</p>
+  <p> You need to add a skillset to your crime!</p>
+  <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
 <% else %>
-<ul>
-  <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
-    <% unless @attributes.include?(skill_name) %>
-      <li><%= skill_name %>: <%= skill_value %></li>
+  <ul>
+    <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
+      <% unless @attributes.include?(skill_name) %>
+        <li><%= skill_name %>: <%= skill_value %></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
-
+  </ul>
 <% end %>
 
 
