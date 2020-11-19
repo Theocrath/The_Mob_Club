@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @crimes = Crime.where(boss_id: current_user.id)
+    @crime = Crime.new
     @skillset = Skillset.new
   end
 

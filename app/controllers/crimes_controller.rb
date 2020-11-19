@@ -1,5 +1,5 @@
 class CrimesController < ApplicationController
-  before_action :set_crime, except: [:index, :new, :create]
+  before_action :set_crime, except: [:index, :create]
   before_action :permitted_skillset_attributes, only: [:show]
 
   def index
@@ -12,21 +12,18 @@ class CrimesController < ApplicationController
 
   end
 
-  def new
-    @crime = Crime.new
-  end
-
   def create
     @crime = Crime.new(crime_params)
-    @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].empty?
+
+    @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].nil?
 
     @crime.boss = current_user
 
-    if @crime.save
+    unless @crime.save
       # We may need to change this redirect path.
-      redirect_to profile_path, notice: 'Your plan was added to the database!'
-    else
-      render :new
+    #   redirect_to profile_path, notice: 'Your plan was added to the database!'
+    # else
+      redirect_to profile_path, notice: 'There was an error. Please fill all the form fields.'
     end
   end
 
