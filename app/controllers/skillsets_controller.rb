@@ -1,5 +1,6 @@
 class SkillsetsController < ApplicationController
-  before_action :skillset_params, only: [:edit, :update]
+  before_action :skillset_params, only: [:edit, :update, :crime_skillset_edit]
+
   def new
     @skillset = Skillset.new
     # @user = current_user
@@ -18,11 +19,14 @@ class SkillsetsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+    # preciso do current crime
+    # @current_crime = Crime.find(params[:id])
     @user_skillset = current_user.skillset
-    
+     
    @user_skillset.update(skillset_params_user)
    if @user_skillset.save
    redirect_to profile_path, notice: 'You updated your skillset'
@@ -49,6 +53,14 @@ class SkillsetsController < ApplicationController
       render :new
     end
   end
+
+  def crime_skillset_edit
+  end
+
+  #def crime_skillset_update
+   # raise
+
+  #end
 
   private
 

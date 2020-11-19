@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     collection do
       get 'crime_skillset_new'
       post 'crime_skillset_create'
+      get '/:id/edit_crime_skillset', to: 'skillsets#crime_skillset_edit', as: 'edit_crime_skillset'
+      patch '/:id', to: 'skillsets#crime_skillset_update'
+  
     end
   end
 
