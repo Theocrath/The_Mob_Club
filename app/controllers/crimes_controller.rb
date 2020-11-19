@@ -1,5 +1,5 @@
 class CrimesController < ApplicationController
-  before_action :set_crime, except: [:index, :new, :create]
+  before_action :set_crime, except: [:index, :create]
   before_action :permitted_skillset_attributes, only: [:show]
 
   def index
@@ -7,10 +7,6 @@ class CrimesController < ApplicationController
   end
 
   def show
-  end
-
-  def new
-    @crime = Crime.new
   end
 
   def create
