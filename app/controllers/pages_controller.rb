@@ -5,9 +5,9 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user = current_user
-    @crimes = Crime.where(boss_id: @user.id)
+    @crimes = Crime.where(boss_id: current_user.id)
     @crime = Crime.new
+    @skillset = Skillset.new
   end
 
   def current_user_json
@@ -22,10 +22,4 @@ class PagesController < ApplicationController
       seduction: current_user.skillset.seduction
      }
   end
-
-  # private
-
-  # def right_hand_param
-  #   params.require(:crime).permit(:right_hand)
-  # end
 end

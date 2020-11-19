@@ -15,11 +15,11 @@ class CrimesController < ApplicationController
     
     @crime.boss = current_user
 
-    if @crime.save
+    unless @crime.save
       # We may need to change this redirect path.
-      redirect_to profile_path, notice: 'Your plan was added to the database!'
-    else
-      render :new
+    #   redirect_to profile_path, notice: 'Your plan was added to the database!'
+    # else
+      redirect_to profile_path, notice: 'There was an error. Please fill all the form fields.'
     end
   end
 

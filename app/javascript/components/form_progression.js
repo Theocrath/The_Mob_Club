@@ -1,4 +1,4 @@
-const toggleFormCard = () => {
+const toggleCrimeFormCard = () => {
   $('.crime-form-btn').click(function (e) {
     e.preventDefault();
     $('#crime-form-1').toggle();
@@ -6,4 +6,12 @@ const toggleFormCard = () => {
   });
 }
 
-export { toggleFormCard };
+const toggleSkillsetFormCard = () => {
+  $('.skillset-form-btn').click(function (e) {
+    e.preventDefault();
+    $('#crime-form-2').toggle();
+    $('#crime-form-skillset').toggle();
+  });
+}
+
+export { toggleCrimeFormCard, toggleSkillsetFormCard };

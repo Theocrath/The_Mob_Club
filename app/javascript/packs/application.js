@@ -29,7 +29,7 @@ import "bootstrap";
 import { userChart } from '../components/radar_chart';
 import { toggleDashboard, toggleNewEventPage } from '../components/show_page';
 import { toggleTabs, activateTab } from '../components/toggle_tabs';
-import { toggleFormCard } from "../components/form_progression";
+import { toggleCrimeFormCard, toggleSkillsetFormCard } from "../components/form_progression";
 
 document.addEventListener('turbolinks:load', () => {
   userChart();
@@ -37,5 +37,6 @@ document.addEventListener('turbolinks:load', () => {
   activateTab();
   toggleNewEventPage();
   toggleDashboard();
-  toggleFormCard();
+  toggleCrimeFormCard();
+  toggleSkillsetFormCard();
 });

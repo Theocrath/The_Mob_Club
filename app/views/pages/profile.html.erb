@@ -1,9 +1,3 @@
-  <% if notice.present? %>
-    <span class="notice-box mt-4" role="alert"> 
-      <%= notice.html_safe %>
-    </span>
-  <% end %>
-
 <div class="container" id="profile-container" style="display: show">
   <div class="row">
 
@@ -11,11 +5,10 @@
       <div class="profile-info">
         <div class="user-info">
           <div class="avatar-container">
-            <p>AVATAR</p>
-            USERNAME <%= @user.username %>
+            <img src="assets/profile-picture.jpg" alt="Profile picture" class="profile-avatar">
           </div>
-          <p>USER DESCRIPTION</p>
-          <p><%= @user.description %></p>
+          <p><small>Username: </small><%= current_user.username %></p>
+          <p>"<%= current_user.description %>"</p>
         </div>
         <div class="links-container">
           <div><a href="#" id="dashboard-btn">Dashboard</div>
@@ -45,17 +38,22 @@
 
         <div id="event-manager" class="toggle" style="display:none">
           <div class="dashboard">
-            <% @crimes.to_a.each do |crime| %>
-              <%= crime.title %>
-              <%= crime.reward %>
-              <% if crime.right_hand.present? %>
-                <%= crime.right_hand.username %>
-              <% else %>
-                <%= simple_form_for crime do |f| %>
-                  <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
-                <% end %>
+            <ul>
+              <% @crimes.to_a.each do |crime| %>
+                <li>
+                  <%= crime.title %>
+                  <%= crime.reward %>
+                  <% if crime.right_hand.present? %>
+                    <%= crime.right_hand.username %>
+                  <% else %>
+                    <%= simple_form_for @crime do |f| %>
+                      <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
+                      <%= f.submit %>
+                    <% end %>
+                  <% end %>
+                </li>
               <% end %>
-            <% end %>
+            </ul>
           </div>
         </div>
       </div>
