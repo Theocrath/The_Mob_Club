@@ -1,0 +1,15 @@
+<h1><%= @crime.title %></h1>
+<h2><%= @crime.date %></h2>
+<p><%= @crime.location %></p>
+<br>
+<p><%= @crime.description %></p>
+<p><%= @crime.right_hand.username %></p>
+<p><%= @crime.reward %>$</p>
+<br>
+<ul>
+  <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
+    <% unless @attributes.include?(skill_name) %>
+      <li><%= skill_name %>: <%= skill_value %></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,38 @@
+// Containers
+
+.dashboard {
+  min-height: 70vh;
+  background-color: red;
+}
+
+// Tabs
+
+.tabs {
+  display: flex;
+  position: relative;
+}
+
+.tab {
+  color: $light-gold;
+  padding: 8px 0;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: lighter;
+  transition: color 0.05s ease-in 0.05s;
+}
+
+.tab:hover {
+  color: $gold;
+  font-weight: normal;
+  transition: color 0.05s ease 0s;
+  text-decoration: none;
+}
+
+.active {
+  color: $gold;
+  border-bottom: 3px solid $gold;
+  font-weight: normal;
+  transition: color 1s ease-in 1s;
+}
