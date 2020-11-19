@@ -2,7 +2,27 @@
 
 .dashboard {
   min-height: 70vh;
-  background-color: red;
+  border-right: 1px solid $light-gold;
+}
+
+.dashboard li {
+  list-style: none;
+  border-bottom: 1px solid $light-gold;
+  padding: 6px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.dashboard li:hover {
+  background-color: rgba(241, 241, 241, 0.3);
+  box-shadow: 1px 1px 4px rgba(115, 115, 115, 0.4);
+  border-right: 1px solid  rgba(115, 115, 115, 0);
+}
+
+.dashboard li p {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 // Tabs

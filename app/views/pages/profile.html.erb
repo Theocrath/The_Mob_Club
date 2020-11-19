@@ -11,9 +11,11 @@
           <p>"<%= current_user.description %>"</p>
         </div>
         <div class="links-container">
-          <div><a href="#" id="dashboard-btn">Dashboard</div>
-          <div><%= link_to 'Edit profile', edit_user_registration_path %></div>
-          <div><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></div>
+
+            <p><a href="#" id="dashboard-btn">Dashboard</p>
+            <p><%= link_to 'Edit profile', edit_user_registration_path %></p>
+            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+
         </div>
       </div>
     </div>
@@ -40,20 +42,15 @@
           <div class="dashboard">
             <ul>
               <% @crimes.to_a.each do |crime| %>
-                <li>
                 <%= link_to crime_path(crime.id) do %>
-                  <%= crime.title %>
-                  <%= crime.reward %>
-                  <% if crime.right_hand.present? %>
-                    <%= crime.right_hand.username %>
-                  <% else %>
-                    <%= simple_form_for @crime do |f| %>
-                      <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
-                      <%= f.submit %>
+                  <li>
+                    <h6><%= crime.title.upcase %><h6>
+                    <p>Reward: <%= crime.reward %></p>
+                    <% if crime.right_hand.present? %>
+                      <p class="pr-3">Right hand: <%= crime.right_hand.username %></p>
                     <% end %>
-                  <% end %>
+                  </li>
                 <% end %>
-                </li>
               <% end %>
             </ul>
           </div>
@@ -71,7 +68,7 @@
 
 <%# Create event pop up %>
 
-<div class="container" id="create-event-page" style="display:none">
+<div id="create-event-page" style="display:none">
   <%= render 'form' %>
 </div>
 
