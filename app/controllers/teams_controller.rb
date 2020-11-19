@@ -21,6 +21,7 @@ class TeamsController < ApplicationController
        redirect_to crime_path(@team.crime)
   end
 
+  # need def destroy for boss and RH
   #  # encontrar a team presente
   #  #
   #  # o usuario presente (current_user) tem que ser o mesmo que o tipo que criou o crime
