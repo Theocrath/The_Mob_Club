@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   end
 
   get 'profile', to: 'pages#profile'
-  get 'current_user_json' => 'pages#current_user_json'
+  get 'current_user_json' => 'pages#current_user_json' 
 end
