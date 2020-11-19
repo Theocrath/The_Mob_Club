@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:edit]
+  before_action :set_team, only: [:update]
 
   def create
     @crime = Crime.find(params[:crime_id])
@@ -8,23 +8,18 @@ class TeamsController < ApplicationController
     @team.user = current_user
 
     if @team.save
-      redirect_to profile_path, notice: 'You applied to this job succesfully!'
+      redirect_to crime_path(@crime), notice: 'You applied to this job succesfully!'
     else
       render :new
     end
   end
 
-  def index
-    @teams = Team.all
+  def update
+       @team.status = true
+       @team.save
+
+       redirect_to crime_path(@team.crime)
   end
-
-  # def edit
-  #   raise
-  #  if @crime.boss_id = current_user
-
-  #   @team.status = true
-
-  #  end
 
   #  # encontrar a team presente
   #  #
@@ -39,6 +34,6 @@ class TeamsController < ApplicationController
   end
 
   def set_team
-    @team = Team.find(params[:team_id])
+    @team = Team.find(params[:id])
   end
 end

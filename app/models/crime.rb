@@ -2,7 +2,8 @@ class Crime < ApplicationRecord
   has_one :skillset
   belongs_to :boss, class_name: 'User'
   belongs_to :right_hand, class_name: 'User', optional: true
-  has_one :team
+  has_many :teams
+  has_many :users, through: :teams
 
   validates_associated :skillset
 

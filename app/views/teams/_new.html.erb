@@ -6,7 +6,7 @@
 <%= simple_form_for [@crime, @team] do |f| %>
   <%= f.hidden_field :crime_id, value: @crime %>
   <%#= hidden_field_tag :status, value: @team.status %>
-  <%= f.button :submit %>
+  <%= f.button :submit , "Apply for crime" %>
 <% end %>
 
 

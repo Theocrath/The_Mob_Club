@@ -1,9 +1,14 @@
-puts "Destroying users..."
-User.destroy_all
+puts "Destroying Teams"
+Team.destroy_all
 puts "Destorying Skillsets!"
 Skillset.destroy_all
 puts "Destroying Crimes"
 Crime.destroy_all
+puts "Destroying users..."
+User.destroy_all
+
+
+
 
 
 puts "creating users"
@@ -40,6 +45,10 @@ crime_s2 = Skillset.create!(close_combat: rand(1..10), long_range_weapons: rand(
 crime_s3 = Skillset.create!(close_combat: rand(1..10), long_range_weapons: rand(1..10), mid_range_weapons: rand(1..10), explosives: rand(1..10), infiltration: rand(1..10), lockpicking: rand(1..10), seduction: rand(1..10), hacking: rand(1..10), crime_id: c3.id)
 crime_s4 = Skillset.create!(close_combat: rand(1..10), long_range_weapons: rand(1..10), mid_range_weapons: rand(1..10), explosives: rand(1..10), infiltration: rand(1..10), lockpicking: rand(1..10), seduction: rand(1..10), hacking: rand(1..10), crime_id: c4.id)
 crime_s5 = Skillset.create!(close_combat: rand(1..10), long_range_weapons: rand(1..10), mid_range_weapons: rand(1..10), explosives: rand(1..10), infiltration: rand(1..10), lockpicking: rand(1..10), seduction: rand(1..10), hacking: rand(1..10), crime_id: c5.id)
+puts "creating teams"
+Team.create!(user: user_2, crime: c1)
+Team.create!(user: user_3, crime: c1)
+Team.create!(user: user_4, crime: c1)
 
 puts "..."
 puts "Villains created. Proceed with caution. These seeds will cause havoc. Protect your children."
