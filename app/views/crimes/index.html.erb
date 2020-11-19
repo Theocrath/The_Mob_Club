@@ -1,8 +1,10 @@
 <h1>Crimes Index</h1>
 
-<ul>
+<ul style="background-color: white">
   <% @crimes.each do |crime| %>
+    <%= link_to crime_path(crime) do  %>
     <li><%= crime.title %></li>
+    <% end %>
     <li><%= crime.description %></li>
     <li><%= crime.date %></li>
     <li><%= crime.location %></li>
@@ -11,3 +13,5 @@
     <br>
   <% end %>
 </ul>
+
+

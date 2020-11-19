@@ -7,12 +7,16 @@ class CrimesController < ApplicationController
   end
 
   def show
+    @team = Team.new
+    @current_teams = @crime.teams
+
   end
 
   def create
     @crime = Crime.new(crime_params)
+
     @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].nil?
-    
+
     @crime.boss = current_user
 
     unless @crime.save
