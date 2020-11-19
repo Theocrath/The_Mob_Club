@@ -10,6 +10,10 @@
 
 <p><%= @crime.reward %>$</p>
 <br>
+
+<% if @crime.skillset.nil? %>
+<p> You need to add a skillset to your crime!</p>
+<% else %>
 <ul>
   <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
     <% unless @attributes.include?(skill_name) %>
@@ -17,6 +21,11 @@
     <% end %>
   <% end %>
 </ul>
+
+<% end %>
+
+
+
 
 <h2>Accepted</h2>
 <% @current_teams.each do |current_team| %>
