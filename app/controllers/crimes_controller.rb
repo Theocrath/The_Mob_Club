@@ -15,7 +15,7 @@ class CrimesController < ApplicationController
 
   def create
     @crime = Crime.new(crime_params)
-    @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].empty?
+    @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].nil?
     
     @crime.boss = current_user
 

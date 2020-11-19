@@ -1,5 +1,5 @@
   <% if notice.present? %>
-    <span class="notice-box mt-4" role="alert">
+    <span class="notice-box mt-4" role="alert"> 
       <%= notice.html_safe %>
     </span>
   <% end %>
@@ -50,26 +50,21 @@
               <%= crime.reward %>
               <% if crime.right_hand.present? %>
                 <%= crime.right_hand.username %>
-                <%= simple_form_for crime do |f| %>
-                  <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
-                <% end %>
               <% else %>
                 <%= simple_form_for crime do |f| %>
                   <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
                 <% end %>
               <% end %>
             <% end %>
+          </div>
         </div>
       </div>
-    </div>
 
       <div class="chart" style="display:show">
         <canvas id="myChart"></canvas>
       </div>
 
-
     </div>
-
 
   </div>
 </div>
