@@ -19,9 +19,9 @@ class CrimesController < ApplicationController
 
     @crime.boss = current_user
 
-    unless @crime.save
-      # We may need to change this redirect path.
-    #   redirect_to profile_path, notice: 'Your plan was added to the database!'
+    unless @crime.save 
+    # if @crime.save
+    #   redirect_to profile_path(anchor: 'testelala')
     # else
       redirect_to profile_path, notice: 'There was an error. Please fill all the form fields.'
     end
