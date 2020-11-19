@@ -1,10 +1,10 @@
 // Main container
 
 .profile-info {
-  margin-top: 16px;
-  padding: 30px;
+  margin: 30px;
   height: 85vh;
   text-align: center;
+  border: 1px solid $light-gold;
 }
 
 // User info
@@ -22,8 +22,12 @@
 }
 
 .avatar-container {
-  background-color: yellow;
-  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60%;
+  padding: 16px;
+  
 }
 
 .links-container {
@@ -33,4 +37,11 @@
   justify-items: center;
   background-color: lightgreen;
   height: 30%;
+}
+
+// Avatar
+
+.profile-avatar {
+  height: 90%;
+  border-radius: 50%;
 }
