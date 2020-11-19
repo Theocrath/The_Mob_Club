@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @skillset = Skillset.new
   end
 
   def current_user_json
@@ -15,7 +16,7 @@ class PagesController < ApplicationController
       explosives: current_user.skillset.explosives,
       infiltration: current_user.skillset.infiltration,
       hacking: current_user.skillset.hacking,
-      lockpicking: current_user.skillset.lockpicking, 
+      lockpicking: current_user.skillset.lockpicking,
       seduction: current_user.skillset.seduction
      }
   end

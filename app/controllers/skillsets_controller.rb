@@ -1,11 +1,13 @@
 class SkillsetsController < ApplicationController
   def new
     @skillset = Skillset.new
+    # @user = current_user
   end
 
   def create
+    @user = current_user
     @skillset = Skillset.new(skillset_params)
-    @skillset.user = current_user
+    @skillset.user = @user
 
     if @skillset.save
       redirect_to profile_path, notice: 'Skillset created!'
