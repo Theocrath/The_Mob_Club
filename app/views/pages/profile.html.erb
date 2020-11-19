@@ -41,6 +41,7 @@
             <ul>
               <% @crimes.to_a.each do |crime| %>
                 <li>
+                <%= link_to crime_path(crime.id) do %>
                   <%= crime.title %>
                   <%= crime.reward %>
                   <% if crime.right_hand.present? %>
@@ -51,6 +52,7 @@
                       <%= f.submit %>
                     <% end %>
                   <% end %>
+                <% end %>
                 </li>
               <% end %>
             </ul>
