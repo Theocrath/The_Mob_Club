@@ -32,6 +32,8 @@ class SkillsetsController < ApplicationController
    end
   end
 
+ # below are custom actions for the skillset related to the crime 
+
   def crime_skillset_new
     @skillset = Skillset.new
   end
