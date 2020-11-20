@@ -2,10 +2,11 @@ puts "Destroying Teams"
 Team.destroy_all
 puts "Destorying Skillsets!"
 Skillset.destroy_all
-puts "Destroying Crimes"
-Crime.destroy_all
 puts "Destroying users..."
 User.destroy_all
+puts "Destroying Crimes"
+Crime.destroy_all
+
 
 
 
@@ -37,7 +38,7 @@ puts "creating crimes"
 c1 = Crime.create!(title: "Bank robbery at Lisbon", description: "Bank robbery already planned. Needed 3 man or woman with minimum 5 sucessful bank robs. Bringing your own weapon is a plus. Very good reward. We provide the costumes if necessary. We are not responsible in casualties or arrest. Apply now.", date: Time.new(2020, 12, 15, 17, 20, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_1)
 c2 = Crime.create!(title: "Million Euros Heist", description: "We need ambitious thugs with no fear of danger. This work will only be released after the interested party is contacted by us. A LOT OF MONEY will be divided. If you show talent we can definitely hire you for future thefts. Come and join our team, unique opportunity.", date: Time.new(2020, 12, 18, 23, 30, 0, "+01:00") , location: "Unknow", reward: rand(500..30000), boss: user_2)
 c3 = Crime.create!(title: "Need heist specialist urgent", description: "What are we looking for? An absolute psychopath, with disregard of the laws, easily handling weapons and bombs. Specializing in electronic theft and hacking is a differentiator for hiring. Lawyer scholarship included. We do not pay the bail. Payment guaranteed in bank account created by the company. We do not hire ex-cops or individuals on the federal police's most wanted list.", date: Time.new(2020, 12, 29, 21, 00, 0, "+01:00") , location: "London", reward: rand(500..30000), boss: user_3)
-c4 = Crime.create!(title: "Kidnapping the Prime Minister's Daughter - experience man/woman needed!", description: "We need an experienced lady who accepts to work as a nanny in the family of the Prime Minister of Portugal. She must be captivating and lethal. Absolute need for the kidnapping of the Prime Minister's daughter. Included guarantees to leave the country safely. Apply now and we'll send you more details.", date: Time.new(2021, 1, 2, 5, 30, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_7)
+c4 = Crime.create!(title: "Kidnapping the Prime Minister's Daughter", description: "We need an experienced lady who accepts to work as a nanny in the family of the Prime Minister of Portugal. She must be captivating and lethal. Absolute need for the kidnapping of the Prime Minister's daughter. Included guarantees to leave the country safely. Apply now and we'll send you more details.", date: Time.new(2021, 1, 2, 5, 30, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_7)
 c5 = Crime.create!(title: "Heist at Bank of Spain", description: "My name is Professor I am looking for a robber who is willing to rob the bank of Spain - the plan is already laid down and it's perfect, and flawless. It is necessary to bring your own Salvador Dali mask for cover. Red coveralls are required. Minimum required: speak basic Spanish.", date: Time.new(2021, 1, 20, 20, 25, 0, "+01:00") , location: "Madrid", reward: rand(500..30000), boss: user_9)
 puts "creating skillsets dos crimes"
 crime_s1 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), crime_id: c1.id)

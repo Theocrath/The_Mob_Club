@@ -25,7 +25,7 @@ class TeamsController < ApplicationController
     @team.destroy
     redirect_to crime_path(@crime), notice: "#{@team.user.username} has been removed from the list..."
   end
-
+  
   #  # encontrar a team presente
   #  #
   #  # o usuario presente (current_user) tem que ser o mesmo que o tipo que criou o crime

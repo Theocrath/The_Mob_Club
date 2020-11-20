@@ -1,38 +1,47 @@
-<h1><%= @crime.title %></h1>
-<h2><%= @crime.date %></h2>
-<p><%= @crime.location %></p>
-<br>
-<p><%= @crime.description %></p>
+<div>
+  <h1><%= @crime.title %></h1>
+  <% how_many_days = @crime.date - Date.today %>
+  <h2>Execution date: in <%= how_many_days.to_i %> days</h2>
+  <p><%= @crime.date %></p>
 
-<% if !@crime.right_hand.nil? %>
-<p><%= @crime.right_hand.username %></p>
-<% end %>
+  <p><%= @crime.location %></p>
+  <br>
+  <p><%= @crime.description %></p>
 
-<p><%= @crime.reward %>$</p>
-<br>
-
-<% if @crime.skillset.nil? %>
-  <p> You need to add a skillset to your crime!</p>
-  <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
-<% else %>
-  <ul>
-    <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
-      <% unless @attributes.include?(skill_name) %>
-        <li><%= skill_name %>: <%= skill_value %></li>
-      <% end %>
-    <% end %>
-  </ul>
-<% end %>
-
-
-
-
-<h2>Accepted</h2>
-<% @current_teams.each do |current_team| %>
-  <% if current_team.status == true %>
-    <p><%= current_team.user.username %></p>
+  <% if !@crime.right_hand.nil? %>
+  <p><%= @crime.right_hand.username %></p>
   <% end %>
-<% end %>
+
+  <p><%= @crime.reward %>$</p>
+  <br>
+
+  <% if @crime.skillset.nil? %>
+    <p> You need to add a skillset to your crime!</p>
+    <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
+  <% else %>
+    <ul>
+      <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
+        <% unless @attributes.include?(skill_name) %>
+          <li><%= skill_name %>: <%= skill_value %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+
+
+<!-- only bosses and right hands can see these two. Need to add logic for user -->
+<!-- to see the current team only if current user id is part of the team -->
+<div>
+  <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
+
+  <h2>Accepted</h2>
+  <% @current_teams.each do |current_team| %>
+    <% if current_team.status == true %>
+      <p><%= current_team.user.username %></p>
+    <% end %>
+  <% end %>
 
 <h2>List of pendings</h2>
 <% @current_teams.each do |current_team| %>
@@ -45,10 +54,24 @@
 <% end %>
 
 
+  <h2>List of pendings</h2>
+  <% @current_teams.each do |current_team| %>
+    <% if current_team.status == false %>
+      <p><%= current_team.user.username %></p>
+      <%= link_to "accept", crime_team_path(@crime,current_team), method: :patch%>
+      <hr>
+    <% end %>
+  <% end %>
 
+<% end %>
+</div>
+
+<%= link_to crimes_path do %>
+ <div class="cancel-button"> Back </div>
+<% end %>
 
 
 <%#= link_to 'Enter team', crime_teams_path(@crime, @team), method: :post %>
-<div style="background-color: white">
+
 <%= render "teams/new" %>
-</div>
+
