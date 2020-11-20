@@ -5,7 +5,7 @@
   <% unless @crime.right_hand.nil? %>
     <p><%= @crime.right_hand.username %></p>
   <% end %>
-  <p>Execution in: <%= @crime.date %></p>
+  <p>Start date: <%= @crime.date %></p>
   <div class='tag-container'>
     <ul>
       <li>Murder Free</li>
@@ -27,7 +27,9 @@
         <p> You need to add a skillset to your crime!</p>
         <%= link_to 'Add a skillset to the crime...', crime_skillset_new_skillsets_path %>
       <% else %>
-        <canvas id="myCrimeChart"></canvas>
+        <div class='chart'>
+          <canvas id="myCrimeChart"></canvas>
+        </div>
       <% end %>
 
       <div class='team-list'>
@@ -56,10 +58,13 @@
   </div>
 
   <div class='actions-container'>
-    <div class='actions-btn devise-btn'>
-        <%= render "teams/new" %>
+    <div class='actions-btn'>
+        <%= render "teams/new", class:'devise-btn' %>
+        <%= link_to 'Update event', edit_crime_path(@crime), class:'devise-btn' %>
+        <%= link_to 'Cancel event', crime_path(@crime), method: :delete,
+            data: { confirm: 'Are you sure, mate?'}, class:'cancel-button' %>
     </div>
-    <div>
+    <div class='background-grey'>
         <h2>Accepted</h2>
         <% @current_teams.each do |current_team| %>
           <% if current_team.status == true %>
