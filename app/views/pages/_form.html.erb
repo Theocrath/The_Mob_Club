@@ -4,7 +4,10 @@
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.input :location %>
-      <a href="#" class="crime-form-btn float-right nav-text">Next</a>
+    <div class="nav-btn-container">
+      <%= link_to 'Back', profile_path, class: 'nav-text' %>
+      <a href="#" class="crime-form-btn nav-text">Next</a>
+    </div>
   </div>
   <div id="crime-form-2" style="display:none;">
       <%= f.input :date %>
@@ -30,7 +33,7 @@
       <%= f.input :seduction, as: :range %>
       <div class="nav-btn-container">
         <a href="#" class="skillset-form-btn nav-text">Back</a>
-        <%= f.button :submit, 'Create Crime', class: 'nav-test' %>
+        <%= f.button :submit, 'Create Crime', class: 'nav-test create-event', id: 'create-crime' %>
         <% end %>
       </div>
   </div>
