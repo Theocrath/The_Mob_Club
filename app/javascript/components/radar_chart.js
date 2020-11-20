@@ -1,5 +1,5 @@
-const chart = (userStats) => {
-  let ctx = document.getElementById('myChart');
+const userC = (userStats) => {
+  let ctx = document.querySelector('#userChart');
   new Chart(ctx, {
     type: 'radar',
     data: {
@@ -40,16 +40,9 @@ const chart = (userStats) => {
   });
 };
 
-const userChart = () => {
-  $.get('/current_user_json', function (userStats) {
-    console.log('testing json response', userStats.close_combat);
-    chart(userStats);
-  });
-}
-
 const crimeC = (crimeStats) => {
-  let crimectx = document.getElementById('myCrimeChart');
-  new Chart(crimectx, {
+  let ctx = document.querySelector('#myCrimeChart');
+  new Chart(ctx, {
     type: 'radar',
     data: {
       labels: ['Close Combat', 'Long Range Weapons', 'Mid Range Weapons', 'Explosives', 'Infiltration', 'Hacking', 'Lockpicking', 'Seduction'],
@@ -89,8 +82,16 @@ const crimeC = (crimeStats) => {
   });
 };
 
+const userChart = () => {
+  $.get('/current_user_json', function (userStats) {
+    console.log('testing json response', userStats.close_combat);
+    userC(userStats);
+  });
+}
+
 const crimeChart = () => {
-  $.get('/crime_json', function (crimeStats) {
+  $.get('crimes/crime_json', function (crimeStats) {
+    console.log('crime stats', crimeStats.close_combat);
     crimeC(crimeStats);
   });
 }

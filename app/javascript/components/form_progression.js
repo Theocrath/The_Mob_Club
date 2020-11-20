@@ -1,7 +1,6 @@
 const toggleCrimeFormCard = () => {
   $('.crime-form-btn').click(function (e) {
     e.preventDefault();
-    $('#submit-crime').submit();
     $('#crime-form-1').toggle();
     $('#crime-form-2').toggle();
   });

@@ -13,9 +13,9 @@
 
 <% if @crime.skillset.nil? %>
   <p> You need to add a skillset to your crime!</p>
-  <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
+  <%= link_to 'Add a skillset to the crime...', skillsets_path %>
 <% else %>
-  <div class="chart" style="display:show">
+  <div class="chart">
     <canvas id="myCrimeChart"></canvas>
   </div>
 <% end %>

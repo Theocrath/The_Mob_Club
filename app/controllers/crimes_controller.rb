@@ -1,6 +1,6 @@
 class CrimesController < ApplicationController
   before_action :set_crime, except: [:index, :create]
-  before_action :permitted_skillset_attributes, only: [:show]
+  # before_action :permitted_skillset_attributes, only: [:show]
 
   def index
     @crimes = Crime.all
@@ -9,7 +9,6 @@ class CrimesController < ApplicationController
   def show
     @team = Team.new
     @current_teams = @crime.teams
-
   end
 
   def create
@@ -20,9 +19,6 @@ class CrimesController < ApplicationController
     @crime.boss = current_user
 
     unless @crime.save 
-    # if @crime.save
-    #   redirect_to profile_path(anchor: 'testelala')
-    # else
       redirect_to profile_path, notice: 'There was an error. Please fill all the form fields.'
     end
   end
@@ -52,9 +48,9 @@ class CrimesController < ApplicationController
     @crime = Crime.find(params[:id])
   end
 
-  def permitted_skillset_attributes
-    @attributes = ['id', 'created_at', 'updated_at', 'user_id', 'crime_id']
-  end
+  # def permitted_skillset_attributes
+  #   @attributes = ['id', 'created_at', 'updated_at', 'user_id', 'crime_id']
+  # end
 
   def crime_params
     params.require(:crime).permit(:title, :description, :date, :location, :reward)

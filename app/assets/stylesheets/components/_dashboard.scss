@@ -8,9 +8,9 @@
 .dashboard li {
   list-style: none;
   border-bottom: 1px solid $light-gold;
-  padding: 6px;
   opacity: 0.8;
   letter-spacing: 1px;
+  min-height: 60px;
 }
 
 .dashboard li:hover {
@@ -20,9 +20,26 @@
 }
 
 .dashboard li p {
-  font-size: 16px;
-  margin-top: 0;
+  padding-bottom: 8px;
+  padding-right: 6px;
+  margin: 0;
+}
+
+.dashboard h6, p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.dashboard h6 {
+  padding-top: 8px;
   margin-bottom: 0;
+}
+
+.empty-dash {
+  margin: 30px;
+}
+
+.dash-date {
+  float: right;
 }
 
 // Tabs

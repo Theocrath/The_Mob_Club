@@ -5,9 +5,9 @@ class SkillsetsController < ApplicationController
   end
 
   def create
-    # @user = current_user
+    @user = current_user
     @skillset = Skillset.new(skillset_params_user)
-    @user_has_skillset = Skillset.find_by(user_id: current_user.id)
+    @user_has_skillset = Skillset.find_by(user_id: @user.id)
 
     if @user_has_skillset.nil?
       @skillset.user = @user
