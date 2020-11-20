@@ -41,7 +41,6 @@
   border-radius: 25px;
   padding: 30px;
   max-width: 90%;
-  min-height: fit-content;
 }
 
 .actions-container {
@@ -59,7 +58,10 @@
 .team-list-members {
   display: flex;
   justify-content: space-between;
-  max-height: 20%;
+}
+
+.crime-chart {
+  height: 50%;
 }
 
 // Actions
