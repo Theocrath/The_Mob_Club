@@ -34,4 +34,32 @@
   // animation: spin 4s linear infinite;
 }
 
+.prp-value {
+  height: 100vh;
+}
 
+.prp-container {
+  margin: 100px 30%;
+}
+
+.prp-text {
+  text-align: right;
+  padding-top: 20px;
+}
+
+// for the middle proposition nr 2
+
+.prp-value2 {
+  height: 100vh;
+  text-align: right;
+  background-color: $dark-brown;
+}
+
+.prp-container2 {
+  margin: 100px 30%;
+}
+
+.prp-text2 {
+  text-align: left;
+  padding-top: 20px;
+}
