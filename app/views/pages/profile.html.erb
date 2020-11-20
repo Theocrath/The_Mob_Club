@@ -34,7 +34,7 @@
           <div class="dashboard">
             <% if @current_jobs.empty? %>
               <div class="empty-dash">
-                <p>You don't have any scheduled job.</p>
+                <p class="op-9">You don't have any scheduled job.</p>
                 <p><%= link_to 'Search Criminal Events', crimes_path %></p>
               </div>
             <% else %>
@@ -53,7 +53,7 @@
           <div class="dashboard">
             <% if @pending_requests.empty? %>
               <div class="empty-dash">
-                <p>You don't have any pending requests.</p>
+                <p class="op-9">You don't have any pending requests.</p>
                 <p><%= link_to 'Search Criminal Events', crimes_path %></p>
               </div>
             <% else %>
