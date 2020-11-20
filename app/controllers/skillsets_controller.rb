@@ -1,32 +1,37 @@
 class SkillsetsController < ApplicationController
+  before_action :set_skillset, only: [:edit, :update]
+
   def new
     @skillset = Skillset.new
-    # @user = current_user
+    @user = current_user
   end
 
   def create
     @user = current_user
-    @skillset = Skillset.new(skillset_params_user)
-    @skillset.user = @user
+    @skillset = Skillset.new(skillset_params)
+    @user_has_skillset = Skillset.find_by(user_id: @user.id)
 
-    if @skillset.save
-      redirect_to profile_path, notice: 'Skillset created!'
+    if @user_has_skillset.nil?
+      @skillset.user = @user
     else
-      render :new
+      @skillset.crime = Crime.last
+    end
+    
+    if @skillset.save
+      redirect_to profile_path, notice: 'Criminal event created.'
+    else
+      redirect_to profile_path, notice: 'There was a problem, please try again'
     end
   end
 
-  def another_new
-    @skillset = Skillset.new
+  def edit
   end
 
-  def another_create
-    @user = current_user
-    @skillset = Skillset.new(skillset_params_crime)
-    @skillset.crime = @crime
+  def update
 
-    if @skillset.save
-      redirect_to profile_path, notice: 'Skillset created for your crime!'
+    @user_skillset.update(skillset_params)
+    if @user_skillset.save
+      redirect_to profile_path, notice: 'You updated your skillset'
     else
       render :new
     end
@@ -34,11 +39,11 @@ class SkillsetsController < ApplicationController
 
   private
 
-  def skillset_params_user
-    params.require(:skillset).permit(:close_combat, :long_range_weapons, :mid_range_weapons, :explosives, :infiltration, :hacking, :lockpicking, :seduction, :user_id)
+  def skillset_params
+    params.require(:skillset).permit(:close_combat, :long_range_weapons, :mid_range_weapons, :explosives, :infiltration, :hacking, :lockpicking, :seduction)
   end
 
-  def skillset_params_crime
-    params.require(:skillset).permit(:close_combat, :long_range_weapons, :mid_range_weapons, :explosives, :infiltration, :hacking, :lockpicking, :seduction, :crime_id)
+  def set_skillset
+    @skillset = Skillset.find(params[:id])
   end
 end

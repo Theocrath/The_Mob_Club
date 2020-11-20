@@ -1,6 +1,6 @@
 class CrimesController < ApplicationController
-  before_action :set_crime, except: [:index, :create]
-  before_action :permitted_skillset_attributes, only: [:show]
+  before_action :set_crime, except: [:index, :create, :crime_json]
+  # before_action :permitted_skillset_attributes, only: [:show]
 
   def index
     @crimes = Crime.all
@@ -18,10 +18,7 @@ class CrimesController < ApplicationController
 
     @crime.boss = current_user
 
-    unless @crime.save
-      # We may need to change this redirect path.
-    #   redirect_to profile_path, notice: 'Your plan was added to the database!'
-    # else
+    unless @crime.save 
       redirect_to profile_path, notice: 'There was an error. Please fill all the form fields.'
     end
   end
@@ -31,7 +28,7 @@ class CrimesController < ApplicationController
 
   def update
     @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].empty?
-
+    
     if @crime.update(crime_params)
       redirect_to crime_path(@crime), notice: 'Plan updated!'
     else
@@ -44,6 +41,20 @@ class CrimesController < ApplicationController
     # We may need to change this redirect path.
     redirect_to profile_path
   end
+  
+  def crime_json
+    @crime = Crime.find(params[:crime_id])
+    render json: {
+      close_combat: @crime.skillset.close_combat,
+      long_range_weapons: @crime.skillset.long_range_weapons,
+      mid_range_weapons: @crime.skillset.mid_range_weapons,
+      explosives: @crime.skillset.explosives,
+      infiltration: @crime.skillset.infiltration,
+      hacking: @crime.skillset.hacking,
+      lockpicking: @crime.skillset.lockpicking,
+      seduction: @crime.skillset.seduction
+    }
+  end
 
   private
 
@@ -51,9 +62,9 @@ class CrimesController < ApplicationController
     @crime = Crime.find(params[:id])
   end
 
-  def permitted_skillset_attributes
-    @attributes = ['id', 'created_at', 'updated_at', 'user_id', 'crime_id']
-  end
+  # def permitted_skillset_attributes
+  #   @attributes = ['id', 'created_at', 'updated_at', 'user_id', 'crime_id']
+  # end
 
   def crime_params
     params.require(:crime).permit(:title, :description, :date, :location, :reward)

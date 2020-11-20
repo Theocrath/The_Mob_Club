@@ -5,9 +5,11 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @crimes = Crime.where(boss_id: current_user.id)
-    @crime = Crime.new
     @skillset = Skillset.new
+    @crime = Crime.new
+    @crimes = Crime.where(boss_id: current_user.id)
+    @current_jobs = Team.where('user_id = ? AND status = ?', current_user, true)
+    @pending_requests = Team.where('user_id = ? AND status = ?', current_user, false)
   end
 
   def current_user_json
@@ -20,6 +22,6 @@ class PagesController < ApplicationController
       hacking: current_user.skillset.hacking,
       lockpicking: current_user.skillset.lockpicking,
       seduction: current_user.skillset.seduction
-     }
+    }
   end
 end
