@@ -1,17 +1,33 @@
-<h1>Crimes Index</h1>
+<h1>Crimes that might interest you</h1>
+<h2><%= Crime.count %> misdeeds available</h2>
+<br>
 
-<ul style="background-color: white">
-  <% @crimes.each do |crime| %>
-    <%= link_to crime_path(crime) do  %>
-    <li><%= crime.title %></li>
+<div class="crime-index-container">
+  <div class="row">
+
+
+    <% @crimes.each do |crime| %>
+    <div class="col-sm-12 col-lg-6">
+      <%= link_to crime_path(crime) do  %>
+      <div class="crime-card">
+        <div class="card-head">
+
+          <h2><%= crime.title %></h2>
+        <div class="card-details">
+          <h3><i class="far fa-compass"></i> <%= crime.location %></h3>
+          <% how_many_days = crime.date - Date.today %>
+          <h4>In <%= how_many_days.to_i %> days</h4>
+        </div>
+        </div>
+        <div class="card-reward">
+          <p>reward</p>
+          <h2><%= crime.reward %>$</h2>
+        </div>
+      </div>
+      <% end %>
+      <!-- <li>Skillset?<%#= crime.skillset %></li> -->
+    </div>
     <% end %>
-    <li><%= crime.description %></li>
-    <li><%= crime.date %></li>
-    <li><%= crime.location %></li>
-    <li><%= crime.reward %>$</li>
-    <li>Skillset?<%#= crime.skillset %></li>
-    <br>
-  <% end %>
-</ul>
-
+  </div>
+</div>
 

@@ -1,8 +1,67 @@
 // for the crimes index
+.crime-index-container {
+  margin: 40px 200px;
+}
 
 .crime-card {
-  background-color: $dark-brown;
-  min-height: 300px;
-  width: 400px;
+  background-image: linear-gradient($brown, $dark-brown);
   border-radius: 15px;
+  margin-bottom: 10px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 10px;
+  margin-right: 0;
 }
+
+.card-head {
+  margin-right: 50px;
+  position: relative;
+  padding: 10px;
+}
+
+
+.card-details {
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.card-details h3 {
+  font-family: Raleway;
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: $gold;
+}
+
+.card-details h4 {
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 0;
+  color: $white;
+}
+
+.card-reward {
+  background-color: $brown;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 15px;
+  padding: 10px 15px;
+  text-align: center;
+  width: 130px;
+}
+
+.card-reward p {
+  margin-bottom: 0;
+  color: $white;
+  font-weight: 200
+}
+
+
+

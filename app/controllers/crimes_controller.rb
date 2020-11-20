@@ -9,7 +9,6 @@ class CrimesController < ApplicationController
   def show
     @team = Team.new
     @current_teams = @crime.teams
-
   end
 
   def create
