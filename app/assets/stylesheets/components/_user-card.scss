@@ -1,4 +1,8 @@
 // Main container
+#profile-container {
+  background-color: rgba(241, 241, 241, 0.5);
+  border-radius: 10px;
+}
 
 .profile-info {
   display: flex;
@@ -8,9 +12,10 @@
   justify-content: center;
   min-height: 85vh;
   text-align: center;
-  background-color:  rgba(241, 241, 241, 0.3);
+  // background-color:  rgba(241, 241, 241, 0.5);
   padding-top: 0;
 }
+
 
 // User info
 
