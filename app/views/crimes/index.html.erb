@@ -4,14 +4,15 @@
 
 <div class="crime-index-container">
   <div class="row">
-    <div class="col-sm-12 col-lg-6">
+
 
     <% @crimes.each do |crime| %>
+    <div class="col-sm-12 col-lg-6">
+      <%= link_to crime_path(crime) do  %>
       <div class="crime-card">
         <div class="card-head">
-          <%= link_to crime_path(crime) do  %>
+
           <h2><%= crime.title %></h2>
-        <% end %>
         <div class="card-details">
           <h3><i class="far fa-compass"></i> <%= crime.location %></h3>
           <% how_many_days = crime.date - Date.today %>
@@ -23,9 +24,10 @@
           <h2><%= crime.reward %>$</h2>
         </div>
       </div>
+      <% end %>
       <!-- <li>Skillset?<%#= crime.skillset %></li> -->
-    <% end %>
     </div>
+    <% end %>
   </div>
 </div>
 
