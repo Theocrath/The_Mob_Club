@@ -1,36 +1,40 @@
-<h1><%= @crime.title %></h1>
-<% how_many_days = @crime.date - Date.today %>
-<h2>Will happen in <%= how_many_days.to_i %> days</h2>
+<div>
+  <h1><%= @crime.title %></h1>
+  <% how_many_days = @crime.date - Date.today %>
+  <h2>Execution date: in <%= how_many_days.to_i %> days</h2>
+  <p><%= @crime.date %></p>
 
-<p><%= @crime.location %></p>
-<br>
-<p><%= @crime.description %></p>
+  <p><%= @crime.location %></p>
+  <br>
+  <p><%= @crime.description %></p>
 
-<% if !@crime.right_hand.nil? %>
-<p><%= @crime.right_hand.username %></p>
-<% end %>
+  <% if !@crime.right_hand.nil? %>
+  <p><%= @crime.right_hand.username %></p>
+  <% end %>
 
-<p><%= @crime.reward %>$</p>
-<br>
+  <p><%= @crime.reward %>$</p>
+  <br>
 
-<% if @crime.skillset.nil? %>
-  <p> You need to add a skillset to your crime!</p>
-  <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
-<% else %>
-  <ul>
-    <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
-      <% unless @attributes.include?(skill_name) %>
-        <li><%= skill_name %>: <%= skill_value %></li>
+  <% if @crime.skillset.nil? %>
+    <p> You need to add a skillset to your crime!</p>
+    <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
+  <% else %>
+    <ul>
+      <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
+        <% unless @attributes.include?(skill_name) %>
+          <li><%= skill_name %>: <%= skill_value %></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-<% end %>
+    </ul>
+  <% end %>
+</div>
+
 
 
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
-<% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
-
+<div>
+  <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
 
   <h2>Accepted</h2>
   <% @current_teams.each do |current_team| %>
@@ -51,6 +55,7 @@
   <% end %>
 
 <% end %>
+</div>
 
 <%= link_to crimes_path do %>
  <div class="cancel-button"> Back </div>
