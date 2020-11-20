@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   # post 'profile/skillsets', to: 'skillsets#create' # is this correct?
   resources :skillsets, only: [:new, :create, :edit, :update] do
     collection do
-      get 'another_new'
-      post 'another_create'
+      get 'crime_skillset_new'
+      post 'crime_skillset_create'
+      get '/:id/edit_crime_skillset', to: 'skillsets#crime_skillset_edit', as: 'edit_crime_skillset'
+
+      patch '/:id', to: 'skillsets#crime_skillset_update'
     end
   end
 
   get 'profile', to: 'pages#profile'
-  get 'current_user_json' => 'pages#current_user_json'
+  get 'current_user_json' => 'pages#current_user_json' 
 end

@@ -103,10 +103,28 @@
 
 
 
+<!-- only bosses and right hands can see these two. Need to add logic for user -->
+<!-- to see the current team only if current user id is part of the team -->
+<div>
+  <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
 
 
 
+  <h2>List of pendings</h2>
+  <% @current_teams.each do |current_team| %>
+    <% if current_team.status == false %>
+      <p><%= current_team.user.username %></p>
+      <%= link_to "accept", crime_team_path(@crime,current_team), method: :patch%>
+      <hr>
+    <% end %>
+  <% end %>
 
+<% end %>
+</div>
+
+<%= link_to crimes_path do %>
+ <div class="cancel-button"> Back </div>
+<% end %>
 
 
 <%#= link_to 'Enter team', crime_teams_path(@crime, @team), method: :post %>
