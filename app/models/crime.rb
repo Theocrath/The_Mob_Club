@@ -12,4 +12,6 @@ class Crime < ApplicationRecord
   validates :description, length: { minimum: 5 }, allow_blank: false
   validates :date, :location, presence: true
   validates :reward, numericality: true
+
+  has_one_attached :photo
 end
