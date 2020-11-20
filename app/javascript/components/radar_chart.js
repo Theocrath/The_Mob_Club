@@ -19,8 +19,8 @@ const userC = (userStats) => {
           userStats.lockpicking,
           userStats.seduction
         ],
-        backgroundColor: ['rgba(211, 171, 106, 0.7)'],
-        borderColor: ['rgba(232, 205, 162, 1)'],
+        backgroundColor: ['rgba(219, 159, 61, 0.7)'],
+        borderColor: ['rgba(219, 159, 61, 1)'],
         borderWidth: 1
       }],
     },

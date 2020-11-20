@@ -1,8 +1,12 @@
 // Containers
 
+#dashboard-main {
+    padding: 16px 40px;
+}
+
 .dashboard {
   min-height: 70vh;
-  border-right: 1px solid $light-gold;
+  border-right: 1px solid rgba(241, 241, 241, 0.3);
 }
 
 .dashboard li {

@@ -1,15 +1,12 @@
-puts "Destroying Teams"
-Team.destroy_all
-puts "Destorying Skillsets!"
+
+puts "Destroying Skillsets!"
 Skillset.destroy_all
-puts "Destroying users..."
-User.destroy_all
 puts "Destroying Crimes"
 Crime.destroy_all
-
-
-
-
+puts "Destroying users..."
+User.destroy_all
+puts "Destroying Teams"
+Team.destroy_all
 
 
 puts "creating users"
