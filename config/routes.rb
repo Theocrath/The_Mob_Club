@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :crimes, except: :new do
-    resources :teams, only: [:create, :update]  #before it was resources :teams, only [:create, :index]
+    resources :teams, only: [:create, :update, :destroy]  #before it was resources :teams, only [:create, :index]
   end
   #added the line above to create a custom route for team index
   # get 'profile/skillsets/new', to: 'skillsets#new'
