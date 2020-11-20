@@ -1,8 +1,8 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:update]
+  before_action :set_team, except: [:create]
+  before_action :set_crime, except: [:update]
 
   def create
-    @crime = Crime.find(params[:crime_id])
     @team = Team.new(team_params)
     @team.crime = @crime
     @team.user = current_user
@@ -21,7 +21,11 @@ class TeamsController < ApplicationController
        redirect_to crime_path(@team.crime)
   end
 
-  # need def destroy for boss and RH
+  def destroy
+    @team.destroy
+    redirect_to crime_path(@crime), notice: "#{@team.user.username} has been removed from the list..."
+  end
+  
   #  # encontrar a team presente
   #  #
   #  # o usuario presente (current_user) tem que ser o mesmo que o tipo que criou o crime
@@ -36,5 +40,9 @@ class TeamsController < ApplicationController
 
   def set_team
     @team = Team.find(params[:id])
+  end
+
+  def set_crime
+    @crime = Crime.find(params[:crime_id])
   end
 end

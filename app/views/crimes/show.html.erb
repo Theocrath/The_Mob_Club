@@ -43,6 +43,15 @@
     <% end %>
   <% end %>
 
+<h2>List of pendings</h2>
+<% @current_teams.each do |current_team| %>
+  <% if current_team.status == false %>
+    <p><%= current_team.user.username %></p>
+    <%= link_to "accept", crime_team_path(@crime,current_team), method: :patch%>
+    <%= link_to "decline", crime_team_path(@crime, current_team), method: :delete,
+        data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} %>
+  <% end %>
+<% end %>
 
 
   <h2>List of pendings</h2>
