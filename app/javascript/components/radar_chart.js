@@ -1,4 +1,6 @@
 const userC = (userStats) => {
+  Chart.defaults.global.defaultFontColor = 'rgba(232, 205, 162, 1)';
+  Chart.defaults.global.defaultFontSize = 16;
   let ctx = document.querySelector('#userChart');
   new Chart(ctx, {
     type: 'radar',
@@ -17,30 +19,34 @@ const userC = (userStats) => {
           userStats.lockpicking,
           userStats.seduction
         ],
-        backgroundColor: ['rgba(218,165,32, 0.4)'],
-        borderColor: ['rgba(218,165,32, 1)'],
+        backgroundColor: ['rgba(211, 171, 106, 0.7)'],
+        borderColor: ['rgba(232, 205, 162, 1)'],
         borderWidth: 1
-      }]
+      }],
     },
     options: {
       scale: {
+        angleLines: {
+          color: 'rgba(232, 205, 162, 0.4)'
+        },
+        gridLines: {
+          color: 'rgba(232, 205, 162, 0.4)'
+        },
         ticks: {
           beginAtZero: true,
           max: 100,
-          backdropColor: ['rgba(218,165,32, 0)'],
+          backdropColor: ['rgba(211, 171, 106, 0)'],
           stepSize: 25
         }
       },
-      legend: { display: false }
-      //   labels: {
-      //     fontColor: 'rgb(255, 99, 132)' // legend on top
-      //   }
-      // }
+      legend: { display: false },
     }
   });
 };
 
 const crimeC = (crimeStats) => {
+  Chart.defaults.global.defaultFontColor = 'rgba(232, 205, 162, 1)';
+  Chart.defaults.global.defaultFontSize = 16;
   let ctx = document.querySelector('#myCrimeChart');
   new Chart(ctx, {
     type: 'radar',
@@ -59,25 +65,27 @@ const crimeC = (crimeStats) => {
           crimeStats.lockpicking,
           crimeStats.seduction
         ],
-        backgroundColor: ['rgba(218,165,32, 0.4)'],
-        borderColor: ['rgba(218,165,32, 1)'],
+        backgroundColor: ['rgba(211, 171, 106, 0.7)'],
+        borderColor: ['rgba(232, 205, 162, 1)'],
         borderWidth: 1
-      }]
+      }],
     },
     options: {
       scale: {
+        angleLines: {
+          color: 'rgba(232, 205, 162, 0.4)'
+        },
+        gridLines: {
+          color: 'rgba(232, 205, 162, 0.4)'
+        },
         ticks: {
           beginAtZero: true,
           max: 100,
-          backdropColor: ['rgba(218,165,32, 0)'],
+          backdropColor: ['rgba(211, 171, 106, 0)'],
           stepSize: 25
         }
       },
-      legend: { display: false }
-      //   labels: {
-      //     fontColor: 'rgb(255, 99, 132)' // legend on top
-      //   }
-      // }
+      legend: { display: false },
     }
   });
 };

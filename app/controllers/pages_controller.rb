@@ -8,8 +8,8 @@ class PagesController < ApplicationController
     @skillset = Skillset.new
     @crime = Crime.new
     @crimes = Crime.where(boss_id: current_user.id)
-    @current_jobs = Team.where('user_id = ? AND status = ?', current_user.id, true)
-    @pending_requests = Team.where('user_id = ? AND status = ?', current_user.id, false)
+    @current_jobs = Team.where('user_id = ? AND status = ?', current_user, true)
+    @pending_requests = Team.where('user_id = ? AND status = ?', current_user, false)
   end
 
   def current_user_json
