@@ -6,7 +6,7 @@
     <p><%= @crime.right_hand.username %></p>
   <% end %>
   <p>Execution in: <%= @crime.date %></p>
-  <div>
+  <div class='tag-container'>
     <ul>
       <li>Murder Free</li>
       <li>Test</li>
@@ -15,17 +15,17 @@
   </div>
 </div>
 
-<div>
-  <div>
-    <div>
+<div class='flex-container'>
+  <div class='details-container'>
+    <div class='crime-details'>
       <h3>Description</h3>
       <p><%= @crime.description %></p>
       <p>Mobsters needed 3</p>
     </div>
-    <div>
+    <div class='crime-stats'>
       <% if @crime.skillset.nil? %>
         <p> You need to add a skillset to your crime!</p>
-        <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
+        <%= link_to 'Add a skillset to the crime...', crime_skillset_new_skillsets_path %>
       <% else %>
         <ul>
           <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
@@ -35,25 +35,35 @@
           <% end %>
         </ul>
       <% end %>
-      <div>
-        <h2>List of pendings</h2>
-        <% @current_teams.each do |current_team| %>
-          <% if current_team.status == false %>
-            <p><%= current_team.user.username %></p>
-            <%= link_to "accept", crime_team_path(@crime,current_team), method: :patch%>
-            <%= link_to "decline", crime_team_path(@crime, current_team), method: :delete,
-                data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} %>
+
+      <div class='team-list'>
+        ------------------------------------------------
+        <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
+          <h2>List of pendings</h2>
+          <% @current_teams.each do |current_team| %>
+            <% if current_team.status == false %>
+              <div class='team-list-members'>
+                <p><%= current_team.user.username %></p>
+                <div class='btn-status-container'>
+                  <%= link_to crime_team_path(@crime,current_team), method: :patch do %>
+                    <i class="far fa-check-square"></i>
+                  <% end %>
+                  <%= link_to crime_team_path(@crime, current_team), method: :delete,
+                      data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
+                    <i class="far fa-window-close"></i>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
 
-  <div>
-    <div>
-      <div style="background-color: white">
+  <div class='actions-container'>
+    <div class='actions-btn devise-btn'>
         <%= render "teams/new" %>
-      </div>
     </div>
     <div>
         <h2>Accepted</h2>
@@ -106,20 +116,7 @@
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <div>
-  <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
-
-
-
-  <h2>List of pendings</h2>
-  <% @current_teams.each do |current_team| %>
-    <% if current_team.status == false %>
-      <p><%= current_team.user.username %></p>
-      <%= link_to "accept", crime_team_path(@crime,current_team), method: :patch%>
-      <hr>
-    <% end %>
-  <% end %>
-
-<% end %>
+  
 </div>
 
 <%= link_to crimes_path do %>
