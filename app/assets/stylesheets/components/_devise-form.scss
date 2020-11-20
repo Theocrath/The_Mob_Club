@@ -1,0 +1,72 @@
+.devise-form-container {
+  margin: 300px auto;
+  max-width: 500px;
+  max-height: 900px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 50px;
+  text-align: center;
+
+  h2 {
+    text-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    font-size: 32px;
+    color:  $gold;
+  }
+}
+
+
+// Input
+
+.devise-input-container {
+  margin-top: 50px;
+}
+
+.devise-input-field {
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.devise-input-field::placeholder {
+  color: $white;
+}
+
+.devise-input-field:focus {
+  background: inherit;
+  box-shadow: 0.7px 0.7px $light-gold;
+  border-bottom: 2px solid $gold;
+}
+
+.password-position {
+  text-align: right;
+  // margin-bottom: 30px;
+}
+
+
+// Button
+
+.devise-button-container {
+  display: grid;
+  row-gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.devise-btn {
+  display: block;
+  color: $brown;
+  background: $gold;
+  font-weight: bold ;
+  font-size: 18px;
+  padding: 10px 40px;
+  border-radius: 50px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.devise-btn:hover {
+  color: $black;
+  background: $light-gold;
+  transition: 0.3s ease-in-out;
+}
+
