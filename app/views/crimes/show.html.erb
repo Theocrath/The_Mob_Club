@@ -44,10 +44,10 @@
                   <%= link_to crime_team_path(@crime,current_team), method: :patch do %>
                     <i class="far fa-check-square"></i>
                   <% end %>
-                  <%= link_to crime_team_path(@crime, current_team), method: :delete,
+                  <%#= link_to crime_team_path(@crime, current_team), method: :delete,
                       data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
                     <i class="far fa-window-close"></i>
-                  <% end %>
+                  <%# end %>
                 </div>
               </div>
             <% end %>
