@@ -41,7 +41,7 @@
 
 
 
-  <h2>List os pendings</h2>
+  <h2>List of pendings</h2>
   <% @current_teams.each do |current_team| %>
     <% if current_team.status == false %>
       <p><%= current_team.user.username %></p>
@@ -52,10 +52,12 @@
 
 <% end %>
 
-
+<%= link_to crimes_path do %>
+ <div class="cancel-button"> Back </div>
+<% end %>
 
 
 <%#= link_to 'Enter team', crime_teams_path(@crime, @team), method: :post %>
-<div style="background-color: white">
+
 <%= render "teams/new" %>
-</div>
+
