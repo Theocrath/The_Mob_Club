@@ -90,7 +90,7 @@ const userChart = () => {
 }
 
 const crimeChart = () => {
-  $.get('crimes/crime_json', function (crimeStats) {
+  $.get('/crimes/56/crime_json', function (crimeStats) {
     console.log('crime stats', crimeStats.close_combat);
     crimeC(crimeStats);
   });

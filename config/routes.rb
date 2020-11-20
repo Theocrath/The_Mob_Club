@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :crimes, except: :new do
+    get 'crime_json' => 'crimes#crime_json'
+
     resources :teams, only: [:create, :update]  #before it was resources :teams, only [:create, :index]
   end
   #added the line above to create a custom route for team index
@@ -17,5 +19,4 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'pages#profile'
   get 'current_user_json' => 'pages#current_user_json'
-  get 'crime_json' => 'pages#crime_json'
 end

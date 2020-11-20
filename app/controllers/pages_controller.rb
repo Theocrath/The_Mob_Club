@@ -24,18 +24,4 @@ class PagesController < ApplicationController
       seduction: current_user.skillset.seduction
     }
   end
-
-  def crime_json
-    @crime = Crime.find(params[:id])
-    render json: {
-      close_combat: @crime.skillset.close_combat,
-      long_range_weapons: @crime.skillset.long_range_weapons,
-      mid_range_weapons: @crime.skillset.mid_range_weapons,
-      explosives: @crime.skillset.explosives,
-      infiltration: @crime.skillset.infiltration,
-      hacking: @crime.skillset.hacking,
-      lockpicking: @crime.skillset.lockpicking,
-      seduction: @crime.skillset.seduction
-    }
-  end
 end
