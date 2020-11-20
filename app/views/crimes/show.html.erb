@@ -27,13 +27,7 @@
         <p> You need to add a skillset to your crime!</p>
         <%= link_to 'Add a skillset to the crime...', crime_skillset_new_skillsets_path %>
       <% else %>
-        <ul>
-          <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
-            <% unless @attributes.include?(skill_name) %>
-              <li><%= skill_name %>: <%= skill_value %></li>
-            <% end %>
-          <% end %>
-        </ul>
+        <canvas id="myCrimeChart"></canvas>
       <% end %>
 
       <div class='team-list'>
@@ -78,6 +72,9 @@
 
 
 
+<!-- only bosses and right hands can see these two. Need to add logic for user -->
+<!-- to see the current team only if current user id is part of the team -->
+<%# if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
 
 
 

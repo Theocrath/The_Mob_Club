@@ -41,6 +41,7 @@
   border-radius: 25px;
   padding: 30px;
   max-width: 90%;
+  max-height: max-content;
 }
 
 .actions-container {
@@ -58,6 +59,7 @@
 .team-list-members {
   display: flex;
   justify-content: space-between;
+  max-height: 20%;
 }
 
 // Actions
