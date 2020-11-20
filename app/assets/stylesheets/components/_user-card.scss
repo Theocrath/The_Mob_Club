@@ -1,6 +1,6 @@
 // Main container
 #profile-container {
-  background-color: rgba(241, 241, 241, 0.5);
+  background-color: rgba(0, 0, 0, 0)!important;
   border-radius: 10px;
 }
 
@@ -10,19 +10,40 @@
   align-content: center;
   align-items: center;
   justify-content: center;
-  min-height: 85vh;
+  min-height: 80vh;
   text-align: center;
-  // background-color:  rgba(241, 241, 241, 0.5);
-  padding-top: 0;
+  background-color:rgba(72, 64, 61, 0.2);
+  padding: 0 30px 26px 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+#dashboard-main {
+  background-color:rgba(72, 64, 61, 0.1);
+  border-radius: 10px;
+}
 
+.chart {
+  margin-top: 60px;
+  padding: 50px 0 0 0;
+}
 // User info
 
 .user-info {
   height: 80%;
   font-size: 16px;
 }
+
+.user-info p {
+  font-size: 16px;
+  color: $light-gold;
+}
+
+#username {
+  font-size: 20px;
+  color: #FFF;
+}
+
 
 .user-info a {
   font-size: 16px;
@@ -38,20 +59,18 @@
   padding: 0 16px 16px 16px; 
 }
 
-.links-container {
+.links-container p {
   height: 20%;
   width: inherit;
   margin: 0 auto;
-}
-
-.links-container p {
-  border-bottom: 1px solid $light-gold;
+  border-bottom: 1px solid $gold;
   padding: 16px 25px;
 }
 
 .links-container p:hover {
-  border-bottom: 2px solid $light-gold;
-  text-shadow: 1px 1px 3px rgba(241, 241, 241, 0.5);
+  color: #FFF;
+  border-bottom: 1px solid $light-gold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 // Avatar
