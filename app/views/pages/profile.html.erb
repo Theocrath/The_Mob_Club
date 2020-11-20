@@ -1,4 +1,4 @@
-<div class="container" id="profile-container" style="display: show">
+<div class="container" id="profile-container" style="display:show">
   <div class="row">
 
     <div class="col-sm-12 col-md-4 col-lg-4 bg-white">
@@ -11,9 +11,11 @@
           <p>"<%= current_user.description %>"</p>
         </div>
         <div class="links-container">
-          <div><a href="#" id="dashboard-btn">Dashboard</div>
-          <div><%= link_to 'Edit profile', edit_user_registration_path %></div>
-          <div><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></div>
+
+            <p><a href="#" id="dashboard-btn">Dashboard</p>
+            <p><%= link_to 'Edit profile', edit_user_registration_path %></p>
+            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+
         </div>
       </div>
     </div>
@@ -25,33 +27,68 @@
           <a href="#jobs" class="tab active">Current jobs</a>
           <a href="#pending" class="tab">Pending requests</a>
           <a href="#event-manager" class="tab">Event manager</a>
-          <button class="tab act-button" id="create-event-btn">Organize Crime</button>
+          <button class="create-event" id="create-event-btn">Organize Crime</button>
         </div>
 
         <div id="jobs" class="toggle" style="display:show">
-          <div class="dashboard">Current jobs</div>
+          <div class="dashboard">
+            <% if @current_jobs.empty? %>
+              <div class="empty-dash">
+                <p>You don't have any scheduled job.</p>
+                <p><%= link_to 'Search Criminal Events', crimes_path %></p>
+              </div>
+            <% else %>
+              <ul>
+              <% @current_jobs.each do |job| %>
+                <li>
+                  <%= job.title %> in <%= job.date - Date.today %> days.
+                </li>
+              <% end %>
+              </ul>
+            <% end %>
+          </div>
         </div>
 
         <div id="pending" class="toggle" style="display:none">
-          <div class="dashboard">Pending requests</div>
+          <div class="dashboard">
+            <% if @pending_requests.empty? %>
+              <div class="empty-dash">
+                <p>You don't have any pending requests.</p>
+                <p><%= link_to 'Search Criminal Events', crimes_path %></p>
+              </div>
+            <% else %>
+              <ul>
+              <% @pending_requests.each do |job| %>
+                <li>
+                  <%= job.title %> in <%= job.date - Date.today %> days.
+                </li>
+              <% end %>
+              </ul>
+            <% end %>
+          </div>
         </div>
 
         <div id="event-manager" class="toggle" style="display:none">
           <div class="dashboard">
             <ul>
               <% @crimes.to_a.each do |crime| %>
-                <li>
-                  <%= crime.title %>
-                  <%= crime.reward %>
-                  <% if crime.right_hand.present? %>
-                    <%= crime.right_hand.username %>
-                  <% else %>
-                    <%= simple_form_for @crime do |f| %>
-                      <%= f.input :right_hand, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Select one' %>
-                      <%= f.submit %>
+                <%= link_to crime_path(crime.id) do %>
+                  <li>
+                    <h6><%= crime.title.upcase %></h6>
+                    <p class="float-right"><small>
+                      <% if (crime.date - Date.today).to_i == 0 %>
+                        <strong>The event is today.</strong>
+                      <% elsif (crime.date - Date.today).to_i < 0 %>
+                        The event has passed.
+                      <% else %>
+                        In <%= (crime.date - Date.today).to_i %> days.
+                      <% end %>
+                    </small></p>
+                    <% if crime.right_hand.present? %>
+                      <p class="pr-3">Right hand: <%= crime.right_hand.username %></p>
                     <% end %>
-                  <% end %>
-                </li>
+                  </li>
+                <% end %>
               <% end %>
             </ul>
           </div>
@@ -59,7 +96,7 @@
       </div>
 
       <div class="chart" style="display:show">
-        <canvas id="myChart"></canvas>
+        <canvas id="userChart"></canvas>
       </div>
 
     </div>
@@ -69,7 +106,7 @@
 
 <%# Create event pop up %>
 
-<div class="container" id="create-event-page" style="display:none">
+<div id="create-event-page" style="display:none">
   <%= render 'form' %>
 </div>
 

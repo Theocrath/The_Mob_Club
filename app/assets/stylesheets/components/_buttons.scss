@@ -38,3 +38,27 @@
   transition: 0.3s;
 }
 
+.create-event {
+  display: inline;
+  background-color: $gold;
+  color: $white;
+  text-shadow: 1px 1px 1px rgba(115, 115, 115, 0.1);
+  font-size: 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  box-shadow: 1px 1px 2px rgba(115, 115, 115, 0.2);
+}
+
+.create-event:hover {
+  text-decoration: none;
+  background-color: $medium-gold;
+  color: $white;
+  // border: 2px solid $light-gold;
+  transition: 0.3s;
+  text-shadow: 1px 1px 1px rgba(115, 115, 115, 0.4);
+  box-shadow: 1px 1px 3px rgba(115, 115, 115, 0.4);
+}
+

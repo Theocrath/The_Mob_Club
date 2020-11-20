@@ -15,22 +15,17 @@
   <p><%= @crime.reward %>$</p>
   <br>
 
-  <% if @crime.skillset.nil? %>
-    <p> You need to add a skillset to your crime!</p>
-    <%= link_to 'Add a skillset to the crime...', another_new_skillsets_path %>
-  <% else %>
-    <ul>
-      <% @crime.skillset.attributes.each do |skill_name, skill_value| %>
-        <% unless @attributes.include?(skill_name) %>
-          <li><%= skill_name %>: <%= skill_value %></li>
-        <% end %>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
+<p><%= @crime.reward %>$</p>
+<br>
 
-
-
+<% if @crime.skillset.nil? %>
+  <p> You need to add a skillset to your crime!</p>
+  <%= link_to 'Add a skillset to the crime...', skillsets_path %>
+<% else %>
+  <div class="chart">
+    <canvas id="myCrimeChart"></canvas>
+  </div>
+<% end %>
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <div>
