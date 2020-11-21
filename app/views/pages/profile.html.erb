@@ -34,7 +34,7 @@
           <div class="dashboard">
             <% if @current_jobs.empty? %>
               <div class="empty-dash">
-                <p class="op-9">You don't have any scheduled job.</p>
+                <p class="op-9">You don't have any scheduled jobs.</p>
                 <p><%= link_to 'Search Criminal Events', crimes_path %></p>
               </div>
             <% else %>
@@ -77,7 +77,7 @@
                     <h6><%= crime.title.upcase %></h6>
                     <p class="float-right"><small>
                       <% if (crime.date - Date.today).to_i == 0 %>
-                        <strong>The event is today.</strong>
+                        The event is <strong>today.</strong>
                       <% elsif (crime.date - Date.today).to_i < 0 %>
                         The event has passed.
                       <% else %>

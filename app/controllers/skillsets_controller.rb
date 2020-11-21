@@ -16,9 +16,13 @@ class SkillsetsController < ApplicationController
     else
       @skillset.crime = Crime.last
     end
-    
+
     if @skillset.save
-      redirect_to profile_path, notice: 'Criminal event created.'
+      if @skillset.crime.nil?
+        redirect_to profile_path
+      else
+        redirect_to crime_path(@skillset.crime.id)
+      end
     else
       redirect_to profile_path, notice: 'There was a problem, please try again'
     end
@@ -28,8 +32,8 @@ class SkillsetsController < ApplicationController
   end
 
   def update
-
     @user_skillset.update(skillset_params)
+
     if @user_skillset.save
       redirect_to profile_path, notice: 'You updated your skillset'
     else
