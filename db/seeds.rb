@@ -5,11 +5,11 @@ puts "Destroying Teams"
 Team.destroy_all
 puts "Destroying Crimes"
 Crime.destroy_all
-puts "Destroying users..."
+puts "Destroying Users..."
 User.destroy_all
 
 
-puts "creating users"
+puts "Creating Users"
 user_1 = User.create!(username: "ashelby", email: "gipsyforlife@example.com", password: "123456", description: "By the order of Peaky Blinders! I'm Thomas Shelby. Widower, father of two, world wide known entrepeneur, based on Birmingham, London and Boston USA. Owner of a lot of legal and illegal enterprises, such as: horse betting, steal companies, gin and liquor distilleries, pubs and nightclubs. Also did some governance work. Elected in the parliament at the house of commons as member of socialist party. The Leader of the Peaky FUCKIN Blinders.")
 user_2 = User.create!(username: "gfather1", email: "bossvito@example.com", password: "123456", description: "Best known as the Godfather. The biggest mob leader of the Corleone family. Original from Sicily. Protection and money loan are the talent of the family. But if you don't kiss the ring you might wake up with a horse head on your bed! Capice?")
 user_3 = User.create!(username: "alfielondon", email: "heyjude@example.com", password: "123456", description: "I pull my trigger always, like an honorable man, because I understand the wicked way of this underworld. Jewish by heart, I have some nice little businesses operating, and I am a master negotiator, as far as I know - at least, the people who would disagree are not alive to tell.")
@@ -20,7 +20,8 @@ user_7 = User.create!(username: "pol", email: "gipsyqueen@example.com", password
 user_8 = User.create!(username: "thebridge", email: "fuckbill@example.com", password: "123456", description: "I’m one of the best killers of the globe, and probably the best with all types of knives, but for good rewarding killings, I will use my Hattori Hanzo sword. And oh boy, it slices limbs like butter. I was killed and reborn, like a phoenix risen from the ashes. Hire me for some good old bloodshed, like in the good old days.")
 user_9 = User.create!(username: "casinoboy", email: "vivalasvegas@example.com", password: "123456", description: "I just got out of prison - after 4 years, I am ready to take over the world. Experienced in working in teams, I am one of the best thieves around - diplomatic, sneaky, and most important - charming. Don’t bother contacting me for feeble work - I’m here for generous rewards only.")
 user_10 = User.create!(username: "mia", email: "mias@example.com", password: "123456", description: " I’m married to a big gangster known in my hometown. Aspiring to become an actress, but I get bored sometimes, so I’m looking to put my skills to good use. I like milkshakes with burgers, and I value the silence between two people.")
-puts "creating Skillsets"
+
+puts "Creating Skillsets"
 user_s1 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), user_id: user_1)
 user_s2 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), user_id: user_2)
 user_s3 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), user_id: user_3)
@@ -31,19 +32,22 @@ user_s7 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(
 user_s1 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), user_id: user_8)
 user_s9 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), user_id: user_9)
 user_s10 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), user_id: user_10)
-puts "creating crimes"
+
+puts "Creating Crimes"
 c1 = Crime.create!(title: "Bank robbery at Lisbon", description: "Bank robbery already planned. Needed 3 man or woman with minimum 5 sucessful bank robs. Bringing your own weapon is a plus. Very good reward. We provide the costumes if necessary. We are not responsible in casualties or arrest. Apply now.", date: Time.new(2020, 12, 15, 17, 20, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_1)
 c2 = Crime.create!(title: "Million Euros Heist", description: "We need ambitious thugs with no fear of danger. This work will only be released after the interested party is contacted by us. A LOT OF MONEY will be divided. If you show talent we can definitely hire you for future thefts. Come and join our team, unique opportunity.", date: Time.new(2020, 12, 18, 23, 30, 0, "+01:00") , location: "Unknow", reward: rand(500..30000), boss: user_2)
 c3 = Crime.create!(title: "Need heist specialist urgent", description: "What are we looking for? An absolute psychopath, with disregard of the laws, easily handling weapons and bombs. Specializing in electronic theft and hacking is a differentiator for hiring. Lawyer scholarship included. We do not pay the bail. Payment guaranteed in bank account created by the company. We do not hire ex-cops or individuals on the federal police's most wanted list.", date: Time.new(2020, 12, 29, 21, 00, 0, "+01:00") , location: "London", reward: rand(500..30000), boss: user_3)
 c4 = Crime.create!(title: "Kidnapping the Prime Minister's Daughter", description: "We need an experienced lady who accepts to work as a nanny in the family of the Prime Minister of Portugal. She must be captivating and lethal. Absolute need for the kidnapping of the Prime Minister's daughter. Included guarantees to leave the country safely. Apply now and we'll send you more details.", date: Time.new(2021, 1, 2, 5, 30, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_7)
 c5 = Crime.create!(title: "Heist at Bank of Spain", description: "My name is Professor I am looking for a robber who is willing to rob the bank of Spain - the plan is already laid down and it's perfect, and flawless. It is necessary to bring your own Salvador Dali mask for cover. Red coveralls are required. Minimum required: speak basic Spanish.", date: Time.new(2021, 1, 20, 20, 25, 0, "+01:00") , location: "Madrid", reward: rand(500..30000), boss: user_9)
-puts "creating skillsets dos crimes"
+
+puts "Creating Crime's Skillsets"
 crime_s1 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), crime_id: c1.id)
 crime_s2 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), crime_id: c2.id)
 crime_s3 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), crime_id: c3.id)
 crime_s4 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), crime_id: c4.id)
 crime_s5 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), crime_id: c5.id)
-puts "creating teams"
+
+puts "Creating Teams"
 Team.create!(user: user_2, crime: c1)
 Team.create!(user: user_3, crime: c1)
 Team.create!(user: user_4, crime: c1)
