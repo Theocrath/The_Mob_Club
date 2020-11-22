@@ -30,13 +30,16 @@
 #hero-banner i:hover {
   color: $light-gold;
   transition: 0.3s;
-
-  // animation: spin 4s linear infinite;
 }
 
-// .arrow-down {
-//   height: 100px;
-// }
+.arrow-down {
+  background-color: lightblue;
+  height: 100px;
+  color: $gold;
+  font-size: 24px;
+  padding: 0 50%;
+}
+
 
 // proposition value of the page
 
@@ -49,6 +52,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  scroll-snap-stop: always;
 }
 
 .prp-container {
@@ -63,7 +67,7 @@
 // for the middle proposition nr 2
 
 .prp-value2 {
-  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1568124928495-9d66d6d74f2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523983555105-0acbfc81e546?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -82,3 +86,23 @@
   padding-top: 20px;
   text-shadow: 2px 2px 8px black;
 }
+
+// for the middle proposition nr 3
+
+.prp-value3 {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1568124928495-9d66d6d74f2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.prp-text3 {
+  text-align: right;
+  padding-top: 20px;
+  text-shadow: 4px 4px 8px black;
+}
+
+
