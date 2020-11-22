@@ -1,16 +1,18 @@
-<div id="hero-banner">
+<div class="hero-banner">
   <h1>The Mob Club</h1>
   <h2>click to enter</h2>
-  <% if current_user.nil? %>
-  <%= link_to new_user_session_path do %>
-    <i class="fab fa-first-order"></i>
-  <% end %>
-  <% else %>
-    <%= link_to profile_path do %>
-    <i class="fab fa-first-order"></i>
-  <% end %>
-  <% end %>
+    <% if current_user.nil? %>
+      <%= link_to new_user_session_path do %>
+      <i id="logo" class="fab fa-first-order"></i>
+    <% end %>
+    <% else %>
+      <%= link_to profile_path do %>
+      <i id="logo" class="fab fa-first-order"></i>
+    <% end %>
+    <% end %>
+    <i id="arrow-dwn" class="fas fa-angle-down"></i>
 </div>
+
 
 
 
