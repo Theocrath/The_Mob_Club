@@ -27,11 +27,11 @@
 
 .hover-up {
   text-shadow: 1px 1px 4px rgba(21,21,21,0.7);
-  transition: ease-in-out 0.1s;
+  transition: ease-in 0.1s;
 }
 
 .hover-up:hover {
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  text-shadow: 4px 2px 3px rgba(0,0,0,0.9);
   transform: translateY(-1px);
 }
 // .navbar-lewagon .navbar-brand img {
