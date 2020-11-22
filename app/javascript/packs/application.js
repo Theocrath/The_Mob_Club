@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { expandLines } from '../components/expand_lines';
 import { userChart } from '../components/user_chart';
 import { crimeChart } from '../components/comparison_chart';
 import { toggleDashboard, toggleNewEventPage } from '../components/show_page';
@@ -35,6 +36,7 @@ import { toggleCrimeFormCard, toggleSkillsetFormCard } from "../components/form_
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
+  expandLines();
   userChart();
   toggleTabs();
   activateTab();

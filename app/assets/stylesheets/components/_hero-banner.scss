@@ -12,7 +12,7 @@
 
 #hero-banner h1 {
   font-size: 64px;
-  text-shadow: 1px 1px 4px rgba(21,21,21,0.9);
+  text-shadow: 2px 2px 4px rgba(21,21,21,1);
 }
 
 #hero-banner h2 {
@@ -36,7 +36,7 @@
   // transition: 0.3s;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
   // transition: ease-out 0.5s;
-  transform: translateY(-1px);
+  transform: translate(-1px, -1px);
 
   // animation: spin 4s linear infinite;
 }
