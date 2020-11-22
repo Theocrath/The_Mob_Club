@@ -1,6 +1,6 @@
 const userC = (userStats) => {
   Chart.defaults.global.defaultFontColor = 'rgba(232, 205, 162, 1)';
-  Chart.defaults.global.defaultFontSize = 16;
+  Chart.defaults.global.defaultFontSize = 14;
   let ctx = document.querySelector('#userChart');
   new Chart(ctx, {
     type: 'radar',
@@ -37,6 +37,9 @@ const userC = (userStats) => {
           max: 100,
           backdropColor: ['rgba(211, 171, 106, 0)'],
           stepSize: 25
+        },
+        pointLabels: {
+          fontSize: 14
         }
       },
       legend: { display: false },
@@ -46,7 +49,7 @@ const userC = (userStats) => {
 
 const crimeC = (userStats, crimeStats) => {
   Chart.defaults.global.defaultFontColor = 'rgba(232, 205, 162, 1)';
-  Chart.defaults.global.defaultFontSize = 16;
+  Chart.defaults.global.defaultFontSize = 14;
   let ctx = document.querySelector('#myCrimeChart');
   new Chart(ctx, {
     type: 'radar',
@@ -99,6 +102,9 @@ const crimeC = (userStats, crimeStats) => {
           max: 100,
           backdropColor: ['rgba(211, 171, 106, 0)'],
           stepSize: 25
+        },
+        pointLabels: {
+          fontSize: 14
         }
       },
       legend: { display: true },
