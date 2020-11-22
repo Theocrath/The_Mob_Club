@@ -63,7 +63,8 @@ const crimeC = (userStats, crimeStats) => {
   });
 };
 
-const crimeChart = (paramsId) => {
+const crimeChart = () => {
+  let paramsId = document.getElementById("paramsId").innerHTML;
   console.log('params_id:', paramsId);
 
   $.get(`/crimes/${paramsId}/crime_json`, function (crimeStats) {
