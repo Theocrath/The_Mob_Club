@@ -9,16 +9,19 @@
       <a href="#" class="crime-form-btn nav-text">Next</a>
     </div>
   </div>
+
   <div id="crime-form-2" style="display:none;">
       <%= f.input :date %>
       <%= f.input :reward %>
-      <p>Do you agree with the <a href="#"><small>terms of service</small></a>?<small><%= f.button :submit, 'I agree', class: 'nav-text mb-2' %></small></p>
+      <span>Do you agree with the <a href="#"><small>terms of service</small></a>?</span>
+      <%= f.button :submit, 'I agree', class: 'nav-text' %></small>
+      <% end %>
       <div class="nav-btn-container">
         <a href="#" class="crime-form-btn nav-text">Back</a>
         <a href="#" class="skillset-form-btn nav-text">Next</a>
       </div>
-      <% end %>
   </div>
+
   <div id="crime-form-skillset" style="display:none;">
       <%# <p><strong>Skillset for the event</strong></p> %>
       <p>Define the necessary skills for your crime.</p>

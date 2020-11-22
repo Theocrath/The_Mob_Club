@@ -38,13 +38,24 @@
                 <p><%= link_to 'Search Criminal Events', crimes_path %></p>
               </div>
             <% else %>
-              <ul>
+            <ul>
               <% @current_jobs.each do |job| %>
-                <li>
-                  <%= job.crime.title %> in <%= job.crime.date - Date.today %> days.
-                </li>
+                <%= link_to crime_path(job.crime) do %>
+                  <li>
+                    <h6><%= job.crime.title.upcase %></h6>
+                    <p class="float-right"><small>
+                      <% if (job.crime.date - Date.today).to_i == 0 %>
+                        The event is <strong>today.</strong>
+                      <% elsif (job.crime.date - Date.today).to_i < 0 %>
+                        The event has passed.
+                      <% else %>
+                        In <%= (job.crime.date - Date.today).to_i %> days.
+                      <% end %>
+                    </small></p>
+                  </li>
+                <% end %>
               <% end %>
-              </ul>
+            </ul>
             <% end %>
           </div>
         </div>
@@ -59,11 +70,22 @@
             <% else %>
               <ul>
               <% @pending_requests.each do |job| %>
-                <li>
-                  <%= job.crime.title %> in <%= job.crime.date - Date.today %> days.
-                </li>
+                <%= link_to crime_path(job.crime) do %>
+                  <li>
+                    <h6><%= job.crime.title.upcase %></h6>
+                    <p class="float-right"><small>
+                      <% if (job.crime.date - Date.today).to_i == 0 %>
+                        The event is <strong>today.</strong>
+                      <% elsif (job.crime.date - Date.today).to_i < 0 %>
+                        The event has passed.
+                      <% else %>
+                        In <%= (job.crime.date - Date.today).to_i %> days.
+                      <% end %>
+                    </small></p>
+                  </li>
+                <% end %>
               <% end %>
-              </ul>
+            </ul>
             <% end %>
           </div>
         </div>
@@ -111,4 +133,3 @@
 </div>
 
 <%# End of create event pop up %>
-
