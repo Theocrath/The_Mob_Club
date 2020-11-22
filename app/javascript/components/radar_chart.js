@@ -44,7 +44,7 @@ const userC = (userStats) => {
   });
 };
 
-const crimeC = (crimeStats) => {
+const crimeC = (userStats, crimeStats) => {
   Chart.defaults.global.defaultFontColor = 'rgba(232, 205, 162, 1)';
   Chart.defaults.global.defaultFontSize = 16;
   let ctx = document.querySelector('#myCrimeChart');
@@ -54,7 +54,23 @@ const crimeC = (crimeStats) => {
       labels: ['Close Combat', 'Long Range Weapons', 'Mid Range Weapons', 'Explosives', 'Infiltration', 'Hacking', 'Lockpicking', 'Seduction'],
 
       datasets: [{
-        label: 'Skillset',
+        label: 'Your stats',
+        data: [
+          userStats.close_combat,
+          userStats.long_range_weapons,
+          userStats.mid_range_weapons,
+          userStats.explosives,
+          userStats.infiltration,
+          userStats.hacking,
+          userStats.lockpicking,
+          userStats.seduction
+        ],
+        backgroundColor: ['rgba(219, 159, 61, 0.5)'],
+        borderColor: ['rgba(219, 159, 61, 1)'],
+        borderWidth: 1
+      },
+      {
+        label: 'Crime Stats',
         data: [
           crimeStats.close_combat,
           crimeStats.long_range_weapons,
@@ -65,9 +81,9 @@ const crimeC = (crimeStats) => {
           crimeStats.lockpicking,
           crimeStats.seduction
         ],
-        backgroundColor: ['rgba(219, 159, 61, 0.7)'],
-        borderColor: ['rgba(219, 159, 61, 1)'],
-        borderWidth: 1
+        backgroundColor: ['rgba(222, 54, 2, 0.7)'],
+        borderColor: ['rgba(222, 54, 2, 1)'],
+        borderWidth: 1 
       }],
     },
     options: {
@@ -85,22 +101,25 @@ const crimeC = (crimeStats) => {
           stepSize: 25
         }
       },
-      legend: { display: false },
+      legend: { display: true },
     }
   });
 };
 
 const userChart = () => {
   $.get('/current_user_json', function (userStats) {
-    console.log('testing json response', userStats.close_combat);
+    console.log('testing current_user_json response', userStats.close_combat);
     userC(userStats);
   });
 }
 
 const crimeChart = () => {
-  $.get('/crimes/56/crime_json', function (crimeStats) {
-    console.log('crime stats', crimeStats.close_combat);
-    crimeC(crimeStats);
+  $.get('/crimes/85/crime_json', function (crimeStats) {
+    $.get('/current_user_json', function (userStats) {
+      console.log('user in join chart', userStats.hacking);
+      console.log('crime in join chart', crimeStats.hacking);
+      crimeC(userStats, crimeStats);
+    });
   });
 }
 
