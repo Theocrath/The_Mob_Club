@@ -60,7 +60,7 @@
               <ul>
               <% @pending_requests.each do |job| %>
                 <li>
-                  <%= job.title %> in <%= job.date - Date.today %> days.
+                  <%= job.crime.title %> in <%= job.crime.date - Date.today %> days.
                 </li>
               <% end %>
               </ul>

@@ -32,8 +32,8 @@
       <% end %>
 
       <div class='team-list'>
-        ------------------------------------------------
         <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
+          ------------------------------------------------
           <h2>List of pendings</h2>
           <% @current_teams.each do |current_team| %>
             <% if current_team.status == false %>
