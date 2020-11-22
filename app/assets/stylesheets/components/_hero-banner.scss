@@ -12,11 +12,13 @@
 
 #hero-banner h1 {
   font-size: 64px;
+  text-shadow: 1px 1px 4px rgba(21,21,21,0.9);
 }
 
 #hero-banner h2 {
   font-size: 24px;
   letter-spacing: 5px;
+  text-shadow: 1px 1px 4px rgba(21,21,21,0.9);
 }
 
 #hero-banner i {
@@ -24,12 +26,17 @@
   font-weight: normal;
   color: $gold;
   margin-top: 15px;
+  text-shadow: 1px 1px 4px rgba(21,21,21,0.7);
+  transition: ease-in-out 0.1s;
   // animation: spin 4s linear infinite;
 }
 
 #hero-banner i:hover {
   color: $light-gold;
-  transition: 0.3s;
+  // transition: 0.3s;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  // transition: ease-out 0.5s;
+  transform: translateY(-1px);
 
   // animation: spin 4s linear infinite;
 }
