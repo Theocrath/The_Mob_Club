@@ -12,9 +12,11 @@
         </div>
         <div class="links-container">
 
-            <p><a href="#" id="dashboard-btn">Dashboard</p>
-            <p><%= link_to 'Edit profile', edit_user_registration_path %></p>
-            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+            <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
+            <hr class="trans--grow hr0">
+            <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
+            <hr class="trans--grow hr0">
+            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
 
         </div>
       </div>
