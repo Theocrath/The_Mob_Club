@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: :home 
+  before_action :set_current_jobs, only: :profile
+  before_action :set_pending_requests, only: :profile
 
   def home
   end
@@ -7,9 +9,7 @@ class PagesController < ApplicationController
   def profile
     @skillset = Skillset.new
     @crime = Crime.new
-    @crimes = Crime.where(boss_id: current_user.id)
-    @current_jobs = Team.where('user_id = ? AND status = ?', current_user, true)
-    @pending_requests = Team.where('user_id = ? AND status = ?', current_user, false)
+    @crimes = Crime.where(boss_id: current_user.id)  
   end
 
   def current_user_json
@@ -23,5 +23,17 @@ class PagesController < ApplicationController
       lockpicking: current_user.skillset.lockpicking,
       seduction: current_user.skillset.seduction
     }
+  end
+
+  private
+
+  def set_pending_requests
+    pending_requests_ar_relation = Team.where('user_id = ? AND status = ?', current_user, false)
+    @pending_requests = pending_requests_ar_relation.to_a
+  end
+
+  def set_current_jobs
+    current_jobs_ar_relation = Team.where('user_id = ? AND status = ?', current_user, true)
+    @current_jobs = current_jobs_ar_relation.to_a
   end
 end
