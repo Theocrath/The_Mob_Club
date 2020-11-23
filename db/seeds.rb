@@ -7,6 +7,10 @@ puts "Destroying Crimes"
 Crime.destroy_all
 puts "Destroying Users..."
 User.destroy_all
+puts "Destroying Chat..."
+Chatroom.destroy_all
+puts "Destroying messsages..."
+Message.destroy_all
 
 
 puts "Creating Users"
@@ -39,14 +43,25 @@ c2 = Crime.create!(title: "Million Euros Heist", description: "We need ambitious
 c3 = Crime.create!(title: "Need heist specialist urgent", description: "What are we looking for? An absolute psychopath, with disregard of the laws, easily handling weapons and bombs. Specializing in electronic theft and hacking is a differentiator for hiring. Lawyer scholarship included. We do not pay the bail. Payment guaranteed in bank account created by the company. We do not hire ex-cops or individuals on the federal police's most wanted list.", date: Time.new(2020, 12, 29, 21, 00, 0, "+01:00") , location: "London", reward: rand(500..30000), boss: user_3)
 c4 = Crime.create!(title: "Kidnapping the Prime Minister's Daughter", description: "We need an experienced lady who accepts to work as a nanny in the family of the Prime Minister of Portugal. She must be captivating and lethal. Absolute need for the kidnapping of the Prime Minister's daughter. Included guarantees to leave the country safely. Apply now and we'll send you more details.", date: Time.new(2021, 1, 2, 5, 30, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_7)
 c5 = Crime.create!(title: "Heist at Bank of Spain", description: "My name is Professor I am looking for a robber who is willing to rob the bank of Spain - the plan is already laid down and it's perfect, and flawless. It is necessary to bring your own Salvador Dali mask for cover. Red coveralls are required. Minimum required: speak basic Spanish.", date: Time.new(2021, 1, 20, 20, 25, 0, "+01:00") , location: "Madrid", reward: rand(500..30000), boss: user_9)
-
 c6 = Crime.create!(title: "Stealing a Fabergé", description: "I am looking to build a team to steal one of the most valious Fabergé Egg in the existence of humanity. The plan is already set, currently looking for a professional grease man/woman, capable of infiltrating into sewers and ventilating tunnels. Material is included, details are only revealed once you pass the test.", date: Time.new(2021, 7, 7, 20, 25, 0, "+01:00") , location: "Prague", reward: rand(500..30000), boss: user_9)
 c7 = Crime.create!(title: "Terminating the PM", description: "In case you haven't read the title, read it again. Plan is defined, looking for someone capable in long range weapons, who is experienced with weapons used by the National's Military forces. The job needs to look like it was done from within. More details after.", date: Time.new(2021, 2, 12, 12, 25, 0, "+01:00") , location: "Madrid", reward: rand(500..30000), boss: user_1)
 c8 = Crime.create!(title: "Hacking the Casino", description: "Plan is defined, looking currently for a professional, capable and seductive con artist, that is able to work under pressure, and use his/her strong persuasion skills to gain access to the main office, without using brute force. Apply if you meet these requirements only.", date: Time.new(2020, 12, 31, 20, 25, 0, "+01:00") , location: "Las Vegas", reward: rand(500..30000), boss: user_9)
 c9 = Crime.create!(title: "Robbery at the Louvre", description: "The plan is to steal one of the most famous paintings ever conceived. Currently searching for the best infiltrator, anywhere in the globe - travelling costs and other expenses are included, my client is very generous. Material will also be provided, apply only if your inflitration skills are above 95.", date: Time.new(2021, 1, 23, 20, 25, 0, "+01:00") , location: "Paris", reward: rand(500..30000), boss: user_7)
 c10 = Crime.create!(title: "Stealing military weapons", description: "Need 3 men/women who are capable of using brute force - this job is not necessary murder free. We provide fake military equipment and clothing.", date: Time.new(2021, 1, 20, 20, 25, 0, "+01:00") , location: "London", reward: rand(500..30000), boss: user_9)
 c11 = Crime.create!(title: "Hacking the NY Stock Exchange", description: "Need the best brains out there - the title says it all. The time window for the job will be only of 8 minutes and 43 seconds, so the expertise must be extremely high - there are no second chances from our side. ", date: Time.new(2021, 1, 20, 20, 25, 0, "+01:00") , location: "New York", reward: rand(500..30000), boss: user_9)
-
+c12 = Crime.create!(title: "Steal Covid-19 sample for evil purposes", description: "Due a window of opportunity, the royal british laboratory will transport Covid-19 samples true the English Channel. Need two army experience or mercenary freelancer. Boat Knowledge and basic chemistry are require.", date: Time.new(2021, 3, 29, 00, 25, 0, "+01:00") , location: "English Channel", reward: rand(500..30000), boss: user_10)
+c13 = Crime.create!(title: "Kill the Brazilian President", description: "Need a very good sniper to kill President Bolsonaro from Brasil. The well know most stupid president in the whole world will make a speach supporting the burnings in Amazon this sunday in Brasilia. Do you part for the well being of humankind. Apply now!", date: Time.new(2020, 11, 28, 11, 20, 0, "+01:00") , location: "Brasilia", reward: rand(500..30000), boss: user_10)
+c14 = Crime.create!(title: "Steal a body of an ET from Area 51", description: "Need a bunch of guys, well armed, to invade a governament area and steal some humanoids from a lab area in the nevada desert. The main goal is to stole the ETs dead or alive and delivered to the Ukranian Mafia at the Ceasar's Park Casino Parking Lot", date: Time.new(2021, 3, 29, 00, 25, 0, "+01:00") , location: "Nevada Desert", reward: rand(500..30000), boss: user_2)
+c15 = Crime.create!(title: "Delivered 100 kilos of psychedelic drugs at Ibiza", description: "Need an clever and well looked men/woman to travel with a lot of psychedelic drugs - bags, boady, everywhere - to Ibiza. The colaborator must have passaport and clean record. The flight will depart from Lisbon Airport. Easy and fast money! Join us!", date: Time.new(2020, 3, 31, 06, 00, 0, "+01:00") , location: "Ibiza", reward: rand(500..30000), boss: user_2)
+c16 = Crime.create!(title: "Crown Heist", description: "Need some good thiefs to steal the denmark royal jewelry. The window will be the dislplay of the jewery at the Copenhagen fine arts museum. Must have experience and fast robbery. Be a good driver is a differencial.", date: Date.today, location: "Copenhagen", reward: rand(500..30000), boss: user_1)
+c17 = Crime.create!(title: "Fake kidnapping service", description: "I would like to fake kidnapping myself to steal money from my mother. Need to guys to play the kidnapping and a place to be fake hostage for 48h. Need to be real, so experience is important.", date: Time.new(2020, 12, 02, 00, 25, 0, "+01:00") , location: "Rio de Janeiro", reward: rand(500..30000), boss: user_4)
+c18 = Crime.create!(title: "Undercover and kill", description: "We are looking for a fearless person to be undercover at Los Lobos, our rival drug gang. Inside, you just need to kill Hector Garcia, theirs Drug Lord. After Killing him, the job is done! How about that? Like to work under pressure? Excelent pay", date: Time.new(2021, 12, 30, 15, 25, 0, "+01:00") , location: "Sinaloa", reward: rand(500..30000), boss: user_10)
+c19 = Crime.create!(title: "Million Dollar Horse", description: "Need some fellas to steal Lucky Boy, the winner horse who will make us all rich. Need to transfer Lucky Boy in safety to our stables. Like horses? Like money? Apply now!", date: Time.new(2021, 2, 2, 00, 40, 0, "+01:00") , location: "Birmingham", reward: rand(500..30000), boss: user_8)
+c20 = Crime.create!(title: "The money train ops", description: "Huge opportunity! The money train will pass true Oriente Station at Lisboa. This train will contain all the gold and money from European Union on the way to Brussels. Good with the gun and no fear of trains! Come on, apply and change your life.", date: Time.new(2021, 4, 6, 00, 40, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_10)
+c21 = Crime.create!(title: "Colombia round trip", description: "Wanna meet the beautiful and magical Colombia? Hava some space in your luggage? Don't worry, we pay for the extra space! We just need you to go to Medellin, retrive some material, and delivered back to me. Easy right? No experience required! Apply and visit south america!!!", date: Time.new(2021, 1, 02, 10, 00, 0, "+01:00") , location: "Medellín", reward: rand(500..30000), boss: user_3)
+c22 = Crime.create!(title: "Cristiano Ronaldo Hotel", description: "Super secret project. Need some bad motherfuckers to steal Pestana CR7 Hotel Lisboa. Vault full of money, looking for expecienced people to open the thing.", date: Time.new(2021, 3, 10, 00, 25, 0, "+01:00") , location: "Lisbon", reward: rand(500..30000), boss: user_4)
+c23 = Crime.create!(title: "The F1 Acquisition", description: "Need fo speed vibe? Join us to stole 5 (five) F1 Mercedes cars, driven by Louis Hamilton. The cars will be transported true Germany ban auto road. Need pilots experienced. We proviede the drive and the wepons. Good reward. Imagine in your live to drive a real F1? It's your chance! Apply it!", date: Time.new(2020, 12, 29, 03, 00, 0, "+01:00"), location: "Berlin", reward: rand(500..30000), boss: user_9)
+c24 = Crime.create!(title: "The Picasso Burglary", description: "Creating a team of good art thiefs, to stole all the Picasso colection at Picasso Museum in Amsterdam. We are hiring Explosive specialist, lockpicking master, Bazuca shooter, and experience art handlers. The heist of the century! Wanna be part of that?", date: Time.new(2020, 12, 31, 00, 00, 0, "+01:00") , location: "Amsterdam", reward: rand(500..30000), boss: user_5)
 
 
 puts "Creating Crime's Skillsets"
@@ -60,6 +75,13 @@ puts "Creating Teams"
 Team.create!(user: user_2, crime: c1)
 Team.create!(user: user_3, crime: c1)
 Team.create!(user: user_4, crime: c1)
+
+puts "Creating Chatroom"
+chat1 = Chatroom.create!(name: "general")
+
+puts "Creating messages"
+ms1 = Message.create!(content: "Hello", chatroom: chat1, user: user_1)
+ms2 = Message.create!(content: "Hi", chatroom: chat1, user: user_2)
 
 puts "..."
 puts "Villains created. Proceed with caution. These seeds will cause havoc. Protect your children."

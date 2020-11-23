@@ -1,7 +1,7 @@
 // Containers
 
 #dashboard-main {
-    padding: 20px 46px;
+  padding: 20px 46px;
 }
 
 .dashboard {
@@ -58,7 +58,7 @@
 }
 
 .tab {
-  color: $light-gold;
+  color: $medium-gold;
   padding: 8px 0;
   margin-right: 15px;
   margin-bottom: 15px;
@@ -69,10 +69,12 @@
 }
 
 .tab:hover {
-  color: $gold;
-  font-weight: normal;
+  color: $light-gold;
+  // font-weight: normal;
   transition: color 0.05s ease 0s;
   text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  transform: translate(-1px, -1px);
 }
 
 .active {

@@ -13,7 +13,7 @@
     <%= favicon_link_tag asset_path('icon-gold.ico') %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %>-<%= action_name %>">
     <% if current_page?(root_path) %>
       <div>
         <%= render 'shared/flashes' %>

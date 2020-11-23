@@ -9,8 +9,13 @@ const toggleNewEventPage = () => {
 const toggleDashboard = () => {
   $('#dashboard-btn').click(function (e) {
     e.preventDefault();
-    $('.chart').toggle();
-    $('#dashboard-main').slideToggle();
+    if ($('.chart')[0]) {
+      $('.chart').toggle();
+      $('#dashboard-main').slideToggle();
+    } else {
+      $('.user-skillset-form').toggle();
+      $('#dashboard-main').toggle();
+    }
   });
 }
 
