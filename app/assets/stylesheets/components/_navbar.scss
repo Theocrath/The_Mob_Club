@@ -25,6 +25,15 @@
   font-weight: 300;
 }
 
+.hover-up {
+  text-shadow: 1px 1px 4px rgba(21,21,21,0.7);
+  transition: ease-in 0.1s;
+}
+
+.hover-up:hover {
+  text-shadow: 4px 2px 3px rgba(0,0,0,0.9);
+  transform: translateY(-1px);
+}
 // .navbar-lewagon .navbar-brand img {
 //   width: 40px;
 // }

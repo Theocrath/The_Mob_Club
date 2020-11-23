@@ -12,15 +12,26 @@
         </div>
         <div class="links-container">
 
-            <p><a href="#" id="dashboard-btn">Dashboard</p>
-            <p><%= link_to 'Edit profile', edit_user_registration_path %></p>
-            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></p>
+            <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
+            <hr class="trans--grow grow hr0">
+            <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
+            <hr class="trans--grow hr0 grow">
+            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
 
         </div>
       </div>
     </div>
 
     <div class="col-sm-12 col-md-8 col-lg-8">
+      <% if current_user.skillset.nil? %>
+        <div class="user-skillset-form" style="display:show">
+          <%= render 'skillset-form' %>
+        </div>
+      <% else %>
+        <div class="chart" style="display:show">
+          <canvas id="userChart"></canvas>
+        </div>
+      <% end %>
 
       <div id="dashboard-main" style="display:none">
         <div id="nav" class="tabs">
@@ -38,13 +49,24 @@
                 <p><%= link_to 'Search Criminal Events', crimes_path %></p>
               </div>
             <% else %>
-              <ul>
+            <ul>
               <% @current_jobs.each do |job| %>
-                <li>
-                  <%= job.crime.title %> in <%= job.crime.date - Date.today %> days.
-                </li>
+                <%= link_to crime_path(job.crime) do %>
+                  <li>
+                    <h6><%= job.crime.title.upcase %></h6>
+                    <p class="float-right"><small>
+                      <% if (job.crime.date - Date.today).to_i == 0 %>
+                        The event is <strong>today.</strong>
+                      <% elsif (job.crime.date - Date.today).to_i < 0 %>
+                        The event has passed.
+                      <% else %>
+                        In <%= (job.crime.date - Date.today).to_i %> days.
+                      <% end %>
+                    </small></p>
+                  </li>
+                <% end %>
               <% end %>
-              </ul>
+            </ul>
             <% end %>
           </div>
         </div>
@@ -59,11 +81,28 @@
             <% else %>
               <ul>
               <% @pending_requests.each do |job| %>
+<<<<<<< HEAD
                 <li>
                   <%= job.crime.title %> in <%= job.crime.date - Date.today %> days.
                 </li>
+=======
+                <%= link_to crime_path(job.crime) do %>
+                  <li>
+                    <h6><%= job.crime.title.upcase %></h6>
+                    <p class="float-right"><small>
+                      <% if (job.crime.date - Date.today).to_i == 0 %>
+                        The event is <strong>today.</strong>
+                      <% elsif (job.crime.date - Date.today).to_i < 0 %>
+                        The event has passed.
+                      <% else %>
+                        In <%= (job.crime.date - Date.today).to_i %> days.
+                      <% end %>
+                    </small></p>
+                  </li>
+                <% end %>
+>>>>>>> master
               <% end %>
-              </ul>
+            </ul>
             <% end %>
           </div>
         </div>
@@ -95,10 +134,6 @@
         </div>
       </div>
 
-      <div class="chart" style="display:show">
-        <canvas id="userChart"></canvas>
-      </div>
-
     </div>
 
   </div>
@@ -111,4 +146,3 @@
 </div>
 
 <%# End of create event pop up %>
-

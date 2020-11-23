@@ -21,7 +21,7 @@ class SkillsetsController < ApplicationController
       if @skillset.crime.nil?
         redirect_to profile_path
       else
-        redirect_to crime_path(@skillset.crime.id)
+        redirect_to crime_path(@skillset.crime), turbolinks: false
       end
     else
       redirect_to profile_path, notice: 'There was a problem, please try again'

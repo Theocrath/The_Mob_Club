@@ -57,6 +57,44 @@
   margin-top: 7px;
 }
 
+// User skillset form
+
+.user-skillset-form {
+  background-color: rgb(36,32,30);
+  color: $medium-gold;
+  padding: 45px 50px 50px 50px;
+  border-radius: 30px;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.user-skillset-form form {
+  padding-right: 16px;
+  padding-left: 25px;
+  overflow: auto;
+  max-height: 55vh;
+  color: #FFF;
+}
+
+.user-skillset-form form::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+.user-skillset-form form::-webkit-scrollbar-track {
+  border-radius: 20px; 
+  background: rgba(232, 205, 162, 0.1);       /* color of the tracking area */
+}
+.user-skillset-form form::-webkit-scrollbar-thumb {
+  background-color: rgba(226, 176, 96, 1);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  // border: 3px solid orange;  /* creates padding around scroll thumb */
+}
+
+.user-skillset-form p {
+  color: $light-gold;
+}
+
+
 // Scrollbar
 
 #crime-form-skillset form::-webkit-scrollbar {
@@ -107,7 +145,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
   background:  rgba(226, 176, 96, 1);
   cursor: pointer;
-  margin-bottom: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  margin-bottom: -40px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: 1px 1px 3px rgba(232, 205, 162, 0.3), 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }
 

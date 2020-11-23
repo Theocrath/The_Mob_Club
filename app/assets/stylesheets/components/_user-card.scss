@@ -4,6 +4,12 @@
   border-radius: 10px;
 }
 
+.links-container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .profile-info {
   display: flex;
   flex-direction: column;
@@ -12,7 +18,7 @@
   justify-content: center;
   min-height: 80vh;
   text-align: center;
-  background-color:rgba(72, 64, 61, 0.2);
+  background-color:rgba(72, 64, 61, 0.1);
   padding: 0 30px 26px 30px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -37,10 +43,12 @@
 .user-info p {
   font-size: 16px;
   color: $light-gold;
+  text-shadow: 1px 1px 2px rgba(21,21,21,1);
 }
 
 #username {
   font-size: 20px;
+  text-shadow: 1px 1px 2px rgba(21,21,21,1);
   color: #FFF;
 }
 
@@ -63,14 +71,24 @@
   height: 20%;
   width: inherit;
   margin: 0 auto;
-  border-bottom: 1px solid $gold;
-  padding: 16px 25px;
+  // border-bottom: 1px solid $gold;
+  padding: 16px 45px;
+  text-shadow: 1px 1px 4px rgba(21,21,21,0.7);
+  transition: ease-in 0.1s;
+}
+
+.color-gold {
+  color: $gold;
+}
+
+.color-gold:hover {
+  color: #FFF;
 }
 
 .links-container p:hover {
-  color: #FFF;
-  border-bottom: 1px solid $light-gold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  // border-bottom: 1px solid $light-gold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  transform: translate(-1px, -1px);
 }
 
 // Avatar
@@ -79,4 +97,25 @@
   max-height: 150px;
   border-radius: 50%;
   max-width: 100%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+// horizontal rules
+
+hr {
+  // width: 150px;
+  margin: 0 auto;
+  // height: 0.5px;
+  background-color: $gold;
+  opacity: 1;
+}
+
+.trans--grow{
+  -webkit-transition: all 2s ease-in-out; /* For Safari 3.1 to 6.0 */
+  transition: all 2s  ease-in-out;
+  width : 0;
+}
+
+.grow{
+  width:100%;
 }

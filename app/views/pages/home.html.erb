@@ -1,19 +1,19 @@
-<div id="hero-banner">
+<div class="hero-banner">
   <h1>The Mob Club</h1>
   <h2>click to enter</h2>
-  <% if current_user.nil? %>
-  <%= link_to new_user_session_path do %>
-    <i class="fab fa-first-order"></i>
-  <% end %>
-  <% else %>
-    <%= link_to profile_path do %>
-    <i class="fab fa-first-order"></i>
-  <% end %>
-  <% end %>
-  <!-- <div class="arrow-down">
-   <h2> <i class="fas fa-arrow-down"></i></h2>
-  </div> -->
+    <% if current_user.nil? %>
+      <%= link_to new_user_session_path do %>
+      <i id="logo" class="fab fa-first-order"></i>
+    <% end %>
+    <% else %>
+      <%= link_to profile_path do %>
+      <i id="logo" class="fab fa-first-order"></i>
+    <% end %>
+    <% end %>
+    <i id="arrow-dwn" class="fas fa-angle-down"></i>
 </div>
+
+
 
 
 <div class="prp-value">
@@ -39,11 +39,11 @@
 
 
 </div>
-<div class="prp-value">
+<div class="prp-value3">
   <div class="prp-container">
     <h1>3</h1>
     <h1>hire the best <br> mobsters.</h1>
-    <div class="prp-text">
+    <div class="prp-text3">
       <p>Have a masterplan, that needs some expertise in opening bank vaults? Finding the right brains or muscle is now made easy - and discretion is the middle name of our Club.</p>
     </div>
   </div>

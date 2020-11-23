@@ -3,7 +3,12 @@ class CrimesController < ApplicationController
   # before_action :permitted_skillset_attributes, only: [:show]
 
   def index
-    @crimes = Crime.all
+    
+    if params[:query].present?
+      @crimes = Crime.search_crime(params[:query])
+    else
+      @crimes = Crime.all
+    end
   end
 
   def show
