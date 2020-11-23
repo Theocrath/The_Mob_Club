@@ -10,4 +10,10 @@ class Crime < ApplicationRecord
   validates :title, length: { minimum: 2 }, allow_blank: false
   validates :date, :location, presence: true
   validates :reward, numericality: true
+  include PgSearch::Model
+  pg_search_scope :search_crime,
+    against: [ :title, :description, :location ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
