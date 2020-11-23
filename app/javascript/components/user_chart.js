@@ -1,3 +1,7 @@
+// const bodyTag = document.querySelector('profile-show');
+
+// if (bodyTag) {
+
 const userC = (userStats) => {
   Chart.defaults.global.defaultFontColor = 'rgba(232, 205, 162, 1)';
   Chart.defaults.global.defaultFontSize = 14;
@@ -56,5 +60,6 @@ const userChart = () => {
     userC(userStats);
   });
 }
+// }
 
 export { userChart };

@@ -37,7 +37,7 @@ const crimeC = (userStats, crimeStats) => {
         ],
         backgroundColor: ['rgba(222, 54, 2, 0.7)'],
         borderColor: ['rgba(222, 54, 2, 1)'],
-        borderWidth: 1 
+        borderWidth: 1
       }],
     },
     options: {
@@ -64,16 +64,18 @@ const crimeC = (userStats, crimeStats) => {
 };
 
 const crimeChart = () => {
-  let paramsId = document.getElementById("paramsId").innerHTML;
-  console.log('params_id:', paramsId);
+  let paramsId = document.getElementById("paramsId")
+  if (paramsId) {
+    paramsId = paramsId.innerHTML;
 
-  $.get(`/crimes/${paramsId}/crime_json`, function (crimeStats) {
-    $.get('/current_user_json', function (userStats) {
-      console.log('user in join chart', userStats.hacking);
-      console.log('crime in join chart', crimeStats.hacking);
-      crimeC(userStats, crimeStats);
+    $.get(`/crimes/${paramsId}/crime_json`, function (crimeStats) {
+      $.get('/current_user_json', function (userStats) {
+        console.log('user in join chart', userStats.hacking);
+        console.log('crime in join chart', crimeStats.hacking);
+        crimeC(userStats, crimeStats);
+      });
     });
-  });
+  }
 }
 
 export { crimeChart };
