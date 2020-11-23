@@ -3,8 +3,20 @@
 <br>
 
 <div class="crime-index-container">
-  <div class="row">
 
+  <%= form_tag crimes_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a crime"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+
+
+  <div class="row">
 
     <% @crimes.each do |crime| %>
     <div class="col-sm-12 col-lg-6">
