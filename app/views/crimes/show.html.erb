@@ -7,7 +7,7 @@
   <% unless @crime.right_hand.nil? %>
     <p><%= @crime.right_hand.username %></p>
   <% end %>
-  <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>
+  <%# #cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>  <!-- upload to cloudify line without css -->
   <p>Start date: <%= @crime.date %></p>
   <div class='tag-container'>
     <ul>
