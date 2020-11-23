@@ -1,7 +1,7 @@
 <%# id="description-add-btn %>
 <div class="container" id="profile-container" style="display:show">
   <div class="row">
-<%= @ranking %>
+
     <div class="col-sm-12 col-md-4 col-lg-4">
       <div class="profile-info">
         <div class="user-info">
@@ -36,6 +36,10 @@
           <%= render 'skillset-form' %>
         </div>
       <% else %>
+      <div class="ranking">
+        <p>Your ranking</p>
+        <p><%= @ranking %></p>
+      </div>
         <div class="chart" style="display:show">
           <canvas id="userChart"></canvas>
         </div>
