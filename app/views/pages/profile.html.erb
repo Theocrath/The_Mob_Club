@@ -18,15 +18,15 @@
               <% end %>
             </div>
         </div>
+
         <div class="links-container">
-
-            <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
-            <hr class="trans--grow grow hr0">
-            <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
-            <hr class="trans--grow hr0 grow">
-            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
-
+          <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
+          <hr class="trans--grow grow hr0">
+          <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
+          <hr class="trans--grow hr0 grow">
+          <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
         </div>
+        
       </div>
     </div>
 
@@ -36,15 +36,15 @@
           <%= render 'skillset-form' %>
         </div>
       <% else %>
-      <div class="chart-container" style="display:show">
-        <div class="ranking">
-          <p>Your ranking</p>
-          <p><%= @ranking %></p>
+        <div class="chart-container" style="display:show">
+          <div class="ranking">
+            <p>Your ranking</p>
+            <p><%= @ranking %></p>
+          </div>
+          <div class="chart">
+            <canvas id="userChart"></canvas>
+          </div>
         </div>
-        <div class="chart">
-          <canvas id="userChart"></canvas>
-        </div>
-      </div>
       <% end %>
 
       <div id="dashboard-main" style="display:none">
