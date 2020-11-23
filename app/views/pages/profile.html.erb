@@ -81,11 +81,6 @@
             <% else %>
               <ul>
               <% @pending_requests.each do |job| %>
-<<<<<<< HEAD
-                <li>
-                  <%= job.crime.title %> in <%= job.crime.date - Date.today %> days.
-                </li>
-=======
                 <%= link_to crime_path(job.crime) do %>
                   <li>
                     <h6><%= job.crime.title.upcase %></h6>
@@ -100,7 +95,6 @@
                     </small></p>
                   </li>
                 <% end %>
->>>>>>> master
               <% end %>
             </ul>
             <% end %>
