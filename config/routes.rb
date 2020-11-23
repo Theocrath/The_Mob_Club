@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   #added the line above to create a custom route for team index
 
   resources :skillsets, only: [:new, :create, :edit, :update]
-  
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
+
   get 'profile', to: 'pages#profile'
   get 'current_user_json' => 'pages#current_user_json'
 end
