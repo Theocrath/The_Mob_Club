@@ -1,0 +1,14 @@
+
+  <p>Define your set of skills.</p>
+  <p><small>This will help find the best the job matches for you.</small></p>
+  <%= simple_form_for @skillset do |f| %>
+    <%= f.input :close_combat, as: :range %>
+    <%= f.input :long_range_weapons, as: :range %>
+    <%= f.input :mid_range_weapons, as: :range %>
+    <%= f.input :explosives, as: :range %>
+    <%= f.input :infiltration, as: :range %>
+    <%= f.input :hacking, as: :range %>
+    <%= f.input :lockpicking, as: :range %>
+    <%= f.input :seduction, as: :range %>
+    <%= f.button :submit, 'Add skillset', class: 'create-event float-right' %>
+  <% end %>

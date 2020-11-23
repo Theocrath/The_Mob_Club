@@ -18,7 +18,7 @@
   justify-content: center;
   min-height: 80vh;
   text-align: center;
-  background-color:rgba(72, 64, 61, 0.2);
+  background-color:rgba(72, 64, 61, 0.1);
   padding: 0 30px 26px 30px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -43,10 +43,12 @@
 .user-info p {
   font-size: 16px;
   color: $light-gold;
+  text-shadow: 1px 1px 2px rgba(21,21,21,1);
 }
 
 #username {
   font-size: 20px;
+  text-shadow: 1px 1px 2px rgba(21,21,21,1);
   color: #FFF;
 }
 
@@ -73,7 +75,6 @@
   padding: 16px 45px;
   text-shadow: 1px 1px 4px rgba(21,21,21,0.7);
   transition: ease-in 0.1s;
-  // color: black;
 }
 
 .color-gold {
@@ -81,14 +82,13 @@
 }
 
 .color-gold:hover {
-  color: $medium-gold;
+  color: #FFF;
 }
 
 .links-container p:hover {
-  color: $light-gold;
   // border-bottom: 1px solid $light-gold;
-  text-shadow: 4px 2px 3px rgba(0,0,0,0.9);
-  transform: translateY(-1px);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  transform: translate(-1px, -1px);
 }
 
 // Avatar
@@ -97,6 +97,7 @@
   max-height: 150px;
   border-radius: 50%;
   max-width: 100%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 // horizontal rules
