@@ -32,11 +32,13 @@ import { crimeChart } from '../components/comparison_chart';
 import { toggleDashboard, toggleNewEventPage } from '../components/show_page';
 import { toggleTabs, activateTab } from '../components/toggle_tabs';
 import { toggleCrimeFormCard, toggleSkillsetFormCard } from "../components/form_progression";
+import { toggleForm } from "../components/toggle_form";
 
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
   // expandLines();
+  toggleForm();
   userChart();
   toggleTabs();
   activateTab();
