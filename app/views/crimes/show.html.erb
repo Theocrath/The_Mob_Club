@@ -1,31 +1,9 @@
-<<<<<<< HEAD
-<div>
-  <h1><%= @crime.title %></h1>
-  <% how_many_days = @crime.date - Date.today %>
-  <h2>Execution date: in <%= how_many_days.to_i %> days</h2>
-  <p><%= @crime.date %></p>
-
-  <%if @crime.photo.attached?%>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @crime.photo.key, height: 300, width: 400, crop: :fill %>')">
-
-  <% else%>
-  <% end %>
-</div>
-
-  <p><%= @crime.location %></p>
-  <br>
-  <p><%= @crime.description %></p>
-
-  <% if !@crime.right_hand.nil? %>
-  <p><%= @crime.right_hand.username %></p>
-=======
 <div class='text-center'>
   <h2><%= @crime.title %></h2> -- 
   <p><%= @crime.location %></p> --
   <p><%= @crime.reward %>$</p> -- 
   <% unless @crime.right_hand.nil? %>
     <p><%= @crime.right_hand.username %></p>
->>>>>>> master
   <% end %>
   <p>Start date: <%= @crime.date %></p>
   <div class='tag-container'>
@@ -36,7 +14,6 @@
     </ul>
   </div>
 </div>
-
 <div class='flex-container'>
   <div class='details-container'>
     <div class='crime-details'>
@@ -52,7 +29,6 @@
           <canvas id="myCrimeChart"></canvas>
         </div>
       <% end %>
-
       <div class='team-list'>
         ------------------------------------------------
         <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
@@ -77,7 +53,6 @@
       </div>
     </div>
   </div>
-
   <div class='actions-container'>
     <div class='actions-btn'>
         <%= render "teams/new", class:'devise-btn' %>
@@ -95,59 +70,17 @@
       </div>
   </div>
 </div>
-
 <%# This is used to pass the crime's id to the chart %>
 <p id='paramsId' style="visibility: hidden;"><%= @crime.id %></p>
-
-
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <%# if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <div>
   
 </div>
-
 <%= link_to crimes_path do %>
  <div class="cancel-button"> Back </div>
 <% end %>
-
-
 <%#= link_to 'Enter team', crime_teams_path(@crime, @team), method: :post %>
-
