@@ -4,6 +4,7 @@
   <p><%= @crime.reward %>$</p> -- 
   <% unless @crime.right_hand.nil? %>
     <p><%= @crime.right_hand.username %></p>
+    <%= cl_image_path @crime.photo.key %>
   <% end %>
   <p>Start date: <%= @crime.date %></p>
   <div class='tag-container'>
