@@ -10,7 +10,6 @@ class PagesController < ApplicationController
     @skillset = Skillset.new
     @crime = Crime.new
     @crimes = Crime.where(boss_id: current_user.id)  
-    @user_has_skillset = Skillset.find_by(user_id: current_user.id)
   end
 
   def current_user_json
