@@ -1,0 +1,6 @@
+<h1>Create new chatroom (for test purposes only)</h1>
+
+<%= simple_form_for [ @crime, @chatroom ] do |f| %>
+<%= f.input :name %>
+<%= f.button :submit, 'Create Chatroom' %>
+<% end %>
