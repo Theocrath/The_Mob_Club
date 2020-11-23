@@ -4,6 +4,13 @@
   <h2>Execution date: in <%= how_many_days.to_i %> days</h2>
   <p><%= @crime.date %></p>
 
+  <%if @crime.photo.attached?%>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @crime.photo.key, height: 300, width: 400, crop: :fill %>')">
+
+  <% else%>
+  <% end %>
+</div>
+
   <p><%= @crime.location %></p>
   <br>
   <p><%= @crime.description %></p>
@@ -12,15 +19,11 @@
   <p><%= @crime.right_hand.username %></p>
   <% end %>
 
-
   <p><%= @crime.reward %>$</p>
   <br>
 
-  <%= f.input :photo, as: :file %>
-
 <p><%= @crime.reward %>$</p>
 <br>
-
 
 <% if @crime.skillset.nil? %>
   <p> You need to add a skillset to your crime!</p>

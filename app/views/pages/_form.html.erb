@@ -12,6 +12,7 @@
   <div id="crime-form-2" style="display:none;">
       <%= f.input :date %>
       <%= f.input :reward %>
+      <%= f.input :photo, as: :file %>
       <p>Do you agree with the <a href="#"><small>terms of service</small></a>?<small><%= f.button :submit, 'I agree', class: 'nav-text mb-2' %></small></p>
       <div class="nav-btn-container">
         <a href="#" class="crime-form-btn nav-text">Back</a>
