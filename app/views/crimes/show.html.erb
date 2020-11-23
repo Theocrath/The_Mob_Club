@@ -12,11 +12,15 @@
   <p><%= @crime.right_hand.username %></p>
   <% end %>
 
+
   <p><%= @crime.reward %>$</p>
   <br>
 
+  <%= f.input :photo, as: :file %>
+
 <p><%= @crime.reward %>$</p>
 <br>
+
 
 <% if @crime.skillset.nil? %>
   <p> You need to add a skillset to your crime!</p>
