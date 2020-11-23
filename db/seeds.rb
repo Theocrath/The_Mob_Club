@@ -7,6 +7,10 @@ puts "Destroying Crimes"
 Crime.destroy_all
 puts "Destroying Users..."
 User.destroy_all
+puts "Destroying Chat..."
+Chatroom.destroy_all
+puts "Destroying messsages..."
+Message.destroy_all
 
 
 puts "Creating Users"
@@ -60,6 +64,13 @@ puts "Creating Teams"
 Team.create!(user: user_2, crime: c1)
 Team.create!(user: user_3, crime: c1)
 Team.create!(user: user_4, crime: c1)
+
+puts "Creating Chatroom"
+chat1 = Chatroom.create!(name: "general")
+
+puts "Creating messages"
+ms1 = Message.create!(content: "Hello", chatroom: chat1, user: user_1)
+ms2 = Message.create!(content: "Hi", chatroom: chat1, user: user_2)
 
 puts "..."
 puts "Villains created. Proceed with caution. These seeds will cause havoc. Protect your children."
