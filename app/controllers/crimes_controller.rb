@@ -44,6 +44,7 @@ class CrimesController < ApplicationController
   
   def crime_json
     @crime = Crime.find(params[:crime_id])
+    # @skillset = Skillset.where("crime_id = ?", params[:crime_id])
     render json: {
       close_combat: @crime.skillset.close_combat,
       long_range_weapons: @crime.skillset.long_range_weapons,

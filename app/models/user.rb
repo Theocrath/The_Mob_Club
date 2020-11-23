@@ -12,6 +12,4 @@ class User < ApplicationRecord
 
   # Validations
   validates :username, presence: true, uniqueness: true
-  # Change minimum length to 50 in production
-  validates :description, length: { minimum: 5, maximum: 500 }, allow_blank: true
 end
