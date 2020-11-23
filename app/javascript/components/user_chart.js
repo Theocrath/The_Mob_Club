@@ -44,13 +44,10 @@ const userC = (userStats) => {
         },
         pointLabels: {
           fontSize: 14
-        },
-      legend: { display: false },
-      }
+        }
+      },
+      legend: { display: false }
     }
-    // tooltips: {
-    //   value: ['Teste1', 'Teste2', 'Teste1', 'Teste2', 'Teste1', 'Teste2', 'Teste1']
-    // }
   });
 };
 

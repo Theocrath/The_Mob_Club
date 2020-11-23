@@ -36,13 +36,15 @@
           <%= render 'skillset-form' %>
         </div>
       <% else %>
-      <div class="ranking">
-        <p>Your ranking</p>
-        <p><%= @ranking %></p>
-      </div>
-        <div class="chart" style="display:show">
+      <div class="chart-container" style="display:show">
+        <div class="ranking">
+          <p>Your ranking</p>
+          <p><%= @ranking %></p>
+        </div>
+        <div class="chart">
           <canvas id="userChart"></canvas>
         </div>
+      </div>
       <% end %>
 
       <div id="dashboard-main" style="display:none">
