@@ -1,0 +1,11 @@
+<div class="description-add-form" style="display:show">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :patch }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :current_password,
+              hint: "we need your current password to confirm your changes",
+              required: true,
+              input_html: { autocomplete: "current-password" } %>
+  <%= f.submit, 'Save' %>
+  <% end %>
+</div>
