@@ -1,11 +1,13 @@
+
+
 <div class='text-center'>
   <h2><%= @crime.title %></h2> -- 
   <p><%= @crime.location %></p> --
   <p><%= @crime.reward %>$</p> -- 
   <% unless @crime.right_hand.nil? %>
     <p><%= @crime.right_hand.username %></p>
-    <%= cl_image_path @crime.photo.key %>
   <% end %>
+  <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>
   <p>Start date: <%= @crime.date %></p>
   <div class='tag-container'>
     <ul>
