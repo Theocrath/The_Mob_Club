@@ -1,0 +1,37 @@
+.chatroom-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chatroom-container {
+  margin: auto;
+  width: 80%;
+}
+
+.talk-container {
+  background-image: linear-gradient($brown, $dark-brown);;
+  padding: 20px 30px;
+  border-radius: 15px;
+}
+
+.cht-button-back {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.msgess-button {
+  display: inline;
+  background-color: $gold;
+  color: $black;
+  font-size: 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 2px solid $gold;
+}
+
+.msgess-button:hover {
+  display: inline;
+  background-color: $light-gold;
+  border: 2px solid $light-gold;
+}
