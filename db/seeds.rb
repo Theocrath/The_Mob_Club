@@ -61,7 +61,7 @@ crime_s4 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand
 crime_s5 = Skillset.create!(close_combat: rand(1..100), long_range_weapons: rand(1..100), mid_range_weapons: rand(1..100), explosives: rand(1..100), infiltration: rand(1..100), lockpicking: rand(1..100), seduction: rand(1..100), hacking: rand(1..100), crime_id: c5.id)
 
 puts "Creating Teams"
-Team.create!(user: user_2, crime: c1)
+Team.create!(user: user_2, crime: c1, status: true)
 Team.create!(user: user_3, crime: c1)
 Team.create!(user: user_4, crime: c1)
 

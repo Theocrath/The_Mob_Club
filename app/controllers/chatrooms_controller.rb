@@ -10,15 +10,14 @@ class ChatroomsController < ApplicationController
     @crime = Crime.find(params[:crime_id])
     @chatroom = Chatroom.new(chatroom_params)
     @chatroom.name = @crime.title
-    @chatroom.crime_id = @crime
-
-    raise
+    @chatroom.crime_id = @crime.id
 
     if @chatroom.save
       redirect_to crime_chatroom_path(@crime, @chatroom), notice: 'Chatroom created.'
     else
       redirect_to profile_path, notice: 'Failed to initialize chatroom.'
     end
+
   end
 
   def show

@@ -59,6 +59,11 @@
             <% else %>
             <ul>
               <% @current_jobs.each do |job| %>
+
+              <% link_to crime_chatroom_path(job.crime_id, job.crime.chatroom) do %>
+              <p>go to chat</p>
+              <% end %>
+
                 <%= link_to crime_path(job.crime) do %>
                   <li>
                     <h6><%= job.crime.title.upcase %></h6>
@@ -113,6 +118,20 @@
           <div class="dashboard">
             <ul>
               <% @crimes.to_a.each do |crime| %>
+
+              <% if crime.chatroom.nil? %>
+
+                      <%= simple_form_for [ crime, @chatroom ] do |f| %>
+                      <%= f.hidden_field :name %>
+                      <%= f.button :submit, 'Start chat' %>
+                      <% end %>
+
+                      <% else %>
+                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
+                        <p>Go to chat</p>
+                      <% end %>
+                    <% end %>
+
                 <%= link_to crime_path(crime.id) do %>
                   <li>
                     <h6><%= crime.title.upcase %></h6>
@@ -129,16 +148,16 @@
                       <p class="pr-3">Right hand: <%= crime.right_hand.username %></p>
                     <% end %>
 
-                    <% if crime.chatroom.nil? %>
-                      <%= simple_form_for [ crime, @chatroom ] do |f| %>
-                      <%= f.hidden_field :name %>
-                      <%= f.button :submit, 'Create Chatroom' %>
-                      <% end %>
-                      <% else %>
-                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
+                  <!--   <%# if crime.chatroom.nil? %>
+                      <%#= simple_form_for [ crime, @chatroom ] do |f| %>
+                      <%#= f.hidden_field :name %>
+                      <%#= f.button :submit, 'Create Chatroom' %>
+                      <%# end %>
+                      <%# else %>
+                      <%#= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
                         <p>Go to chat</p>
-                      <% end %>
-                    <% end %>
+                      <%# end %>
+                    <%# end %> -->
 
                   </li>
                 <% end %>
