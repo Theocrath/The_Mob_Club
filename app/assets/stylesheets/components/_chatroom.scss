@@ -1,6 +1,7 @@
 .chatroom-details {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .chatroom-container {
@@ -15,8 +16,9 @@
 }
 
 .cht-button-back {
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: center;
+  padding: auto;
 }
 
 .msgess-button {
@@ -35,3 +37,4 @@
   background-color: $light-gold;
   border: 2px solid $light-gold;
 }
+
