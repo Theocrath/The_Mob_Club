@@ -1,29 +1,32 @@
-<div class='text-center'>
-  <h2><%= @crime.title %></h2> 
-  <% unless @crime.right_hand.nil? %>
-    <p><%= @crime.right_hand.username %></p>
-  <% end %>
-  <p>Start date: <%= @crime.date %></p>
-  <div class='tag-container'>
-    <ul>
-      <li>Murder Free</li>
-      <li>Test</li>
-      <li>Test</li>
-    </ul>
-  </div>
-</div>
-
-<div class='flex-container'>
-  <div class='details-container'>
-    <div class='crime-details'>
-      <h3>Description</h3>
-      <p><%= @crime.description %></p>
-      <p>Mobsters needed 3</p>
-      -------------------------------
-      <p>Location: <%= @crime.location %></p>
-      <p>Reward: <%= @crime.reward %>$</p>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='details-container col-12 col-lg-8'>
+      <div class='crime-details'>
+        <div class='title-container'>
+          <h2><%= @crime.title %></h2>
+          <p class='card-reward'>Reward<br><%= @crime.reward %>$</p>
+        </div>
+        <% unless @crime.right_hand.nil? %>
+          <p><%= @crime.right_hand.username %></p>
+        <% end %>
+        <div class='day-location-container'>
+          <p>In <%= (@crime.date - Date.today).to_i %> days</p>
+          <p><%= @crime.location %></p>
+        </div>
+        <p><%= @crime.description %></p>
+      </div>
+      <div class='actions-btn'>
+        <%= render "teams/new", class:'devise-btn' %>
+        <%= link_to 'Update event', edit_crime_path(@crime), class:'devise-btn' %>
+        <%= link_to 'Cancel event', crime_path(@crime), method: :delete,
+            data: { confirm: 'Are you sure, mate?'}, class:'cancel-button' %>
+      </div>
     </div>
-    <div class='crime-stats'>
+
+    <div class='actions-container col-12 col-lg-4'>
+      <div class='plan-container'>
+        An image will soon be there!
+      </div>
       <% if @crime.skillset.nil? %>
         <p> You need to add a skillset to your crime!</p>
       <% else %>
@@ -31,50 +34,44 @@
           <canvas id="myCrimeChart"></canvas>
         </div>
       <% end %>
+    </div>
+  </div>
+</div>
 
+<div class='d-none'>
+  <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
+    <div class='members-container'>
       <div class='team-list'>
-        <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
-          ------------------------------------------------
-          <h2>List of pendings</h2>
-          <% @current_teams.each do |current_team| %>
-            <% if current_team.status == false %>
-              <div class='team-list-members'>
-                <p><%= current_team.user.username %></p>
-                <div class='btn-status-container'>
-                  <%= link_to crime_team_path(@crime,current_team), method: :patch do %>
-                    <i class="far fa-check-square"></i>
-                  <% end %>
-                  <%#= link_to crime_team_path(@crime, current_team), method: :delete,
-                      data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
-                    <i class="far fa-window-close"></i>
-                  <%# end %>
-                </div>
+        <h2>Current squad</h2>
+        <% @current_teams.each do |current_team| %>
+          <% if current_team.status == true %>
+            <p><%= current_team.user.username %></p>
+          <% else %>
+            <p>No one is in your team yet!</p>
+          <% end %>
+        <% end %>
+      </div>
+      <div class='team-list'>
+        <h2>Pending requests</h2>
+        <% @current_teams.each do |current_team| %>
+          <% if current_team.status == false %>
+            <div class='team-list-members'>
+              <p><%= current_team.user.username %></p>
+              <div class='btn-status-container'>
+                <%= link_to crime_team_path(@crime, current_team), method: :patch do %>
+                  <i class="far fa-check-square"></i>
+                <% end %>
+                <%#= link_to crime_team_path(@crime, current_team), method: :delete,
+                    data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
+                  <i class="far fa-window-close"></i>
+                <%# end %>
               </div>
-            <% end %>
+            </div>
           <% end %>
         <% end %>
       </div>
     </div>
-  </div>
-
-  <div class='actions-container'>
-    <div class='actions-btn'>
-        <%= render "teams/new", class:'devise-btn' %>
-        <%= link_to 'Update event', edit_crime_path(@crime), class:'devise-btn' %>
-        <%= link_to 'Cancel event', crime_path(@crime), method: :delete,
-            data: { confirm: 'Are you sure, mate?'}, class:'cancel-button' %>
-    </div>
-    <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id  %>
-      <div class='background-grey'>
-          <h2>Accepted</h2>
-          <% @current_teams.each do |current_team| %>
-            <% if current_team.status == true %>
-              <p><%= current_team.user.username %></p>
-            <% end %>
-          <% end %>
-        </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
 
 <%# This is used to pass the crime's id to the chart %>
