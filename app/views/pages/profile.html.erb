@@ -1,3 +1,4 @@
+<%# id="description-add-btn %>
 <div class="container" id="profile-container" style="display:show">
   <div class="row">
 
@@ -8,7 +9,14 @@
             <img src="assets/profile-picture.jpg" alt="Profile picture" class="profile-avatar">
           </div>
           <p id="username"><%= current_user.username %></p>
-          <p>"<%= current_user.description %>"</p>
+            <div>
+              <% if current_user.description.blank? || current_user.description.nil? %>
+                <a href="#" class="description-btn">Add description <i class="fas fa-pencil-alt"></i></a>
+                <%= render 'edit_description' %>
+              <% else %>
+                <p>"<%= current_user.description %>"</p>
+              <% end %>
+            </div>
         </div>
         <div class="links-container">
 
@@ -140,3 +148,9 @@
 </div>
 
 <%# End of create event pop up %>
+
+<script>
+  if(window.location.href.substr(-2) !== "?r") {
+    window.location = window.location.href + "?r";
+  }
+</script>
