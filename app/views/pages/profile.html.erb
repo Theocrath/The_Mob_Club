@@ -60,9 +60,12 @@
             <ul>
               <% @current_jobs.each do |job| %>
 
-              <% link_to crime_chatroom_path(job.crime_id, job.crime.chatroom) do %>
-              <p>go to chat</p>
+              <% unless job.crime.chatroom.id.nil? %>
+              <%= link_to crime_chatroom_path(job.crime, job.crime.chatroom) do %>
+                <p>go to chat</p>
               <% end %>
+              <% end %>
+
 
                 <%= link_to crime_path(job.crime) do %>
                   <li>
@@ -170,7 +173,7 @@
     </div>
 
   </div>
-</div>
+<!-- </div> uncommented because it's an extra div tag that doesnt belong anywhere  -->
 
 <%# Create event pop up %>
 
