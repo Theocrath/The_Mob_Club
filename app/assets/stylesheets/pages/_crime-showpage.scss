@@ -3,16 +3,21 @@
 .details-container {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 25px;
-  padding: 30px 55px;
   position: relative;
-  min-height: 100%;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.title-container {
+.crime-details-container {
+  padding: 30px 55px;
+  flex-grow: 4;
+}
+
+.reward-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 50px;
 
   .crime-reward {
     color: #E8CDA2;
@@ -42,22 +47,25 @@
 .actions-btn-container {
   // display: flex;
   // justify-content: space-between;
-  margin-top: 200px;
   padding-top: 10px;
   border-top: 1px solid $gold;
+  margin: 0 25px;
+  position: relative;
+  bottom: 15px;
 }
 
 .actions-btn {
   // margin-right: 20px;
-  padding: 0;
   color: #D3AB6A;
   font-weight: bold;
   border-left: 1px solid $gold;
-  padding-left: 10px;
+  padding: 0 30px;
+  text-align: center;
 }
 
 .actions-btn:first-child {
   border-left: none;
+  padding-left: 0;
 }
 
 
@@ -72,6 +80,10 @@
   border-radius: 25px;
   text-align: center;
   height: 45%;
+}
+
+.crime-chart {
+  margin: 10px 0;
 }
 
 .members-container {

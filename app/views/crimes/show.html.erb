@@ -1,18 +1,20 @@
 <div class='container-fluid'>
   <div class='row'>
     <div class='details-container col-12 col-lg-6 mb-5'>
-      <div class='title-container'>
+      <div class='crime-details-container'>
+        <div class='reward-container'>
+          <p class='crime-reward'>Reward<br><%= @crime.reward %>$</p>
+        </div>
         <h2><%= @crime.title %></h2>
-        <p class='crime-reward'>Reward<br><%= @crime.reward %>$</p>
+        <% unless @crime.right_hand.nil? %>
+          <p><%= @crime.right_hand.username %></p>
+        <% end %>
+        <div class='day-location-container'>
+          <p>In <%= (@crime.date - Date.today).to_i %> days</p>
+          <p><i class="far fa-compass"></i><%= @crime.location %></p>
+        </div>
+        <p><%= @crime.description %></p>
       </div>
-      <% unless @crime.right_hand.nil? %>
-        <p><%= @crime.right_hand.username %></p>
-      <% end %>
-      <div class='day-location-container'>
-        <p>In <%= (@crime.date - Date.today).to_i %> days</p>
-        <p><i class="far fa-compass"></i><%= @crime.location %></p>
-      </div>
-      <p><%= @crime.description %></p>
       <div class='actions-btn-container d-flex'>
         <%= link_to crimes_path do %>
           <div class="actions-btn"> Back </div>
@@ -33,6 +35,7 @@
     <div class='actions-container col-12 col-lg-5'>
       <div class='plan-container'>
         An image will soon be there!
+        <%# #cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>  <!-- upload to cloudify line without css -->
       </div>
       <% if @crime.skillset.nil? %>
         <p> You need to add a skillset to your crime!</p>
