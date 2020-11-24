@@ -1,7 +1,7 @@
 <div class='text-center'>
-  <h2><%= @crime.title %></h2> -- 
+  <h2><%= @crime.title %></h2> --
   <p><%= @crime.location %></p> --
-  <p><%= @crime.reward %>$</p> -- 
+  <p><%= @crime.reward %>$</p> --
   <% unless @crime.right_hand.nil? %>
     <p><%= @crime.right_hand.username %></p>
   <% end %>
@@ -78,6 +78,8 @@
 <p id='paramsId' style="visibility: hidden;"><%= @crime.id %></p>
 
 
+
+
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <%# if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
@@ -119,7 +121,7 @@
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <div>
-  
+
 </div>
 
 <%= link_to crimes_path do %>

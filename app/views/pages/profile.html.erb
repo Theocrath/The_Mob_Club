@@ -128,6 +128,18 @@
                     <% if crime.right_hand.present? %>
                       <p class="pr-3">Right hand: <%= crime.right_hand.username %></p>
                     <% end %>
+
+                    <% if crime.chatroom.nil? %>
+                      <%= simple_form_for [ crime, @chatroom ] do |f| %>
+                      <%= f.hidden_field :name %>
+                      <%= f.button :submit, 'Create Chatroom' %>
+                      <% end %>
+                      <% else %>
+                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
+                        <p>Go to chat</p>
+                      <% end %>
+                    <% end %>
+
                   </li>
                 <% end %>
               <% end %>
