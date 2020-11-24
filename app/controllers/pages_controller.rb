@@ -47,11 +47,13 @@ class PagesController < ApplicationController
     skillset_hash = JSON.parse(user_skillset)
     stat_sum = 0
 
-    skillset_hash.each do |skill, stat_val|
-      stat_sum += stat_val
-    end
+    unless skillset_hash.nil?
+      skillset_hash.each do |skill, stat_val|
+        stat_sum += stat_val
+      end
 
-    @stats_average = stat_sum / skillset_hash.count
+      @stats_average = stat_sum / skillset_hash.count
+    end
   end
 
   def set_ranking
