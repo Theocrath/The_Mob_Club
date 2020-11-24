@@ -4,16 +4,17 @@
 
 <div class="crime-index-container">
 
+<div>
   <%= form_tag crimes_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
+    id: "custom-search-bar",
     placeholder: "Find a crime"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-
+  <%= submit_tag "Search", class: "btn btn-search" %>
+  <% end %>
+</div>
 
 
   <div class="row">

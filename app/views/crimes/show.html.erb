@@ -1,3 +1,5 @@
+
+
 <div class='text-center'>
   <h2><%= @crime.title %></h2> -- 
   <p><%= @crime.location %></p> --
@@ -5,6 +7,7 @@
   <% unless @crime.right_hand.nil? %>
     <p><%= @crime.right_hand.username %></p>
   <% end %>
+  <%# #cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>  <!-- upload to cloudify line without css -->
   <p>Start date: <%= @crime.date %></p>
   <div class='tag-container'>
     <ul>
@@ -14,7 +17,6 @@
     </ul>
   </div>
 </div>
-
 <div class='flex-container'>
   <div class='details-container'>
     <div class='crime-details'>
@@ -30,7 +32,6 @@
           <canvas id="myCrimeChart"></canvas>
         </div>
       <% end %>
-
       <div class='team-list'>
         ------------------------------------------------
         <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
@@ -55,7 +56,6 @@
       </div>
     </div>
   </div>
-
   <div class='actions-container'>
     <div class='actions-btn'>
         <%= render "teams/new", class:'devise-btn' %>
@@ -73,59 +73,17 @@
       </div>
   </div>
 </div>
-
 <%# This is used to pass the crime's id to the chart %>
 <p id='paramsId' style="visibility: hidden;"><%= @crime.id %></p>
-
-
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <%# if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- only bosses and right hands can see these two. Need to add logic for user -->
 <!-- to see the current team only if current user id is part of the team -->
 <div>
   
 </div>
-
 <%= link_to crimes_path do %>
  <div class="cancel-button"> Back </div>
 <% end %>
-
-
 <%#= link_to 'Enter team', crime_teams_path(@crime, @team), method: :post %>
-

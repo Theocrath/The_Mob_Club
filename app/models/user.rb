@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :crimes, foreign_key: 'boss'
   has_many :crimes, foreign_key: 'right_hand'
   has_many :teams
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   # Validations
   validates :username, presence: true, uniqueness: true

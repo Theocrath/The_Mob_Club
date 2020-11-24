@@ -10,9 +10,12 @@
     </div>
   </div>
 
+  
+
   <div id="crime-form-2" style="display:none;">
       <%= f.input :date %>
       <%= f.input :reward %>
+      <%= f.input :photo, as: :file %>
       <span>Do you agree with the <a href="#"><small>terms of service</small></a>?</span>
       <%= f.button :submit, 'I agree', class: 'nav-text' %></small>
       <% end %>
