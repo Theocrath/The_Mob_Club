@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   def create
+    @crime = Crime.find(params[:crime_id])
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
@@ -10,7 +11,7 @@ class MessagesController < ApplicationController
       @chatroom,
       render_to_string(partial: "message", locals: { message: @message })
       )
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      redirect_to crime_chatroom_path(@crime, @chatroom, anchor: "message-#{@message.id}")
     else
       render "chatrooms/show"
     end

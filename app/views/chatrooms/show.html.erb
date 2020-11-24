@@ -8,7 +8,14 @@
 
 </div>
 
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+<%= simple_form_for [ @crime, @chatroom, @message ] do |f| %>
   <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-  <%= f.submit %>
+  <%# raise %>
+  <%= f.submit 'Message away' %>
 <% end %>
+
+<div class=>
+  <%= link_to profile_path do %>
+  <h2>Back to Dashboard</h2>
+  <% end %>
+</div>
