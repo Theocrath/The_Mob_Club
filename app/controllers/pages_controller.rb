@@ -67,16 +67,3 @@ class PagesController < ApplicationController
     end
   end
 end
-
-  # TRY n.1
-  # def set_stats_average
-  #   skills = JSON.parse(current_user_json)
-  #   stat_sum = 0
-
-  #   skills.each do |skill, stat_val|
-  #     stat_sum += stat_val
-  #   end
-
-  #   @stats_average = stat_sum / skills.keys.count
-  # end
-
