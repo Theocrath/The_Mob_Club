@@ -43,13 +43,9 @@
           <div class="ranking">
             <p class="text-sm">Your ranking</p>
             <p><%= @ranking %></p>
-            <p class="text-sm"><span>
-            <% if @until_next_ranking == 1 %>
-              <%= @until_next_ranking %>pt until <%= @next_ranking %></span></p>
-            <% else %>
-              <%= @until_next_ranking %>pts until <%= @next_ranking %></span></p>
-            <% end %>
-            <%# <span>Avg: <%= @avg %>
+            <p class="text-sm"><strong><%= @until_next_ranking %></strong>
+              <%= @until_next_ranking == 1 ? 'pt' : 'pts '%>
+              until <%= @next_ranking %></span></p>
           </div>
         </div>
       <% end %>
