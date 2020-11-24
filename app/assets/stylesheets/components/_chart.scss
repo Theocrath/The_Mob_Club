@@ -1,4 +1,36 @@
 .chart {
-  height: 80%;
-  margin: 10% auto;
+  height: 60%;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10%;
+
+}
+
+.chart-container {
+  height: 100vh;
+}
+
+.ranking {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  min-height: 12%;
+  margin: 36px auto;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: rgb(31,29,27);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.ranking p {
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.text-sm {
+  color: $gold;
+  font-size: 12px;
 }
