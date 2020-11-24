@@ -10,6 +10,8 @@ class Crime < ApplicationRecord
   validates :title, length: { minimum: 2 }, allow_blank: false
   validates :date, :location, presence: true
   validates :reward, numericality: true
+
+  has_one_attached :photo
   include PgSearch::Model
   pg_search_scope :search_crime,
     against: [ :title, :description, :location ],
