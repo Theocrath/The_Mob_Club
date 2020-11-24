@@ -18,15 +18,15 @@
               <% end %>
             </div>
         </div>
+
         <div class="links-container">
-
-            <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
-            <hr class="trans--grow grow hr0">
-            <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
-            <hr class="trans--grow hr0 grow">
-            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
-
+          <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
+          <hr class="trans--grow grow hr0">
+          <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
+          <hr class="trans--grow hr0 grow">
+          <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
         </div>
+        
       </div>
     </div>
 
@@ -36,8 +36,17 @@
           <%= render 'skillset-form' %>
         </div>
       <% else %>
-        <div class="chart" style="display:show">
-          <canvas id="userChart"></canvas>
+        <div class="chart-container" style="display:show">
+          <div class="chart">
+            <canvas id="userChart"></canvas>
+          </div>
+          <div class="ranking">
+            <p class="text-sm">Your ranking</p>
+            <p><%= @ranking %></p>
+            <p class="text-sm"><strong><%= @until_next_ranking %></strong>
+              <%= @until_next_ranking == 1 ? 'pt' : 'pts '%>
+              until <%= @next_ranking %></span></p>
+          </div>
         </div>
       <% end %>
 

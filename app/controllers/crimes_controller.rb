@@ -73,7 +73,7 @@ class CrimesController < ApplicationController
   # end
 
   def crime_params
-    params.require(:crime).permit(:title, :description, :date, :location, :reward)
+    params.require(:crime).permit(:title, :description, :date, :location, :reward, :photo)
   end
 
   def right_hand_param
