@@ -66,7 +66,7 @@ Team.create!(user: user_3, crime: c1)
 Team.create!(user: user_4, crime: c1)
 
 puts "Creating Chatroom"
-chat1 = Chatroom.create!(name: "general")
+chat1 = Chatroom.create!(name: "general", crime_id: c1.id)
 
 puts "Creating messages"
 ms1 = Message.create!(content: "Hello", chatroom: chat1, user: user_1)

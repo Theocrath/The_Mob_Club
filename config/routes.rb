@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :crimes, except: :new do
     get 'crime_json' => 'crimes#crime_json'
-    resources :chatrooms, except: [:update, :edit] do
+    resources :chatrooms, except: [:index, :update, :edit] do
       resources :messages, only: :create
     end
 

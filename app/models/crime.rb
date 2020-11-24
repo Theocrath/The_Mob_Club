@@ -4,7 +4,7 @@ class Crime < ApplicationRecord
   belongs_to :right_hand, class_name: 'User', optional: true
   has_many :teams
   has_many :users, through: :teams
-
+  has_one :chatroom #
   validates_associated :skillset
 
   validates :title, length: { minimum: 2 }, allow_blank: false
