@@ -54,6 +54,24 @@
   color: #FFF;
 }
 
+.user-skillset-form {
+  max-height: 80vh;
+  background-color: rgb(36,32,30);
+  color: $medium-gold;
+  padding: 60px 70px 70px 70px;
+  border-radius: 30px;
+  max-width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 4px rgba(241, 241, 241, 0.1);
+}
+
+.user-skillset-form form {
+  padding-right: 16px;
+  overflow: auto;
+  max-height: 50vh;
+  color: #FFF;
+}
+
 #create-crime {
   padding: 0 12px;
   height: 45px;
@@ -61,6 +79,18 @@
 }
 
 // Scrollbar
+.user-skillset-form form::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+.user-skillset-form form::-webkit-scrollbar-track {
+  border-radius: 20px; 
+  background: rgba(232, 205, 162, 0.1);       /* color of the tracking area */
+}
+.user-skillset-form form::-webkit-scrollbar-thumb {
+  background-color: rgba(226, 176, 96, 1);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  // border: 3px solid orange;  /* creates padding around scroll thumb */
+}
 
 #crime-form-skillset form::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
