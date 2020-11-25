@@ -34,6 +34,7 @@
 
     <div class='actions-container col-12 col-lg-5'>
       <div class='plan-container'>
+        <% if current_user.id == @crime.boss_id %>
         <% unless @crime.photo.attached? %>
           <%= simple_form_for @crime do |f| %>
             <%= f.input :photo, as: :file %>
@@ -42,7 +43,13 @@
         <% else %>
           <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
+        <% else %>
+        <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill if @crime.photo.attached? %>
+        <p>There are no added attachments for this crime.</p>
+        <% end %>
       </div>
+
+      <% if current_user.id == @crime.boss_id %>
       <% if @crime.skillset.nil? %>
         <p> You need to add a skillset to your crime!</p>
       <% else %>
@@ -50,6 +57,16 @@
           <canvas id="myCrimeChart"></canvas>
         </div>
       <% end %>
+      <% else %>
+        <% if @crime.skillset.nil? %>
+        <p style="text-align: center"> The stats needed for this crime have not been defined yet.</p>
+      <% else %>
+        <div class='chart'>
+          <canvas id="myCrimeChart"></canvas>
+        </div>
+      <% end %>
+      <% end %>
+
     </div>
   </div>
 </div>
