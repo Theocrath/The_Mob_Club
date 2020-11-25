@@ -1,17 +1,14 @@
-<div class="mob-club-headers">
-  <div class=chatroom-details>
-    <div>
-      <h1>#<%= @chatroom.name %></h1>
-      <p><em>This is a safe place to discuss your masterplan.</em></p>
-    </div>
-    <div class="top-cth-back">
-      <%= link_to profile_path do %>
-        <p class="cancel-button">Back</p>
-      <% end %>
-    </div>
+<div class=chatroom-details>
+  <div>
+    <h1>#<%= @chatroom.name %></h1>
+    <p>This is a safe place to discuss your masterplan.</p>
+  </div>
+  <div>
+    <%= link_to profile_path do %>
+      <p class="cancel-button">Back</p>
+    <% end %>
   </div>
 </div>
-
 
 <div class="chatroom-container">
   <div class="talk-container">
