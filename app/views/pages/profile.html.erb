@@ -137,12 +137,10 @@
           <div class="dashboard">
             <ul>
               <% @crimes.to_a.each do |crime| %>
-                
                 <li>
                   <%= link_to crime_path(crime.id) do %>
                     <h6><%= crime.title.upcase %></h6>
                   <% end %>
-
                   <div class="li-dash-org">
                     <% if crime.chatroom.nil? %>
                         <div>                    
@@ -162,7 +160,6 @@
                             <% end %>
                           </div>
                         </div>
-              
                     <% else %>
                       <p><small>
                         <% if (crime.date - Date.today).to_i == 0 %>
@@ -178,15 +175,12 @@
                       <% end %>
                     <% end %>
                   </div>
-
-                  </li>
-                
+                </li>
               <% end %>
             </ul>
           </div>
         </div>
       </div>
-
     </div>
 
   </div>
