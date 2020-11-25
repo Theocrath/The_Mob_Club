@@ -14,7 +14,7 @@
                 <a href="#" class="description-btn">Add description <i class="fas fa-pencil-alt"></i></a>
                 <%= render 'edit_description' %>
               <% else %>
-                <p>"<%= current_user.description %>"</p>
+                <p><small>"<%= current_user.description %>"</small></p>
               <% end %>
             </div>
         </div>
@@ -51,7 +51,8 @@
       <% end %>
 
       <div id="dashboard-main" style="display:none">
-        <div id="nav" class="tabs">
+
+        <div class="nav tabs">
           <a href="#jobs" class="tab active">Current jobs</a>
           <a href="#pending" class="tab">Pending requests</a>
           <a href="#event-manager" class="tab">Event manager</a>
@@ -68,18 +69,12 @@
             <% else %>
             <ul>
               <% @current_jobs.each do |job| %>
-
-              <% unless job.crime.chatroom.nil? %>
-              <%= link_to crime_chatroom_path(job.crime, job.crime.chatroom) do %>
-                <p>go to chat</p>
-              <% end %>
-              <% end %>
-
-
-                <%= link_to crime_path(job.crime) do %>
-                  <li>
+                <li>
+                  <%= link_to crime_path(job.crime) do %>
                     <h6><%= job.crime.title.upcase %></h6>
-                    <p class="float-right"><small>
+                  <% end %>
+                  <div class="li-dash-org">
+                  <p><small>
                       <% if (job.crime.date - Date.today).to_i == 0 %>
                         The event is <strong>today.</strong>
                       <% elsif (job.crime.date - Date.today).to_i < 0 %>
@@ -88,11 +83,16 @@
                         In <%= (job.crime.date - Date.today).to_i %> days.
                       <% end %>
                     </small></p>
-                  </li>
-                <% end %>
+                    <% unless job.crime.chatroom.nil? %>
+                      <%= link_to crime_chatroom_path(job.crime, job.crime.chatroom) do %>
+                        <span class="chat-profile-cta"><small>Go to chat</small></span>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </li>
               <% end %>
-            </ul>
             <% end %>
+            </ul>
           </div>
         </div>
 
@@ -106,10 +106,12 @@
             <% else %>
               <ul>
               <% @pending_requests.each do |job| %>
-                <%= link_to crime_path(job.crime) do %>
-                  <li>
+                <li>
+                  <%= link_to crime_path(job.crime) do %>
                     <h6><%= job.crime.title.upcase %></h6>
-                    <p class="float-right"><small>
+                  <% end %>
+                  <div class="li-dash-org">
+                    <p><small>
                       <% if (job.crime.date - Date.today).to_i == 0 %>
                         The event is <strong>today.</strong>
                       <% elsif (job.crime.date - Date.today).to_i < 0 %>
@@ -118,11 +120,16 @@
                         In <%= (job.crime.date - Date.today).to_i %> days.
                       <% end %>
                     </small></p>
-                  </li>
-                <% end %>
+                    <% unless job.crime.chatroom.nil? %>
+                      <%= link_to crime_chatroom_path(job.crime, job.crime.chatroom) do %>
+                        <span class="chat-profile-cta"><small>Go to chat</small></span>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </li>
               <% end %>
-            </ul>
             <% end %>
+            </ul>
           </div>
         </div>
 
@@ -130,49 +137,50 @@
           <div class="dashboard">
             <ul>
               <% @crimes.to_a.each do |crime| %>
-
-              <% if crime.chatroom.nil? %>
-
-                      <%= simple_form_for [ crime, @chatroom ] do |f| %>
-                      <%= f.hidden_field :name %>
-                      <%= f.button :submit, 'Start chat' %>
-                      <% end %>
-
-                      <% else %>
-                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
-                        <p>Go to chat</p>
-                      <% end %>
-                    <% end %>
-
-                <%= link_to crime_path(crime.id) do %>
-                  <li>
+                
+                <li>
+                  <%= link_to crime_path(crime.id) do %>
                     <h6><%= crime.title.upcase %></h6>
-                    <p class="float-right"><small>
-                      <% if (crime.date - Date.today).to_i == 0 %>
-                        The event is <strong>today.</strong>
-                      <% elsif (crime.date - Date.today).to_i < 0 %>
-                        The event has passed.
-                      <% else %>
-                        In <%= (crime.date - Date.today).to_i %> days.
-                      <% end %>
-                    </small></p>
-                    <% if crime.right_hand.present? %>
-                      <p class="pr-3">Right hand: <%= crime.right_hand.username %></p>
-                    <% end %>
+                  <% end %>
 
-                  <!--   <%# if crime.chatroom.nil? %>
-                      <%#= simple_form_for [ crime, @chatroom ] do |f| %>
-                      <%#= f.hidden_field :name %>
-                      <%#= f.button :submit, 'Create Chatroom' %>
-                      <%# end %>
-                      <%# else %>
-                      <%#= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
-                        <p>Go to chat</p>
-                      <%# end %>
-                    <%# end %> -->
+                  <div class="li-dash-org">
+                    <% if crime.chatroom.nil? %>
+                        <div>                    
+                          <p class="float-left"><small>
+                            <% if (crime.date - Date.today).to_i == 0 %>
+                              The event is <strong>today.</strong>
+                            <% elsif (crime.date - Date.today).to_i < 0 %>
+                              The event has passed.
+                            <% else %>
+                              In <%= (crime.date - Date.today).to_i %> days.
+                            <% end %>
+                          </small></p>
+                          <div>
+                            <%= simple_form_for [ crime, @chatroom ] do |f| %>
+                            <%= f.hidden_field :name %>
+                            <%= f.button :submit, 'Start chat', class: 'chat-profile-cta text-14' %>
+                            <% end %>
+                          </div>
+                        </div>
+              
+                    <% else %>
+                      <p><small>
+                        <% if (crime.date - Date.today).to_i == 0 %>
+                          The event is <strong>today.</strong>
+                        <% elsif (crime.date - Date.today).to_i < 0 %>
+                          The event has passed.
+                        <% else %>
+                          In <%= (crime.date - Date.today).to_i %> days.
+                        <% end %>
+                      </small></p>
+                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom), class: 'text-14' do %>
+                        <span class="chat-profile-cta"><small>Go to chat</small></span>
+                      <% end %>
+                    <% end %>
+                  </div>
 
                   </li>
-                <% end %>
+                
               <% end %>
             </ul>
           </div>

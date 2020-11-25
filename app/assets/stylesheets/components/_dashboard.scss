@@ -6,16 +6,15 @@
 
 .dashboard {
   min-height: 70vh;
-  border-right: 1px solid rgba(241, 241, 241, 0.3);
+  // border-right: 1px solid rgba(241, 241, 241, 0.3);
 }
 
 .dashboard li {
   list-style: none;
   border-bottom: 1px solid rgba(115, 115, 115, 0.4);
-  opacity: 0.8;
   letter-spacing: 1px;
   min-height: 60px;
-
+  max-height: fit-content;
 }
 
 .dashboard li:hover {
@@ -27,19 +26,38 @@
 }
 
 .dashboard li p {
-  padding-bottom: 8px;
+  font-size: 16px;
+  // padding-bottom: 8px;
+  padding-left: 6px;
+  margin: 0;
+}
+
+.dashboard p {
+  font-size: 16px;
+  padding-bottom: 6px;
   padding-right: 6px;
   margin: 0;
+  color: #FFF;
 }
 
 .dashboard h6, p {
   font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
 }
 
 .dashboard h6 {
-  padding-top: 8px;
+  padding-top: 10px;
   padding-left: 8px;
   margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 14px;
+}
+// 
+.dashboard a {
+  font-size: 16px;
+  padding-bottom: 8px;
+  padding-right: 6px;
+  margin: 0;
 }
 
 .empty-dash {
@@ -49,6 +67,34 @@
 .float-right {
   float: right;
 }
+
+.dashboard ul {
+  padding-top: 16px;
+}
+
+.li-dash-org {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-profile-cta {
+  // font-weight: lighter;
+  color: $light-ruby;
+  padding-left: 16px;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.chat-profile-cta:hover {
+  // font-weight: lighter;
+  color: $very-light-ruby;
+  padding-left: 16px;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+}
+
+
+
 
 // Tabs
 
@@ -63,7 +109,7 @@
   margin-right: 15px;
   margin-bottom: 15px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: lighter;
   transition: color 0.05s ease-in 0.05s;
 }
@@ -88,3 +134,4 @@
   // opacity: 0.9;
   font-weight: 100;
 }
+
