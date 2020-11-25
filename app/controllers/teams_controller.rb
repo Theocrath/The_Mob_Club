@@ -15,10 +15,10 @@ class TeamsController < ApplicationController
   end
 
   def update
-       @team.status = true
-       @team.save
+    @team.status = true
+    @team.save
 
-       redirect_to crime_path(@team.crime)
+    redirect_to crime_path(@team.crime)
   end
 
   def destroy
