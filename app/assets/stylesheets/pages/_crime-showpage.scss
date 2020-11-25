@@ -1,7 +1,7 @@
 // Details
 
 .details-container {
-  background: rgba(255, 255, 255, 0.2);
+  background-image: linear-gradient($dark-brown, $brown);
   border-radius: 25px;
   position: relative;
   margin-right: auto;
@@ -20,15 +20,15 @@
   margin-bottom: 50px;
 
   .crime-reward {
-    color: #E8CDA2;
+    color: $light-gold;
     position: absolute;
     right: 0;
     top: 0;
-    background: $brown;
+    background: $light-brown;
     padding: 8px 50px;
     border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
-  } 
+  }
 }
 
 .day-location-container {
@@ -39,8 +39,13 @@
     padding-right: 5px;
   }
 
+  p {
+    font-style: italic;
+    font-weight: 300;
+  }
+
   p:last-child {
-    color: #D3AB6A;
+    color: $gold;
   }
 }
 
@@ -54,14 +59,32 @@
   bottom: 15px;
 }
 
+.actions-btn-container a {
+  // display: flex;
+  // justify-content: space-between;
+  text-align: center;
+  margin: auto;
+}
+
 .actions-btn {
   // margin-right: 20px;
-  color: #D3AB6A;
+  color: $light-gold;
+  // background-color: lightblue;
   font-weight: bold;
   border-left: 1px solid $gold;
   padding: 0 30px;
   text-align: center;
 }
+
+.actions-btn:hover {
+  // margin-right: 20px;
+  color: $pale-grey;
+  border-left: 1px solid $gold;
+  padding: 0 30px;
+  text-align: center;
+}
+
+
 
 .actions-btn:first-child {
   border-left: none;
@@ -76,10 +99,30 @@
 }
 
 .plan-container {
-  background: rgba(255, 255, 255, 0.2);
+  background-image: linear-gradient($dark-brown, $brown);
   border-radius: 25px;
   text-align: center;
   height: 45%;
+  display: flex; //
+  align-items: center; //
+  justify-content: center;
+  // overflow: auto;
+  width: fit-content;
+  height: fit-content;
+}
+
+.plan-photo {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 15px;
+  padding: 40px 30px;
+}
+
+.plan-photo img {
+  border-radius: 15px;
+}
+
+.plan-photo img:hover {
+  border-radius: 2px;
 }
 
 .crime-chart {
