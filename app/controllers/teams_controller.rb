@@ -10,15 +10,15 @@ class TeamsController < ApplicationController
     if @team.save
       redirect_to crime_path(@crime), notice: 'You applied to this job succesfully!'
     else
-      render :new
+      redirect_to crime_path(@crime), notice: 'You already applied to this job...'
     end
   end
 
   def update
-       @team.status = true
-       @team.save
+    @team.status = true
+    @team.save
 
-       redirect_to crime_path(@team.crime)
+    redirect_to crime_path(@team.crime)
   end
 
   def destroy

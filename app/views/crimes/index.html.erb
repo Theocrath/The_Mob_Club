@@ -23,32 +23,34 @@
   <div class="row justify-content-center">
 
     <% @crimes.each do |crime| %>
-    <% how_many_days = crime.date - Date.today %>
-    <div class="col-sm-offset-12 col-xl-offset-6">
-      <%= link_to crime_path(crime) do  %>
-      <div class="crime-card">
-        <div class="card-head">
-          <h2><%= crime.title %></h2>
-          <% if how_many_days < 30 && how_many_days > 0 %>
-            <p><i class="fas fa-hourglass-end"></i> This misdeed must be executed soon.</p>
-          <% end %>
-          <% if how_many_days <= 0 %>
-             <p><em>Time out - this crime has expired.</em></p>
-          <% end %>
+      <% unless crime.boss == current_user || crime.right_hand == current_user %>
+        <% how_many_days = crime.date - Date.today %>
+        <div class="col-sm-offset-12 col-xl-offset-6">
+          <%= link_to crime_path(crime) do  %>
+          <div class="crime-card">
+            <div class="card-head">
+              <h2><%= crime.title %></h2>
+              <% if how_many_days < 30 && how_many_days > 0 %>
+                <p><i class="fas fa-hourglass-end"></i> This misdeed must be executed soon.</p>
+              <% end %>
+              <% if how_many_days <= 0 %>
+                <p><em>Time out - this crime has expired.</em></p>
+              <% end %>
 
-        <div class="card-details">
-          <h3><i class="far fa-compass"></i> <%= crime.location %></h3>
-          <h4>In <%= how_many_days.to_i %> days</h4>
+            <div class="card-details">
+              <h3><i class="far fa-compass"></i> <%= crime.location %></h3>
+              <h4>In <%= how_many_days.to_i %> days</h4>
+            </div>
+            </div>
+            <div class="card-reward">
+              <p>reward</p>
+              <h2><%= crime.reward %>$</h2>
+            </div>
+          </div>
+          <% end %>
+          <!-- <li>Skillset?<%#= crime.skillset %></li> -->
         </div>
-        </div>
-        <div class="card-reward">
-          <p>reward</p>
-          <h2><%= crime.reward %>$</h2>
-        </div>
-      </div>
       <% end %>
-      <!-- <li>Skillset?<%#= crime.skillset %></li> -->
-    </div>
     <% end %>
   </div>
 </div>

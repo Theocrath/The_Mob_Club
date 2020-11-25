@@ -1,5 +1,5 @@
 class Crime < ApplicationRecord
-  has_one :skillset
+  has_one :skillset, dependent: :destroy
   belongs_to :boss, class_name: 'User'
   belongs_to :right_hand, class_name: 'User', optional: true
   has_many :teams

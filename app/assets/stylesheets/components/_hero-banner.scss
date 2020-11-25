@@ -75,6 +75,9 @@
   display: flex;
   align-items: center;
   scroll-snap-stop: always;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
 }
 
 .prp-container {
@@ -89,7 +92,7 @@
 // for the middle proposition nr 2
 
 .prp-value2 {
-  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1523983555105-0acbfc81e546?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80');
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1523983555105-0acbfc81e546?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -97,6 +100,9 @@
   text-align: right;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
 }
 
 .prp-container2 {
@@ -119,6 +125,9 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
 }
 
 .prp-text3 {
@@ -127,4 +136,12 @@
   text-shadow: 4px 4px 8px black;
 }
 
+// carroussel aka sign in
 
+#login-page {
+  padding: 50px;
+  height: 100vh;
+  width: 100%;
+  // display: flex;
+  // align-items: center;
+}

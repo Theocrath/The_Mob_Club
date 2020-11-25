@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  # before_action :user_root_path, if: :devise_controller?
+  before_action :user_root_path, if: :devise_controller?
   
   def user_root_path
     profile_path
