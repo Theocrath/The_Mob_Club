@@ -2,9 +2,7 @@
   <h1>The Mob Club</h1>
   <h2>click to enter</h2>
     <% if current_user.nil? %>
-      <%= link_to new_user_session_path do %>
-        <i id="logo" class="fab fa-first-order"></i>
-      <% end %>
+        <i id="logo" class="login-scroll fab fa-first-order"></i>
     <% else %>
       <%= link_to profile_path do %>
         <i id="logo" class="fab fa-first-order"></i>
@@ -55,8 +53,8 @@
   <i class="fas fa-angle-down" id="page4BottomArrow"></i>
 </div>
 
-<div class="carroussel">
-  <i class="fas fa-angle-up" id="page5TopArrow"></i>
+<div id="login-page">
+  <%# <i class="fas fa-angle-up" id="page5TopArrow"></i> %>
 
   <div class='devise-form-container text-center'>
     <h2>Welcome<br>to the<br>Mob Club</h2>

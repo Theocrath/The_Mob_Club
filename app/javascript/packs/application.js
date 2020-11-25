@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { homeToLogin, homeToP2, p2toHome, p2ToP3, p3ToP2, p3ToP4, p4ToP3, p4ToP5 } from "../components/scroll_home";
 import { expandLines } from '../components/expand_lines';
 import { userChart } from '../components/user_chart';
 import { crimeChart } from '../components/comparison_chart';
@@ -34,12 +35,12 @@ import { toggleTabs, activateTab } from '../components/toggle_tabs';
 import { toggleCrimeFormCard, toggleSkillsetFormCard } from "../components/form_progression";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { toggleForm } from "../components/toggle_form";
-import { homeToP2, p2toHome, p2ToP3, p3ToP2, p3ToP4, p4ToP3, p4ToP5, p5ToP4 } from "../components/scroll_home";
 
 
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
+  // homeToLogin();
   expandLines();
   toggleForm();
   userChart();
@@ -58,4 +59,5 @@ document.addEventListener('turbolinks:load', () => {
   p3ToP4();
   p4ToP3();
   p4ToP5();
+  homeToLogin();
 });

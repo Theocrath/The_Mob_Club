@@ -84,7 +84,7 @@ const p4ToP3 = () => {
 
 const p4ToP5 = () => {
   const page4BottomArrow = document.querySelector('#page4BottomArrow');
-  const carroussel = document.querySelector('.carroussel');
+  const carroussel = document.querySelector('.login-page');
   if (page4BottomArrow) {
     page4BottomArrow.addEventListener('click', () => {
       carroussel.scrollIntoView({
@@ -96,22 +96,36 @@ const p4ToP5 = () => {
   }
 };
 
-const p5ToP4 = () => {
-  const page5TopArrow = document.querySelector('#page5TopArrow');
-  const page4 = document.querySelector('.prp-value3');
-  if (page5TopArrow) {
-    page5TopArrow.addEventListener('click', () => {
-      page4.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-        inline: 'nearest'
-      });
-    });
-  }
-};
+// const homeToLogin = () => {
+//   const homeButton = document.querySelector('.login-scroll');
+//   const loginPage = document.querySelector('.login-page');
+//   if (homeButton) {
+//     homeButton.addEventListener('click', () => {
+//       loginPage.scrollIntoView({
+//         behavior: 'smooth',
+//         block: 'end',
+//         inline: 'nearest'
+//       });
+//     });
+//   }
+// };
+
+// const p5ToP4 = () => {
+//   const page5TopArrow = document.querySelector('#page5TopArrow');
+//   const page4 = document.querySelector('.prp-value3');
+//   if (page5TopArrow) {
+//     page5TopArrow.addEventListener('click', () => {
+//       page4.scrollIntoView({
+//         behavior: 'smooth',
+//         block: 'end',
+//         inline: 'nearest'
+//       });
+//     });
+//   }
+// };
 
 // const scrollHome = () => {
 
 // };
 
-export { homeToP2, p2toHome, p2ToP3, p3ToP2, p3ToP4, p4ToP3, p4ToP5, p5ToP4 };
+export { homeToP2, p2toHome, p2ToP3, p3ToP2, p3ToP4, p4ToP3, p4ToP5 };

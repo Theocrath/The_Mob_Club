@@ -76,6 +76,8 @@
   align-items: center;
   scroll-snap-stop: always;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
 }
 
 .prp-container {
@@ -99,6 +101,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
 }
 
 .prp-container2 {
@@ -122,6 +126,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
 }
 
 .prp-text3 {
@@ -132,7 +138,10 @@
 
 // carroussel aka sign in
 
-.carroussel {
+.login-page {
+  padding: 50px;
   height: 100vh;
   width: 100%;
+  // display: flex;
+  // align-items: center;
 }
