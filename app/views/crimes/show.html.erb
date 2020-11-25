@@ -34,8 +34,14 @@
 
     <div class='actions-container col-12 col-lg-5'>
       <div class='plan-container'>
-        An image will soon be there!
-        <%# #cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>  <!-- upload to cloudify line without css -->
+        <% unless @crime.photo.attached? %>
+          <%= simple_form_for @crime do |f| %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit 'Upload photo' %>
+          <% end %>
+        <% else %>
+          <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
       </div>
       <% if @crime.skillset.nil? %>
         <p> You need to add a skillset to your crime!</p>
