@@ -1,7 +1,7 @@
 .devise-form-container {
   margin: 5vh auto;
   max-width: 500px;
-  max-height: 900px;
+  max-height: 80vh;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   padding: 50px;
@@ -14,8 +14,11 @@
   }
 }
 
-
 // Input
+
+.color-white {
+  color: #FFF;
+}
 
 .devise-input-container {
   margin-top: 50px;

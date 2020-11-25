@@ -58,5 +58,4 @@ document.addEventListener('turbolinks:load', () => {
   p3ToP4();
   p4ToP3();
   p4ToP5();
-  p5ToP4();
 });
