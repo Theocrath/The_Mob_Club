@@ -2,7 +2,11 @@
 
 #create-event-btn {
   position: absolute;
+  // padding-top: 9px;
+  vertical-align: middle;
   right: 2px;
+  color: $medium-grey;
+  font-size: 16px;
   //unsure of the correct propertys to use in order to put the button on the right
 }
 

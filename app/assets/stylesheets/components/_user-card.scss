@@ -60,7 +60,7 @@
   flex-direction: column;
   align-items: center;
   height: 50%;
-  padding: 0 16px 16px 16px; 
+  padding: 16px; 
 }
 
 .links-container p {
@@ -75,6 +75,7 @@
 
 .color-gold {
   color: $gold;
+  font-size: 16px;
 }
 
 .color-gold:hover {
@@ -90,9 +91,10 @@
 // Avatar
 
 .profile-avatar {
+  // padding-top: 20px;
   max-height: 150px;
   border-radius: 50%;
-  max-width: 100%;
+  max-width: 150%;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
@@ -113,5 +115,5 @@ hr {
 }
 
 .grow{
-  width:100%;
+  width:90%;
 }
