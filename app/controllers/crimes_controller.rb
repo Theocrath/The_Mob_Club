@@ -29,10 +29,11 @@ class CrimesController < ApplicationController
   end
 
   def edit
+    @skillset = Skillset.find(@crime.skillset.id)
   end
 
   def update
-    @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].empty?
+    @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].nil?
     
     if @crime.update(crime_params)
       redirect_to crime_path(@crime), notice: 'Plan updated!'
