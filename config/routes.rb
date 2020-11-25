@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     # crime_chatroom GET    /crimes/:crime_id/chatrooms/:id(.:format)       chatrooms#show
     # crime_teams POST   /crimes/:crime_id/teams(.:format) teams#create
 
-    resources :teams, only: [:create, :update]  #before it was resources :teams, only [:create, :index]
+    resources :teams, only: [:create, :update, :destroy]  #before it was resources :teams, only [:create, :index]
   end
   #added the line above to create a custom route for team index
 
