@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { expandLines } from '../components/expand_lines';
+import { expandLines } from '../components/expand_lines';
 import { userChart } from '../components/user_chart';
 import { crimeChart } from '../components/comparison_chart';
 import { toggleDashboard, toggleNewEventPage } from '../components/show_page';
@@ -39,7 +39,7 @@ import { toggleForm } from "../components/toggle_form";
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
-  // expandLines();
+  expandLines();
   toggleForm();
   userChart();
   toggleTabs();
