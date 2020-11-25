@@ -4,6 +4,15 @@ Rails.application.routes.draw do
 
   resources :crimes, except: :new do
     get 'crime_json' => 'crimes#crime_json'
+    resources :chatrooms, except: [:index, :update, :edit] do
+      resources :messages, only: :create
+    end
+
+    # crimes/:id/chatrooms/:id
+    #for the chatroom, it needs: new, create, show, delete
+
+    # crime_chatroom GET    /crimes/:crime_id/chatrooms/:id(.:format)       chatrooms#show
+    # crime_teams POST   /crimes/:crime_id/teams(.:format) teams#create
 
     resources :teams, only: [:create, :update]  #before it was resources :teams, only [:create, :index]
   end
@@ -11,9 +20,9 @@ Rails.application.routes.draw do
 
   resources :skillsets, only: [:new, :create, :edit, :update]
 
-  resources :chatrooms, only: :show do
-    resources :messages, only: :create
-  end
+  # resources :chatrooms, only: :show do
+  #   resources :messages, only: :create
+  # end
 
   get 'profile', to: 'pages#profile'
   get 'current_user_json' => 'pages#current_user_json'

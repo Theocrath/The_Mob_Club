@@ -46,10 +46,7 @@ const userC = (userStats) => {
           fontSize: 14
         }
       },
-      legend: { display: false },
-    },
-    tooltips: {
-      value: ['Teste1', 'Teste2', 'Teste1', 'Teste2', 'Teste1', 'Teste2', 'Teste1']
+      legend: { display: false }
     }
   });
 };

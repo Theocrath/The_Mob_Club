@@ -1,34 +1,43 @@
-<h1>Crimes that might interest you</h1>
-<h2><%= Crime.count %> misdeeds available</h2>
-<br>
-
-<div class="crime-index-container">
-
-<div>
-  <%= form_tag crimes_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    id: "custom-search-bar",
-    placeholder: "Find a crime"
-  %>
-  <%= submit_tag "Search", class: "btn btn-search" %>
-  <% end %>
+<div class="mob-club-headers">
+  <h1>Crimes that might interest you</h1>
+  <p><%= Crime.count %> misdeeds available</p>
+  <br>
+  <div>
+    <%= form_tag crimes_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      id: "custom-search-bar",
+      placeholder: "Find a crime"
+    %>
+    <%= submit_tag "Search", class: "btn btn-search" %>
+    <% end %>
+  </div>
 </div>
 
 
-  <div class="row">
+<!-- Responsive is done - any changes on theses classes, ask first please -->
+
+<div class="crime-index-container">
+
+  <div class="row justify-content-center">
 
     <% @crimes.each do |crime| %>
-    <div class="col-sm-12 col-lg-6">
+    <% how_many_days = crime.date - Date.today %>
+    <div class="col-sm-offset-12 col-xl-offset-6">
       <%= link_to crime_path(crime) do  %>
       <div class="crime-card">
         <div class="card-head">
-
           <h2><%= crime.title %></h2>
+          <% if how_many_days < 30 && how_many_days > 0 %>
+            <p><i class="fas fa-hourglass-end"></i> This misdeed must be executed soon.</p>
+          <% end %>
+          <% if how_many_days <= 0 %>
+             <p><em>Time out - this crime has expired.</em></p>
+          <% end %>
+
         <div class="card-details">
           <h3><i class="far fa-compass"></i> <%= crime.location %></h3>
-          <% how_many_days = crime.date - Date.today %>
           <h4>In <%= how_many_days.to_i %> days</h4>
         </div>
         </div>

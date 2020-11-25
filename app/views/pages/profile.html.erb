@@ -18,15 +18,15 @@
               <% end %>
             </div>
         </div>
+
         <div class="links-container">
-
-            <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
-            <hr class="trans--grow grow hr0">
-            <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
-            <hr class="trans--grow hr0 grow">
-            <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
-
+          <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
+          <hr class="trans--grow grow hr0">
+          <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
+          <hr class="trans--grow hr0 grow">
+          <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
         </div>
+        
       </div>
     </div>
 
@@ -36,8 +36,17 @@
           <%= render 'skillset-form' %>
         </div>
       <% else %>
-        <div class="chart" style="display:show">
-          <canvas id="userChart"></canvas>
+        <div class="chart-container" style="display:show">
+          <div class="chart">
+            <canvas id="userChart"></canvas>
+          </div>
+          <div class="ranking">
+            <p class="text-sm">Your ranking</p>
+            <p><%= @ranking %></p>
+            <p class="text-sm"><strong><%= @until_next_ranking %></strong>
+              <%= @until_next_ranking == 1 ? 'pt' : 'pts '%>
+              until <%= @next_ranking %></span></p>
+          </div>
         </div>
       <% end %>
 
@@ -59,6 +68,14 @@
             <% else %>
             <ul>
               <% @current_jobs.each do |job| %>
+
+              <% unless job.crime.chatroom.id.nil? %>
+              <%= link_to crime_chatroom_path(job.crime, job.crime.chatroom) do %>
+                <p>go to chat</p>
+              <% end %>
+              <% end %>
+
+
                 <%= link_to crime_path(job.crime) do %>
                   <li>
                     <h6><%= job.crime.title.upcase %></h6>
@@ -113,6 +130,20 @@
           <div class="dashboard">
             <ul>
               <% @crimes.to_a.each do |crime| %>
+
+              <% if crime.chatroom.nil? %>
+
+                      <%= simple_form_for [ crime, @chatroom ] do |f| %>
+                      <%= f.hidden_field :name %>
+                      <%= f.button :submit, 'Start chat' %>
+                      <% end %>
+
+                      <% else %>
+                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
+                        <p>Go to chat</p>
+                      <% end %>
+                    <% end %>
+
                 <%= link_to crime_path(crime.id) do %>
                   <li>
                     <h6><%= crime.title.upcase %></h6>
@@ -128,6 +159,18 @@
                     <% if crime.right_hand.present? %>
                       <p class="pr-3">Right hand: <%= crime.right_hand.username %></p>
                     <% end %>
+
+                  <!--   <%# if crime.chatroom.nil? %>
+                      <%#= simple_form_for [ crime, @chatroom ] do |f| %>
+                      <%#= f.hidden_field :name %>
+                      <%#= f.button :submit, 'Create Chatroom' %>
+                      <%# end %>
+                      <%# else %>
+                      <%#= link_to crime_chatroom_path(crime.id, crime.chatroom) do %>
+                        <p>Go to chat</p>
+                      <%# end %>
+                    <%# end %> -->
+
                   </li>
                 <% end %>
               <% end %>
@@ -139,7 +182,7 @@
     </div>
 
   </div>
-</div>
+<!-- </div> uncommented because it's an extra div tag that doesnt belong anywhere  -->
 
 <%# Create event pop up %>
 

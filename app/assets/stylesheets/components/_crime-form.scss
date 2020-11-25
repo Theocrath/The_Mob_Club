@@ -39,6 +39,10 @@
   display: flex;
   justify-content: space-between;
 }
+.crime-form-container div:nth-child(2) {
+  padding-top: 0;
+  margin-top: 0;
+}
 
 #crime-form-skillset {
   max-height: 50vh;
@@ -51,32 +55,31 @@
   color: #FFF;
 }
 
+.user-skillset-form {
+  max-height: 80vh;
+  background-color: rgb(36,32,30);
+  color: $medium-gold;
+  padding: 60px 70px 70px 70px;
+  border-radius: 30px;
+  max-width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 4px rgba(241, 241, 241, 0.1);
+}
+
+.user-skillset-form form {
+  padding-right: 16px;
+  overflow: auto;
+  max-height: 50vh;
+  color: #FFF;
+}
+
 #create-crime {
   padding: 0 12px;
   height: 45px;
   margin-top: 7px;
 }
 
-// User skillset form
-
-.user-skillset-form {
-  background-color: rgb(36,32,30);
-  color: $medium-gold;
-  padding: 45px 50px 50px 50px;
-  border-radius: 30px;
-  width: 80%;
-  margin: 0 auto;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-}
-
-.user-skillset-form form {
-  padding-right: 16px;
-  padding-left: 25px;
-  overflow: auto;
-  max-height: 55vh;
-  color: #FFF;
-}
-
+// Scrollbar
 .user-skillset-form form::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
 }
@@ -89,13 +92,6 @@
   border-radius: 20px;       /* roundness of the scroll thumb */
   // border: 3px solid orange;  /* creates padding around scroll thumb */
 }
-
-.user-skillset-form p {
-  color: $light-gold;
-}
-
-
-// Scrollbar
 
 #crime-form-skillset form::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */

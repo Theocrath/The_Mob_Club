@@ -9,8 +9,8 @@ const toggleNewEventPage = () => {
 const toggleDashboard = () => {
   $('#dashboard-btn').click(function (e) {
     e.preventDefault();
-    if ($('.chart')[0]) {
-      $('.chart').toggle();
+    if ($('.chart-container')[0]) {
+      $('.chart-container').toggle();
       $('#dashboard-main').slideToggle();
     } else {
       $('.user-skillset-form').toggle();
