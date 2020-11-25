@@ -1,5 +1,5 @@
 meta_product_name: "The Mob Club"
 meta_title: "The Mob Club - A way to organize crimes free of hassle!"
 meta_description: "A way to organize crimes free of hassle!"
-meta_image: "icon-gold.ico" # should exist in `app/assets/images/`
+meta_image: "og-image.jpeg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
