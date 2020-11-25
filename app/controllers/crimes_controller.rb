@@ -3,7 +3,7 @@ class CrimesController < ApplicationController
   # before_action :permitted_skillset_attributes, only: [:show]
 
   def index
-    
+
     if params[:query].present?
       @crimes = Crime.search_crime(params[:query])
     else
@@ -23,7 +23,7 @@ class CrimesController < ApplicationController
 
     @crime.boss = current_user
 
-    unless @crime.save 
+    unless @crime.save
       redirect_to profile_path, notice: 'There was an error. Please fill all the form fields.'
     end
   end
@@ -33,12 +33,21 @@ class CrimesController < ApplicationController
   end
 
   def update
-    @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].nil?
-    
-    if @crime.update(crime_params)
-      redirect_to crime_path(@crime), notice: 'Plan updated!'
+    # @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].nil? || params[:crime].present?
+    # if @crime.update(crime_params)
+    #   redirect_to crime_path(@crime), notice: 'Plan updated!'
+    # else
+    #   render :new
+    # end
+    if params[:crime].present?
+      @crime.right_hand = User.find(right_hand_param[:right_hand]) unless right_hand_param[:right_hand].nil?
+      if @crime.update(crime_params)
+        redirect_to crime_path(@crime), notice: 'Plan updated!'
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to crime_path(@crime), notice: "Don't click on upload for no reason."
     end
   end
 
@@ -47,7 +56,7 @@ class CrimesController < ApplicationController
     # We may need to change this redirect path.
     redirect_to profile_path
   end
-  
+
   def crime_json
     @crime = Crime.find(params[:crime_id])
     # @skillset = Skillset.where("crime_id = ?", params[:crime_id])
