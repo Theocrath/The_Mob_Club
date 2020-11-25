@@ -9,13 +9,16 @@
   // background-color: white; original navbar
 }
 
-.navbar-lewagon i {
+.navbar-brand i {
   color: $gold;
   font-size: 36px;
   font-weight: normal;
   // background-color: white; original navbar
 }
 
+.dropdown-burger {
+  color: red;
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;

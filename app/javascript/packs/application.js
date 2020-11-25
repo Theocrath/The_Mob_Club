@@ -40,7 +40,7 @@ import { toggleForm } from "../components/toggle_form";
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
-  // homeToLogin();
+  homeToLogin();
   expandLines();
   toggleForm();
   userChart();
@@ -59,5 +59,4 @@ document.addEventListener('turbolinks:load', () => {
   p3ToP4();
   p4ToP3();
   p4ToP5();
-  homeToLogin();
 });
