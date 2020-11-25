@@ -17,7 +17,16 @@
 }
 
 .dropdown-burger {
-  color: red;
+  color: $gold;
+  font-size: 28px;
+  transition: 0.2s ease-out;
+  text-shadow: 2px 2px 4px rgba(21,21,21,0.7);
+}
+
+.dropdown-burger:hover {
+  color: $pale-grey;
+  font-size: 28px;
+  text-shadow: 1px 1px 3px rgb(0,0,0);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -28,14 +37,14 @@
   color: $medium-gold;
   padding: 0 20px;
   margin-bottom: 0;
-  padding-top: 5px;
+  align-self: center;
   font-weight: 300;
   transition: color 0.05s ease-in 0.05s;
 }
 
 
 .nav-link2:hover {
-  color: $light-gold;
+  color: $pale-grey;
   // font-weight: normal;
   transition: color 0.05s ease 0s;
   text-decoration: none;
@@ -77,7 +86,8 @@
   margin-top: 2vh;
   padding-right: 0;
   padding: 0;
-  background-color: rgba(31,29,27, 0.9);
+  background-color: rgba(31,29,27, 1);
+  border: 1px solid rgba(21,21,21, 1);
   border-radius: 4px;
 }
 
