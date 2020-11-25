@@ -1,37 +1,5 @@
-// Arrows
-// const homeArrow = document.querySelector('#arrow-dwn');
-// const page2TopArrow = document.querySelector('#page2TopArrow');
-// const page2BottomArrow = document.querySelector('#page2BottomArrow');
-// const page3TopArrow = document.querySelector('#page3TopArrow');
-// const page3BottomArrow = document.querySelector('#page3BottomArrow');
-// const page4TopArrow = document.querySelector('#page4TopArrow');
-// const page4BottomArrow = document.querySelector('#page4BottomArrow');
-// const page5TopArrow = document.querySelector('#page5TopArrow');
-
-// Pages
-// const homePage = document.querySelector('.hero-banner');
-// const page2 = document.querySelector('.prp-value');
-// const page3 = document.querySelector('.prp-value2');
-// const page4 = document.querySelector('.prp-value3');
-// const carroussel = document.querySelector('.carroussel');
-
-// const scrollTo = (page) => {
-//   page.scrollIntoView({
-//     behavior: 'smooth',
-//     block: 'end',
-//     inline: 'nearest'
-//   });
-// };
-
-// const p2toHome = () => {
-//   const page2TopArrow = document.querySelector('#page2TopArrow');
-//   const homePage = document.querySelector('.hero-banner');
-//   page2TopArrow.addEventListener('click', scrollTo(homePage));
-// };
-
-
 const homeToP2 = () => {
-  const homeArrow = document.querySelector('#homeArrow');
+  const homeArrow = document.querySelector('#arrow-dwn');
   const page2 = document.querySelector('.prp-value');
   if (homeArrow) {
     homeArrow.addEventListener('click', () => {

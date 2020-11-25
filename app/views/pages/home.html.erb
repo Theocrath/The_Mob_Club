@@ -10,14 +10,14 @@
         <i id="logo" class="fab fa-first-order"></i>
        <% end %>
     <% end %>
-    <button id="homeArrow"><i id="arrow-dwn" class="fas fa-angle-down"></i></button>
+    <i id="arrow-dwn" class="fas fa-angle-down"></i>
 </div>
 
 
 
 
 <div class="prp-value">
-  <button id="page2TopArrow"><i class="fas fa-angle-up"></i></button>
+  <i class="fas fa-angle-up" id="page2TopArrow"></i>
   <div class="prp-container">
     <h1>1</h1>
     <h1>define <br> your skillset.</h1>
@@ -25,12 +25,12 @@
       <p>Once you are in, you can let others know your worth. <br> From explosives expert to mastery in seduction - define your skills in your profile in an easy, convenient way.</p>
     </div>
   </div>
-  <button id="page2BottomArrow" ><i class="fas fa-angle-down"></i></button>
+  <i class="fas fa-angle-down" id="page2BottomArrow"></i>
 </div>
 
 </div>
 <div class="prp-value2">
-<button id="page3TopArrow" ><i class="fas fa-angle-up"></i></button>
+  <i class="fas fa-angle-up" id="page3TopArrow"></i>
   <div class="prp-container2">
     <h1>2</h1>
     <h1>find the<br> perfect crime.</h1>
@@ -38,13 +38,13 @@
       <p>In our club, it’s easy to find the perfect match - all you have to do is browse through the latest, most evil plans ever conceived, and earning your coins is only a click away.</p>
     </div>
   </div>
-  <button id="page3BottomArrow"><i class="fas fa-angle-down"></i></button>
+  <i class="fas fa-angle-down" id="page3BottomArrow"></i>
 </div>
 
 
 </div>
 <div class="prp-value3">
-  <button id="page4TopArrow"><i class="fas fa-angle-up"></i></button>
+  <i class="fas fa-angle-up" id="page4TopArrow"></i>
   <div class="prp-container">
     <h1>3</h1>
     <h1>hire the best <br> mobsters.</h1>
@@ -52,10 +52,49 @@
       <p>Have a masterplan, that needs some expertise in opening bank vaults? Finding the right brains or muscle is now made easy - and discretion is the middle name of our Club.</p>
     </div>
   </div>
-  <button id="page4BottomArrow"><i class="fas fa-angle-down"></i></button>
+  <i class="fas fa-angle-down" id="page4BottomArrow"></i>
 </div>
 
 <div class="carroussel">
-  <button id="page5TopArrow"><i class="fas fa-angle-up"></i></button>
+  <i class="fas fa-angle-up" id="page5TopArrow"></i>
+
+  <div class='devise-form-container text-center'>
+    <h2>Welcome<br>to the<br>Mob Club</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="devise-input-container">
+        <%= f.input :username,
+                    label: false,
+                    placeholder: 'Username',
+                    autofocus: true,
+                    input_html: {class: 'devise-input-field'} %>         
+        <%= f.input :email,
+                    label: false,
+                    placeholder: 'E-mail',
+                    required: true,
+                    input_html: { autocomplete: "email", class: 'devise-input-field' }%>
+        <%= f.input :password,
+                    label: false,
+                    placeholder: "Type your password... (#{@minimum_password_length} characters minimum)",
+                    required: true,
+                    # hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password", class: 'devise-input-field' } %>
+        <%= f.input :password_confirmation,
+                    label: false,
+                    placeholder: 'Type your password again...',
+                    required: true,
+                    input_html: { autocomplete: "new-password", class: 'devise-input-field' } %>
+      </div>
+
+      <div class='devise-button-container'>
+        <%= f.button :submit, "Create Account", class:"devise-btn" %>
+        <% if controller_name != 'sessions' %>
+          <%= link_to "Log in", new_session_path(resource_name), class:"devise-btn" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
 </div>

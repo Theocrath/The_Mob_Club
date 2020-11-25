@@ -75,6 +75,7 @@
   display: flex;
   align-items: center;
   scroll-snap-stop: always;
+  flex-direction: column;
 }
 
 .prp-container {
@@ -97,6 +98,7 @@
   text-align: right;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .prp-container2 {
@@ -119,6 +121,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .prp-text3 {
@@ -127,4 +130,10 @@
   text-shadow: 4px 4px 8px black;
 }
 
+// carroussel aka sign in
 
+.carroussel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}

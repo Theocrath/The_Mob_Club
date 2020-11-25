@@ -30,7 +30,7 @@
 
     <div class='devise-button-container'>
       <%= f.button :submit, "Create Account", class:"devise-btn" %>
-      <%- if controller_name != 'sessions' %>
+      <% if controller_name != 'sessions' %>
         <%= link_to "Log in", new_session_path(resource_name), class:"devise-btn" %>
       <% end %>
     </div>
