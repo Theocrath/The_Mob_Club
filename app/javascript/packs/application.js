@@ -34,6 +34,7 @@ import { toggleTabs, activateTab } from '../components/toggle_tabs';
 import { toggleCrimeFormCard, toggleSkillsetFormCard } from "../components/form_progression";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { toggleForm } from "../components/toggle_form";
+import { homeToP2, p2toHome, p2ToP3, p3ToP2, p3ToP4, p4ToP3, p4ToP5, p5ToP4 } from "../components/scroll_home";
 
 
 // let paramsId = document.getElementById("paramsId").innerHTML;
@@ -50,4 +51,12 @@ document.addEventListener('turbolinks:load', () => {
   toggleSkillsetFormCard();
   crimeChart();
   initChatroomCable();
+  homeToP2();
+  p2toHome();
+  p2ToP3();
+  p3ToP2();
+  p3ToP4();
+  p4ToP3();
+  p4ToP5();
+  p5ToP4();
 });

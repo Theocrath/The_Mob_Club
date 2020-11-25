@@ -3,20 +3,21 @@
   <h2>click to enter</h2>
     <% if current_user.nil? %>
       <%= link_to new_user_session_path do %>
-      <i id="logo" class="fab fa-first-order"></i>
-    <% end %>
+        <i id="logo" class="fab fa-first-order"></i>
+      <% end %>
     <% else %>
       <%= link_to profile_path do %>
-      <i id="logo" class="fab fa-first-order"></i>
+        <i id="logo" class="fab fa-first-order"></i>
+       <% end %>
     <% end %>
-    <% end %>
-    <i id="arrow-dwn" class="fas fa-angle-down"></i>
+    <button id="homeArrow"><i id="arrow-dwn" class="fas fa-angle-down"></i></button>
 </div>
 
 
 
 
 <div class="prp-value">
+  <button id="page2TopArrow"><i class="fas fa-angle-up"></i></button>
   <div class="prp-container">
     <h1>1</h1>
     <h1>define <br> your skillset.</h1>
@@ -24,10 +25,12 @@
       <p>Once you are in, you can let others know your worth. <br> From explosives expert to mastery in seduction - define your skills in your profile in an easy, convenient way.</p>
     </div>
   </div>
+  <button id="page2BottomArrow" ><i class="fas fa-angle-down"></i></button>
 </div>
 
 </div>
 <div class="prp-value2">
+<button id="page3TopArrow" ><i class="fas fa-angle-up"></i></button>
   <div class="prp-container2">
     <h1>2</h1>
     <h1>find the<br> perfect crime.</h1>
@@ -35,11 +38,13 @@
       <p>In our club, it’s easy to find the perfect match - all you have to do is browse through the latest, most evil plans ever conceived, and earning your coins is only a click away.</p>
     </div>
   </div>
+  <button id="page3BottomArrow"><i class="fas fa-angle-down"></i></button>
 </div>
 
 
 </div>
 <div class="prp-value3">
+  <button id="page4TopArrow"><i class="fas fa-angle-up"></i></button>
   <div class="prp-container">
     <h1>3</h1>
     <h1>hire the best <br> mobsters.</h1>
@@ -47,5 +52,10 @@
       <p>Have a masterplan, that needs some expertise in opening bank vaults? Finding the right brains or muscle is now made easy - and discretion is the middle name of our Club.</p>
     </div>
   </div>
+  <button id="page4BottomArrow"><i class="fas fa-angle-down"></i></button>
 </div>
 
+<div class="carroussel">
+  <button id="page5TopArrow"><i class="fas fa-angle-up"></i></button>
+
+</div>
