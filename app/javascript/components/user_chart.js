@@ -1,7 +1,3 @@
-// const bodyTag = document.querySelector('profile-show');
-
-// if (bodyTag) {
-
 const userC = (userStats) => {
   Chart.defaults.global.defaultFontColor = 'rgba(232, 205, 162, 1)';
   Chart.defaults.global.defaultFontSize = 14;
@@ -52,11 +48,13 @@ const userC = (userStats) => {
 };
 
 const userChart = () => {
+  let ctx = document.querySelector('#userChart');
+  if (ctx) {
   $.get('/current_user_json', function (userStats) {
     console.log('testing current_user_json response', userStats.close_combat);
     userC(userStats);
   });
-}
-// }
+  };
+};
 
 export { userChart };
