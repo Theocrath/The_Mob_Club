@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
     if @team.save
       redirect_to crime_path(@crime), notice: 'You applied to this job succesfully!'
     else
-      render :new
+      redirect_to crime_path(@crime), notice: 'You already applied to this job...'
     end
   end
 

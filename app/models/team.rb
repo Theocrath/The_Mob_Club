@@ -5,4 +5,6 @@ class Team < ApplicationRecord
 
   # Validations
   validates :status, inclusion: { in: [true, false] }
+  validates :user, uniqueness: { scope: :crime, 
+    message: 'You already applied to this crime...'}
 end

@@ -69,7 +69,7 @@
             <ul>
               <% @current_jobs.each do |job| %>
 
-              <% unless job.crime.chatroom.id.nil? %>
+              <% unless job.crime.chatroom.nil? %>
               <%= link_to crime_chatroom_path(job.crime, job.crime.chatroom) do %>
                 <p>go to chat</p>
               <% end %>
