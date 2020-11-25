@@ -1,58 +1,110 @@
-// Top part of page
-
-.tag-container {
-  ul {
-    padding: 0;
-  }
-}
-
-
-.tag-container {
-  li {
-    list-style: none;
-    display: inline-flex;
-    margin-right: 12px;
-    margin-bottom: 6px;
-    background: $gold;
-    padding: 4px 15px;
-    color: $dark-brown;
-    border-radius: 15px;
-    // text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-  }
-}
-
-
-// Middle part of page
-
-.flex-container {
-  display: flex;
-  margin: 30px 20px;
-  height: fit-content;
-}
-
 // Details
 
 .details-container {
-  display: flex;
-  flex-grow: 2;
-  justify-content: space-between;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 25px;
-  padding: 30px;
-  max-width: 90%;
+  position: relative;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
 }
+
+.crime-details-container {
+  padding: 30px 55px;
+  flex-grow: 4;
+}
+
+.reward-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  .crime-reward {
+    color: #E8CDA2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $brown;
+    padding: 8px 50px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+  } 
+}
+
+.day-location-container {
+  display: flex;
+  justify-content: space-between;
+
+  i {
+    padding-right: 5px;
+  }
+
+  p:last-child {
+    color: #D3AB6A;
+  }
+}
+
+.actions-btn-container {
+  // display: flex;
+  // justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid $gold;
+  margin: 0 25px;
+  position: relative;
+  bottom: 15px;
+}
+
+.actions-btn {
+  // margin-right: 20px;
+  color: #D3AB6A;
+  font-weight: bold;
+  border-left: 1px solid $gold;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.actions-btn:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+
+// Actions
 
 .actions-container {
-  flex-grow: 1;
+  padding: 0;
 }
 
-.crime-details {
-  max-width: 60%;
+.plan-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  text-align: center;
+  height: 45%;
 }
 
-.crime-stats {
-  max-width: 40%;
+.crime-chart {
+  margin: 10px 0;
+}
+
+.members-container {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 25px;
+  width: 100%;
+  height: 45%;
+}
+
+.team-list {
+  background: rgba(100, 100, 100, 0.2);
+  width: 45%;
+  border-radius: 25px;
+  padding: 15px;
+
+  h2{
+    text-align: center;
+  }
 }
 
 .team-list-members {
@@ -60,26 +112,12 @@
   justify-content: space-between;
 }
 
-.crime-chart {
-  height: 50%;
-}
 
-// Actions
 
-.actions-container {
-  padding: 20px;
-}
 
-.actions-btn {
-  display: grid;
-  row-gap: 10px;
-  justify-content: center;
-  max-height: 30%;
-  margin-bottom: 70px;
-}
 
-.background-grey {
-  background: rgba(100, 100, 100, 0.2);
-  border-radius: 25px;
-  padding: 20px;
-}
+
+
+
+
+
