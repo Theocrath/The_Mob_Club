@@ -2,13 +2,13 @@
   margin: 5vh auto;
   max-width: 500px;
   max-height: 80vh;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(44,41,40);
   border-radius: 15px;
   padding: 50px;
   text-align: center;
 
   h2 {
-    text-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     font-size: 32px;
     color:  $gold;
   }
@@ -42,8 +42,14 @@
 
 .password-position {
   text-align: right;
-  // margin-bottom: 30px;
 }
+
+.password-position a {
+  font-size: 14px;
+  font-weight: normal;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
 
 
 // Button
@@ -63,13 +69,29 @@
   font-size: 18px;
   padding: 10px 40px;
   border-radius: 50px;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
 }
 
 .devise-btn:hover {
   color: $black;
   background: $light-gold;
-  transition: 0.3s ease-in-out;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
 }
 
+.devise-btn-sign-up {
+  display: block;
+  border: 1px solid $gold;
+  background: none;
+  font-weight: bold ;
+  font-size: 18px;
+  padding: 10px 40px;
+  border-radius: 50px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+}
+
+.devise-btn-sign-up:hover {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  background-color: rgba(64, 60, 58, 1);
+}
