@@ -13,8 +13,11 @@
           <% end %>
           <div class='day-location-container'>
             <% days_until = (@crime.date - Date.today).to_i %>
-
-            <p>In <%= days_until %> days</p>
+            <% if days_until == 0 %>
+              <p>Starts today</p>
+            <% else %>
+              <p>In <%= days_until %> days</p>
+            <% end %>
             <p> <%= @crime.date %></p>
             <p><i class="far fa-compass"></i><%= @crime.location %></p>
           </div>
