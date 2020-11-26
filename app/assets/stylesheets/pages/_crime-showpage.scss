@@ -69,7 +69,7 @@
 
 .actions-btn:hover {
   // margin-right: 20px;
-  color: $pale-grey;
+  color: $very-light-ruby;
   // border-left: 1px solid $gold;
   padding: 0 auto;
   text-align: center;
@@ -228,6 +228,10 @@
   h2 {
     font-family: Raleway;
     font-weight: 400;
+    text-align: left;
   }
 }
 
+.tabs-cont {
+  background-color: green;
+}

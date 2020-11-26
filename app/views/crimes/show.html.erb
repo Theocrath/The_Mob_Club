@@ -39,55 +39,44 @@
         </div>
 
       </div>
-      <div class="photo-cont">
-        <h1>TABS</h1>
-
+      <div class="tabs-cont">
         <% if current_user.id == @crime.boss_id || current_user.id == @crime.right_hand_id %>
 
-  <div class="nav tabs">
-    <a href="#active-members" class="tab active">Team members</a>
-    <a href="#pending-members" class="tab">Pending members</a>
-  </div>
+        <div class="nav tabs">
+          <a href="#active-members" class="tab active">Team members</a>
+          <a href="#pending-members" class="tab">Pending members</a>
+        </div>
 
-  <div id="active-members" class="toggle" style="display:show">
-    <p>Test 1</p> <!-- aqui por entao o container com a lista de membros activos-->
-  </div>
+        <div id="active-members" class="toggle" style="display:show">
+          <h2>Current squad</h2>
+            <% @current_teams.each do |current_team| %>
+              <% if current_team.status == true %>
+                <p><%= current_team.user.username %></p>
+              <% else %>
+                <p>No one is in your team yet!</p>
+              <% end %>
+            <% end %> <!-- aqui por entao o container com a lista de membros activos-->
+        </div>
 
-   <div id="pending-members" class="toggle" style="display:none">
-    <p>Test 2</p> <!-- aqui por entao o container com a lista de membros pending -->
-  </div>
-
-    <div class='members-container col-12 col-lg-6 mb-5'>
-      <div class='team-list'>
-        <h2>Current squad</h2>
-        <% @current_teams.each do |current_team| %>
-          <% if current_team.status == true %>
-            <p><%= current_team.user.username %></p>
-          <% else %>
-            <p>No one is in your team yet!</p>
-          <% end %>
-        <% end %>
-      </div>
-      <div class='team-list'>
-        <h2>Pending requests</h2>
-        <% @current_teams.each do |current_team| %>
-          <% if current_team.status == false %>
-            <div class='team-list-members'>
-              <p><%= current_team.user.username %></p>
-              <div class='btn-status-container'>
-                <%= link_to crime_team_path(@crime, current_team), method: :patch do %>
-                  <i class="far fa-check-square"></i>
-                <% end %>
-                <%= link_to crime_team_path(@crime, current_team), method: :delete,
-                    data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
-                  <i class="far fa-window-close"></i>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+        <div id="pending-members" class="toggle" style="display:none">
+          <h2>Pending requests</h2>
+            <% @current_teams.each do |current_team| %>
+              <% if current_team.status == false %>
+                <div class='team-list-members'>
+                  <p><%= current_team.user.username %></p>
+                  <div class='btn-status-container'>
+                    <%= link_to crime_team_path(@crime, current_team), method: :patch do %>
+                      <i class="far fa-check-square"></i>
+                    <% end %>
+                    <%= link_to crime_team_path(@crime, current_team), method: :delete,
+                        data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
+                      <i class="far fa-window-close"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %> <!-- aqui por entao o container com a lista de membros pending -->
+        </div>
 
   <% end %>
 
