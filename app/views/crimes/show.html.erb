@@ -1,47 +1,99 @@
-<div class='container-fluid'>
-  <div class='row'>
-    <div class='details-container col-12 col-lg-6 mb-5'>
-      <div class='crime-details-container'>
-        <div class='reward-container'>
-          <p class='crime-reward'>Reward<br><%= @crime.reward %>$</p>
+<div class="show-page-container">
+  <div class="row">
+    <div class="crime-new-cont col-sm-12 col-lg-6">
+      <div class="crime-cont">
+        <div class="reward-cont">
+          <p>Reward<br></p>
+          <h2><%= @crime.reward %>$</h2>
         </div>
-        <h2><%= @crime.title %></h2>
-        <% unless @crime.right_hand.nil? %>
-          <p><%= @crime.right_hand.username %></p>
-        <% end %>
-        <div class='day-location-container'>
-          <p>In <%= (@crime.date - Date.today).to_i %> days</p>
-          <p> <%= @crime.date %></p>
-          <p><i class="far fa-compass"></i><%= @crime.location %></p>
-        </div>
-        <p><%= @crime.description %></p>
-      </div>
+        <div class="crime-dtl">
+          <h2><%= @crime.title %></h2>
+          <% unless @crime.right_hand.nil? %>
+            <p><%= @crime.right_hand.username %></p>
+          <% end %>
+          <div class='day-location-container'>
+            <% days_until = (@crime.date - Date.today).to_i %>
 
-      <hr class="trans--grow hr0">
-      <div class='actions-btn-container d-flex'>
-        <%= link_to crimes_path do %>
-          <div class="actions-btn"> Back </div>
-        <% end %>
-        <% unless current_user == @crime.boss || current_user == @crime.right_hand %>
-          <%= render "teams/new" %>
-        <% end %>
-        <% if current_user == @crime.boss || current_user == @crime.right_hand %>
-          <%= link_to 'Update event', edit_crime_path(@crime), class: 'actions-btn' %>
-        <% end %>
-        <% if current_user == @crime.boss %>
-          <%= link_to 'Cancel event', crime_path(@crime), method: :delete,
-              data: { confirm: 'Are you sure, mate?'}, class: 'actions-btn' %>
-        <% end %>
+            <p>In <%= days_until %> days</p>
+            <p> <%= @crime.date %></p>
+            <p><i class="far fa-compass"></i><%= @crime.location %></p>
+          </div>
+          <div class="descr-cont">
+          <p><%= @crime.description %></p>
+          </div>
+          <hr class="trans--grow hr0">
+
+          <div class='actions-btn-container d-flex'>
+            <%= link_to crimes_path do %>
+              <div class="actions-btn"> Back </div>
+            <% end %>
+            <% unless current_user == @crime.boss || current_user == @crime.right_hand %>
+              <%= render "teams/new" %>
+            <% end %>
+            <% if current_user == @crime.boss || current_user == @crime.right_hand %>
+              <%= link_to 'Update event', edit_crime_path(@crime), class: 'actions-btn' %>
+            <% end %>
+            <% if current_user == @crime.boss %>
+              <%= link_to 'Cancel event', crime_path(@crime), method: :delete,
+                  data: { confirm: 'Are you sure, mate?'}, class: 'actions-btn' %>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+      <div class="tabs-cont">
+        <% if current_user.id == @crime.boss_id || current_user.id == @crime.right_hand_id %>
+        <div class="nav tabs">
+          <a href="#active-members" class="tab active">Team members</a>
+          <a href="#pending-members" class="tab">Pending members</a>
+        </div>
+
+        <div id="active-members" class="toggle" style="display:show">
+          <h3>This is the list of accepted member of your mob.</h3>
+            <% @current_teams.each do |current_team| %>
+              <% if current_team.status == true %>
+                <p><%= current_team.user.username %></p>
+
+                <% if current_team.present? == false %>
+                <p>There are no members in your squad yet.</p>
+                <% end %>
+              <% end %>
+            <% end %> <!-- aqui por entao o container com a lista de membros activos-->
+        </div>
+
+        <div id="pending-members" class="toggle" style="display:none">
+          <h3>These criminals are waiting for your confirmation:</h3>
+            <% @current_teams.each do |current_team| %>
+              <% if current_team.status == false %>
+                <div class='team-list-members'>
+                  <p><%= current_team.user.username %></p>
+                  <div class='btn-status-container'>
+                    <%= link_to crime_team_path(@crime, current_team), method: :patch do %>
+                      <i class="far fa-check-square"></i>
+                    <% end %>
+                    <%= link_to crime_team_path(@crime, current_team), method: :delete,
+                        data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
+                      <i class="far fa-window-close"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %> <!-- aqui por entao o container com a lista de membros pending -->
+        </div>
+        <% else %>
+
+  <% end %>
+
       </div>
 
     </div>
 
-    <div class='actions-container col-12 col-lg-5'>
-      <div class='plan-container'>
-        <div class='plan-photo'>
-          <% if current_user.id == @crime.boss_id %>
-          <% unless @crime.photo.attached? %>
-            <%= simple_form_for @crime do |f| %>
+    <div class="crime-new-cont col-sm-12 col-lg-6">
+        <div class="photo-cont">
+        <!--   <div class='plan-photo'> -->
+            <% if current_user.id == @crime.boss_id %>
+            <% unless @crime.photo.attached? %>
+              <%= simple_form_for @crime do |f| %>
               <%= f.input :photo, as: :file %>
               <%= f.submit 'Upload photo' %>
             <% end %>
@@ -50,12 +102,24 @@
           <% end %>
           <% else %>
           <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill if @crime.photo.attached? %>
-          <p style="font-weight:200">There are no added attachments for this crime.</p>
+          <p style="font-weight:200">There are no added plans for this crime.</p>
           <% end %>
+        <!-- </div> -->
+
+        </div>
+      <div class="arrow-cont">
+        <div class="scrl-to-chart-arrow">
+          <p>Scroll down see the stats this crime demands</p>
+          <i id="chart-arrow-dwn" class="fas fa-angle-down"></i>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <% if current_user.id == @crime.boss_id %>
+<!-- CHART -->
+<div class="cht-cont-1">
+  <% if current_user.id == @crime.boss_id %>
       <% if @crime.skillset.nil? %>
         <p> You need to add a skillset to your crime!</p>
       <% else %>
@@ -73,60 +137,6 @@
       <% end %>
       <% end %>
     </div>
-  </div>
-</div>
-
-<!-- Team container -->
-<!-- <div class='d-none'> -->
-
-  <% if current_user.id == @crime.boss_id || current_user.id == @crime.right_hand_id %>
-
-  <div class="nav tabs">
-    <a href="#active-members" class="tab active">Team members</a>
-    <a href="#pending-members" class="tab">Pending members</a>
-  </div>
-
-  <div id="active-members" class="toggle" style="display:show">
-    <p>Test 1</p> <!-- aqui por entao o container com a lista de membros activos-->
-  </div>
-
-   <div id="pending-members" class="toggle" style="display:none">
-    <p>Test 2</p> <!-- aqui por entao o container com a lista de membros pending -->
-  </div>
-
-    <div class='members-container col-12 col-lg-6 mb-5'>
-      <div class='team-list'>
-        <h2>Current squad</h2>
-        <% @current_teams.each do |current_team| %>
-          <% if current_team.status == true %>
-            <p><%= current_team.user.username %></p>
-          <% else %>
-            <p>No one is in your team yet!</p>
-          <% end %>
-        <% end %>
-      </div>
-      <div class='team-list'>
-        <h2>Pending requests</h2>
-        <% @current_teams.each do |current_team| %>
-          <% if current_team.status == false %>
-            <div class='team-list-members'>
-              <p><%= current_team.user.username %></p>
-              <div class='btn-status-container'>
-                <%= link_to crime_team_path(@crime, current_team), method: :patch do %>
-                  <i class="far fa-check-square"></i>
-                <% end %>
-                <%= link_to crime_team_path(@crime, current_team), method: :delete,
-                    data: { confirm: "Are you sure you want to decline #{current_team.user.username}?"} do %>
-                  <i class="far fa-window-close"></i>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-  <% end %>
 <!-- </div> -->
 <%# This is used to pass the crime's id to the chart %>
 <p id='paramsId' style="visibility: hidden;"><%= @crime.id %></p>
