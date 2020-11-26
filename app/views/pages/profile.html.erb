@@ -143,23 +143,24 @@
                   <% end %>
                   <div class="li-dash-org">
                     <% if crime.chatroom.nil? %>
-                        <div>                    
-                          <p class="float-left"><small>
-                            <% if (crime.date - Date.today).to_i == 0 %>
-                              The event is <strong>today.</strong>
-                            <% elsif (crime.date - Date.today).to_i < 0 %>
-                              The event has passed.
-                            <% else %>
-                              In <%= (crime.date - Date.today).to_i %> days.
-                            <% end %>
-                          </small></p>
-                          <div>
-                            <%= simple_form_for [ crime, @chatroom ] do |f| %>
-                            <%= f.hidden_field :name %>
-                            <%= f.button :submit, 'Start chat', class: 'chat-profile-cta text-14' %>
-                            <% end %>
-                          </div>
-                        </div>
+                      <div>                    
+                        <p class="float-left"><small>
+                          <% if (crime.date - Date.today).to_i == 0 %>
+                            The event is <strong>today.</strong>
+                          <% elsif (crime.date - Date.today).to_i < 0 %>
+                            The event has passed.
+                          <% else %>
+                            In <%= (crime.date - Date.today).to_i %> days.
+                          <% end %>
+                        </small></p>
+                      </div>
+                      <div>
+                        <%= simple_form_for [ crime, @chatroom ], class: 'chat-profile-cta text-14' do |f| %>
+                        <%= f.hidden_field :name %>
+                        <%= f.button :submit, 'Go to chat' %>
+                        <% end %>
+                      </div>
+                  </div>
                     <% else %>
                       <p><small>
                         <% if (crime.date - Date.today).to_i == 0 %>
