@@ -21,6 +21,7 @@
   text-shadow: 1px 1px 4px rgba(21,21,21,0.9);
 }
 
+
 #logo {
   font-size: 48px;
   font-weight: normal;
@@ -89,6 +90,12 @@
   padding-top: 20px;
 }
 
+.prp-text p {
+  font-size: 20px;
+  font-weight: 300;
+  text-shadow: 2px 2px 8px black;
+}
+
 // for the middle proposition nr 2
 
 .prp-value2 {
@@ -112,6 +119,11 @@
 .prp-text2 {
   text-align: left;
   padding-top: 20px;
+}
+
+.prp-text2 p {
+  font-size: 20px;
+  font-weight: 300;
   text-shadow: 2px 2px 8px black;
 }
 
@@ -136,6 +148,12 @@
   text-shadow: 4px 4px 8px black;
 }
 
+.prp-text3 p {
+  font-size: 20px;
+  font-weight: 300;
+  text-shadow: 2px 2px 8px black;
+}
+
 // carroussel aka sign in
 
 #login-page {
@@ -145,3 +163,4 @@
   // display: flex;
   // align-items: center;
 }
+
