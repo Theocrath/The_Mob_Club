@@ -7,12 +7,14 @@
 .chatroom-container {
   margin: auto;
   width: 80%;
+  // box-shadow: $box-medium;
 }
 
 .talk-container {
   background-image: linear-gradient($brown, $dark-brown);;
   padding: 20px 30px;
   border-radius: 15px;
+  box-shadow: $box-medium;
 }
 
 .cht-button-back {
