@@ -9,12 +9,28 @@
   box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 
   h2 {
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     font-size: 32px;
-    color:  rgb(232,205,162);
+    color:  $medium-gold;
   }
 }
 
+.sign-up-form-container {
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 80vh;
+  background-color: rgb(44,41,40);
+  border-radius: 15px;
+  padding: 30px 50px;
+  text-align: center;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+
+    h2 {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+    color:   $medium-gold;
+  }
+}
 // Input
 
 .color-white {
@@ -66,7 +82,7 @@
 .devise-btn {
   display: block;
   color: $brown;
-  background: $light-gold;
+  background: $medium-gold;
   font-weight: bold ;
   font-size: 18px;
   padding: 10px 40px;
@@ -82,9 +98,9 @@
 }
 
 .devise-btn-sign-up {
-  color: $light-gold;
+  color: $medium-gold;
   display: block;
-  border: 1px solid $light-gold;
+  border: 1px solid $medium-gold;
   background: none;
   font-weight: bold ;
   font-size: 18px;
@@ -96,6 +112,6 @@
 
 .devise-btn-sign-up:hover {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-  background-color: rgba(64, 60, 58, 1);
+  background-color: rgba(54, 50, 48, 1);
   border: 1px solid rgb(232,205,162);
 }

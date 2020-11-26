@@ -25,16 +25,18 @@
   display: inline;
   background-color: $gold;
   color: $black;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 30px;
   font-weight: bold;
   padding: 5px 10px;
-  border: 2px solid $gold;
+  border: 1px solid $gold;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .msgess-button:hover {
   display: inline;
   background-color: $light-gold;
-  border: 2px solid $light-gold;
+  border: 1px solid $light-gold;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
