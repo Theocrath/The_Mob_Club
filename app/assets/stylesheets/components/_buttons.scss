@@ -7,7 +7,7 @@
   font-size: 18px;
   border-radius: 30px;
   font-weight: bold;
-  padding: 10px 30px;
+  padding: 8px 26px;
   border: 1px solid $gold;
 }
 
@@ -22,13 +22,14 @@
 // below, use this as back or cancel button
 
 .cancel-button {
+  height: 36px;
   display: inline;
   color: #D3AB6A;
   font-size: 16px;
   border: 1px solid #D3AB6A;
   border-radius: 30px;
   font-weight: bold;
-  padding: 10px 30px;
+  padding: 8px 26px;
   box-shadow: $box-medium;
 }
 
@@ -41,6 +42,7 @@
 }
 
 .create-event {
+  height: 36px;
   display: inline;
   background-color: $gold;
   color: white;

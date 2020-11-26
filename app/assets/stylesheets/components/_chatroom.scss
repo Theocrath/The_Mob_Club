@@ -2,11 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 0 20px 80px;
 }
 
 .chatroom-container {
   margin: auto;
   width: 80%;
+  min-height: 100vh;
   // box-shadow: $box-medium;
 }
 
@@ -15,6 +17,11 @@
   padding: 20px 30px;
   border-radius: 15px;
   box-shadow: $box-medium;
+}
+
+.chat-btn-container {
+  margin-top: 16px;
+  height: 36px;
 }
 
 .cht-button-back {

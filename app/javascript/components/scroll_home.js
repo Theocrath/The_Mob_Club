@@ -71,7 +71,7 @@ const p3ToP2 = () => {
 const p3ToP4 = () => {
   const page3BottomArrow = document.querySelector('#page3BottomArrow');
   const page4 = document.querySelector('.prp-value3');
-  if (page3TopArrow) {
+  if (page3BottomArrow) {
     page3BottomArrow.addEventListener('click', () => {
       page4.scrollIntoView({
         behavior: 'smooth',

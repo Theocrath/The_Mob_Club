@@ -40,6 +40,7 @@ import { toggleForm } from "../components/toggle_form";
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
   homeToLogin();
   expandLines();
   toggleForm();
@@ -51,7 +52,6 @@ document.addEventListener('turbolinks:load', () => {
   toggleCrimeFormCard();
   toggleSkillsetFormCard();
   crimeChart();
-  initChatroomCable();
   homeToP2();
   p2toHome();
   p2ToP3();

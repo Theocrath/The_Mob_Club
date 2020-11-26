@@ -3,11 +3,6 @@
     <h1>#<%= @chatroom.name %></h1>
     <p>This is a safe place to discuss your masterplan.</p>
   </div>
-  <div>
-    <%= link_to profile_path do %>
-      <p class="cancel-button">Back</p>
-    <% end %>
-  </div>
 </div>
 
 <div class="chatroom-container">
@@ -20,9 +15,14 @@
     </div>
 
     <%= simple_form_for [ @crime, @chatroom, @message ] do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+      <%= f.input :content, label: false, autofocus: false, placeholder: "Message ##{@chatroom.name}" %>
       <%= f.submit 'Message away', class: 'msgess-button'  %>
     <% end %>
 
+  </div>
+  <div class="chat-btn-container">
+    <%= link_to profile_path do %>
+      <p class="cancel-button">Back</p>
+    <% end %>
   </div>
 </div>

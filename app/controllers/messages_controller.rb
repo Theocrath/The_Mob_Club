@@ -11,7 +11,11 @@ class MessagesController < ApplicationController
       @chatroom,
       render_to_string(partial: "message", locals: { message: @message })
       )
-      redirect_to crime_chatroom_path(@crime, @chatroom, anchor: "message-#{@message.id}")
+      if @chatroom.message_ids.length < 5
+        redirect_to crime_chatroom_path(@crime, @chatroom)
+      else
+        redirect_to crime_chatroom_path(@crime, @chatroom, anchor: "message-#{@message.id}")
+      end
     else
       render "chatrooms/show"
     end
