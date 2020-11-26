@@ -1,6 +1,6 @@
 const toggleTabs = () => {
-  if ($(".nav a")) {
-    $(".nav a").click(function (e) {
+  if ($("#nav a")) {
+    $("#nav a").click(function (e) {
       e.preventDefault();
       $(".toggle").hide();
       const toShow = $(this).attr('href');
