@@ -1,8 +1,9 @@
 .crime-form-container {
   // background-color: rgba(241, 241, 241, 0.2);
+  height: 65vh;
   background-color: rgb(36,32,30);
   color: $medium-gold;
-  padding: 70px 90px;
+  padding: 30px 70px 40px 70px;
   border-radius: 30px;
   max-width: 50%;
   margin: 0 auto;
@@ -10,7 +11,7 @@
 }
 
 #crime-form-1, #crime-form-2 {
-  max-height: 50vh;
+  max-height: 60vh;
 }
 
 .nav-text {
@@ -38,6 +39,8 @@
 .nav-btn-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 0;
+  padding-top: 0;
 }
 .crime-form-container div:nth-child(2) {
   padding-top: 0;
@@ -45,7 +48,7 @@
 }
 
 #crime-form-skillset {
-  max-height: 50vh;
+  max-height: 65vh;
 }
 
 #crime-form-skillset form {
