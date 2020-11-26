@@ -1,8 +1,6 @@
 <div class="mob-club-headers">
   <h1>Crimes that might interest you</h1>
   <p><%= Crime.count %> misdeeds available</p>
-  <br>
-  
 </div>
 
 
@@ -10,7 +8,7 @@
 
 <div class="crime-index-container">
   <div class="row">
-    <div class="col-sm-6 offset-1">
+    <div class="search-position">
     
       <%= form_tag crimes_path, method: :get do %>
         <%= text_field_tag :query,
@@ -44,7 +42,9 @@
 
             <div class="card-details">
               <h3><i class="far fa-compass"></i> <%= crime.location %></h3>
-              <h4>In <%= how_many_days.to_i %> days</h4>
+              <% if how_many_days > 0 %>
+                <h4>In <%= how_many_days.to_i %> days</h4>
+              <% end %>
             </div>
             </div>
             <div class="card-reward">
