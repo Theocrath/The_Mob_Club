@@ -180,7 +180,22 @@
 }
 
 .photo-cont {
-  background-color: lightblue;
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  // margin-top: 20px;
+
+  img {
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  p {
+    display: inline-block;
+    margin: 0 auto;
+  }
 }
 
 .crime-cont {
@@ -233,5 +248,27 @@
 }
 
 .tabs-cont {
-  background-color: green;
+  margin-top: 20px;
+  border-radius: 15px;
+  // background-image: linear-gradient($dark-brown, $brown);
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+
+  h3 {
+    font-family: Raleway;
+    font-weight: 300;
+    font-size: 14px;
+    color: $very-light-ruby;
+  }
+
+  i:hover {
+    color: $very-light-ruby;
+    transition: 0.2s ease-in;
+  }
 }
+
+.arrow-cont {
+  background-color: blue;
+}
+
+

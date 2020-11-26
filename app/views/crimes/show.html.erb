@@ -12,7 +12,9 @@
             <p><%= @crime.right_hand.username %></p>
           <% end %>
           <div class='day-location-container'>
-            <p>In <%= (@crime.date - Date.today).to_i %> days</p>
+            <% days_until = (@crime.date - Date.today).to_i %>
+
+            <p>In <%= days_until %> days</p>
             <p> <%= @crime.date %></p>
             <p><i class="far fa-compass"></i><%= @crime.location %></p>
           </div>
@@ -41,25 +43,25 @@
       </div>
       <div class="tabs-cont">
         <% if current_user.id == @crime.boss_id || current_user.id == @crime.right_hand_id %>
-
         <div class="nav tabs">
           <a href="#active-members" class="tab active">Team members</a>
           <a href="#pending-members" class="tab">Pending members</a>
         </div>
 
         <div id="active-members" class="toggle" style="display:show">
-          <h2>Current squad</h2>
+          <h3>This is the list of accepted member of your mob.</h3>
             <% @current_teams.each do |current_team| %>
               <% if current_team.status == true %>
                 <p><%= current_team.user.username %></p>
-              <% else %>
-                <p>No one is in your team yet!</p>
+                <% if current_team.present? == false %>
+                <p>There are no members in your squad yet.</p>
+                <% end %>
               <% end %>
             <% end %> <!-- aqui por entao o container com a lista de membros activos-->
         </div>
 
         <div id="pending-members" class="toggle" style="display:none">
-          <h2>Pending requests</h2>
+          <h3>These criminals are waiting for your confirmation:</h3>
             <% @current_teams.each do |current_team| %>
               <% if current_team.status == false %>
                 <div class='team-list-members'>
@@ -77,6 +79,7 @@
               <% end %>
             <% end %> <!-- aqui por entao o container com a lista de membros pending -->
         </div>
+        <% else %>
 
   <% end %>
 
@@ -86,12 +89,10 @@
 
     <div class="crime-new-cont col-sm-12 col-lg-6">
         <div class="photo-cont">
-          <h1>PHOTO CONTAINER</h1>
-
-          <div class='plan-photo'>
-          <% if current_user.id == @crime.boss_id %>
-          <% unless @crime.photo.attached? %>
-            <%= simple_form_for @crime do |f| %>
+        <!--   <div class='plan-photo'> -->
+            <% if current_user.id == @crime.boss_id %>
+            <% unless @crime.photo.attached? %>
+              <%= simple_form_for @crime do |f| %>
               <%= f.input :photo, as: :file %>
               <%= f.submit 'Upload photo' %>
             <% end %>
@@ -100,12 +101,12 @@
           <% end %>
           <% else %>
           <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill if @crime.photo.attached? %>
-          <p style="font-weight:200">There are no added attachments for this crime.</p>
+          <p style="font-weight:200">There are no added plans for this crime.</p>
           <% end %>
-        </div>
+        <!-- </div> -->
 
         </div>
-      <div class="photo-cont">
+      <div class="arrow-cont">
         <div class="scrl-to-chart-arrow">
           <h1>Scroll Down to check the stats!</h1>
         </div>
