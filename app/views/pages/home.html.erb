@@ -50,44 +50,48 @@
       <p>Have a masterplan, that needs some expertise in opening bank vaults? Finding the right brains or muscle is now made easy - and discretion is the middle name of our Club.</p>
     </div>
   </div>
-  <i class="fas fa-angle-down" id="page4BottomArrow"></i>
+  <% unless user_signed_in? %>
+    <i class="fas fa-angle-down" id="page4BottomArrow"></i>
+  <% end %>
 </div>
 
-<div id="login-page">
-  <%# <i class="fas fa-angle-up" id="page5TopArrow"></i> %>
+<% unless user_signed_in? %>
+  <div id="login-page">
+    <%# <i class="fas fa-angle-up" id="page5TopArrow"></i> %>
 
-  <div class='devise-form-container text-center'>
-    <h2>Welcome<br>to the<br>Mob Club</h2>
+    <div class='devise-form-container text-center'>
+      <h2>Welcome<br>to the<br>Mob Club</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class='devise-input-container'>
-        <%= f.input :email,
-                    label: false,
-                    placeholder: 'Email',
-                    required: false,
-                    autofocus: false,
-                    input_html: { autocomplete: "email", class: 'devise-input-field', class: 'color-light'} %>
-        <%= f.input :password,
-                    label: false,
-                    placeholder: 'Password',
-                    required: false,
-                    input_html: { autocomplete: "current-password", class: 'devise-input-field', class: 'color-light' } %>
-      </div>
-
-      <div>
-        <div class='password-position'>
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-          <% end %>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class='devise-input-container'>
+          <%= f.input :email,
+                      label: false,
+                      placeholder: 'Email',
+                      required: false,
+                      autofocus: false,
+                      input_html: { autocomplete: "email", class: 'devise-input-field', class: 'color-light'} %>
+          <%= f.input :password,
+                      label: false,
+                      placeholder: 'Password',
+                      required: false,
+                      input_html: { autocomplete: "current-password", class: 'devise-input-field', class: 'color-light' } %>
         </div>
-        <div class='devise-button-container'>
-          <%= f.button :submit, "Log in", class:'devise-btn' %>
-          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "Create Account", new_registration_path(resource_name), class:'devise-btn-sign-up' %>
-          <% end %>
+
+        <div>
+          <div class='password-position'>
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+            <% end %>
+          </div>
+          <div class='devise-button-container'>
+            <%= f.button :submit, "Log in", class:'devise-btn' %>
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Create Account", new_registration_path(resource_name), class:'devise-btn-sign-up' %>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
   </div>
-
-</div>
+<% end %>
