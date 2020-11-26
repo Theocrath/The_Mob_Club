@@ -14,7 +14,7 @@
                 <a href="#" class="description-btn">Add description <i class="fas fa-pencil-alt"></i></a>
                 <%= render 'edit_description' %>
               <% else %>
-                <p><small>"<%= current_user.description %>"</small></p>
+                <p><small><%= current_user.description %></small></p>
               <% end %>
             </div>
         </div>
@@ -64,7 +64,7 @@
             <% if @current_jobs.empty? %>
               <div class="empty-dash">
                 <p class="op-9">You don't have any scheduled jobs.</p>
-                <p><%= link_to 'Search Criminal Events', crimes_path %></p>
+                <p><%= link_to 'Search Criminal Events', crimes_path, class: 'text-white-ruby' %></p>
               </div>
             <% else %>
             <ul>
@@ -101,7 +101,7 @@
             <% if @pending_requests.empty? %>
               <div class="empty-dash">
                 <p class="op-9">You don't have any pending requests.</p>
-                <p><%= link_to 'Search Criminal Events', crimes_path %></p>
+                <p><%= link_to 'Search Criminal Events', crimes_path, class: 'text-white-ruby' %></p>
               </div>
             <% else %>
               <ul>

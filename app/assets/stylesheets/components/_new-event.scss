@@ -7,6 +7,7 @@
   right: 2px;
   color: $medium-grey;
   font-size: 16px;
+  box-shadow: $btn-medium;
 
   //unsure of the correct propertys to use in order to put the button on the right
 }
@@ -17,4 +18,5 @@
   background-color: rgba(241, 241, 241, 0);
   border-radius: 5px;
   transform: translateY(-1px);
+  box-shadow: $btn-dark;
 }
