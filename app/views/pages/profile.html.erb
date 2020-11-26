@@ -46,8 +46,8 @@
             <p class="text-sm">Your ranking</p>
             <p><%= @ranking %></p>
             <p class="text-sm"><strong><%= @until_next_ranking %></strong>
-              <%= @until_next_ranking == 1 ? 'pt' : 'pts '%>
-              until <%= @next_ranking %></span></p>
+              <%= @until_next_ranking == 1 ? 'point' : 'points' %>
+              until <br><strong><%= @next_ranking %></strong></span></p>
           </div>
         </div>
       <% end %>
