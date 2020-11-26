@@ -2,23 +2,28 @@
   <h1>Crimes that might interest you</h1>
   <p><%= Crime.count %> misdeeds available</p>
   <br>
-  <div>
-    <%= form_tag crimes_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      id: "custom-search-bar",
-      placeholder: "Find a crime"
-    %>
-    <%= submit_tag "Search", class: "btn btn-search" %>
-    <% end %>
-  </div>
+  
 </div>
 
 
 <!-- Responsive is done - any changes on theses classes, ask first please -->
 
 <div class="crime-index-container">
+  <div class="row">
+    <div class="col-sm-6 offset-1">
+    
+      <%= form_tag crimes_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          id: "custom-search-bar",
+          placeholder: "Find a crime"
+        %>
+        <%= submit_tag "Search", class: "btn btn-search" %>
+      <% end %>
+  
+    </div>
+  </div>
 
   <div class="row justify-content-center">
 
