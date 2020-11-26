@@ -168,19 +168,26 @@
 // NEW CODE HERE::
 
 .show-page-container {
-  background-color: grey;
+  // background-color: grey;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .scrl-to-chart-arrow {
-  background-color: green;
+  background-color: none;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .crime-new-cont {
-  background-color: red;
+  // background-color: red;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .photo-cont {
-  background: rgba(0,0,0,0.2);
+  // background: red;
+  min-height: 200px;
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -188,8 +195,8 @@
   // margin-top: 20px;
 
   img {
-    padding: 15px;
     margin: 0 auto;
+    border-radius: 15px;
   }
 
   p {
@@ -251,7 +258,7 @@
   margin-top: 20px;
   border-radius: 15px;
   // background-image: linear-gradient($dark-brown, $brown);
-  background: rgba(0,0,0,0.2);
+  // background: rgba(0,0,0,0.2);
   padding: 15px;
 
   h3 {
@@ -268,7 +275,14 @@
 }
 
 .arrow-cont {
-  background-color: blue;
+  // background-color: rgba(0,0,0,0.2);
 }
+
+#chart-arrow-dwn {
+  font-size: 30px;
+  color: $light-gold;
+  animation: float 2s ease-in-out infinite;
+}
+
 
 
