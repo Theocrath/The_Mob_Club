@@ -3,7 +3,7 @@
   height: 65vh;
   background-color: rgb(36,32,30);
   color: $medium-gold;
-  padding: 30px 70px 40px 70px;
+  padding: 40px 70px 40px 70px;
   border-radius: 30px;
   max-width: 50%;
   margin: 0 auto;
@@ -211,3 +211,10 @@ input[type=range]::-ms-fill-upper {
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
 }
+
+// input #file-upload-button {
+//   background-color: red;
+// }
+// input[type="file" i] {
+//   background-color: red;
+//   }
