@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @crime = Crime.new
     @crimes = Crime.where(boss_id: current_user.id)
     @chatroom = Chatroom.new
+    @user_has_skillset = Skillset.find_by(user_id: current_user.id)
   end
 
   def current_user_json
