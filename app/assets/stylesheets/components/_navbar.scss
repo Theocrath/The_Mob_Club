@@ -20,13 +20,13 @@
   color: $gold;
   font-size: 28px;
   transition: 0.2s ease-out;
-  text-shadow: 2px 2px 4px rgba(21,21,21,0.7);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
 .dropdown-burger:hover {
   color: $light-gold;
   font-size: 28px;
-  text-shadow: 1px 1px 3px rgb(0,0,0);
+  text-shadow: 2px 2px 2px rgb(0,0,0);
   transform: translateY(-1px);
 
 }
