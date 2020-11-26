@@ -83,7 +83,7 @@
         <div class='devise-button-container'>
           <%= f.button :submit, "Log in", class:'devise-btn' %>
           <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "Create Account", new_registration_path(resource_name), class:'devise-btn' %>
+            <%= link_to "Create Account", new_registration_path(resource_name), class:'devise-btn-sign-up' %>
           <% end %>
         </div>
       </div>

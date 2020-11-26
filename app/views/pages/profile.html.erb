@@ -6,7 +6,7 @@
       <div class="profile-info">
         <div class="user-info">
           <div class="avatar-container">
-            <%= image_tag 'profile-picture.jpg', class: 'profile-avatar' %>
+            <%= image_tag 'avatar-mob-placeholder.png', class: 'profile-avatar' %>
           </div>
           <p id="username"><%= current_user.username %></p>
             <div>
@@ -26,7 +26,7 @@
           <hr class="trans--grow hr0">
           <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
         </div>
-        
+
       </div>
     </div>
 
@@ -143,23 +143,24 @@
                   <% end %>
                   <div class="li-dash-org">
                     <% if crime.chatroom.nil? %>
-                        <div>                    
-                          <p class="float-left"><small>
-                            <% if (crime.date - Date.today).to_i == 0 %>
-                              The event is <strong>today.</strong>
-                            <% elsif (crime.date - Date.today).to_i < 0 %>
-                              The event has passed.
-                            <% else %>
-                              In <%= (crime.date - Date.today).to_i %> days.
-                            <% end %>
-                          </small></p>
-                          <div>
-                            <%= simple_form_for [ crime, @chatroom ] do |f| %>
-                            <%= f.hidden_field :name %>
-                            <%= f.button :submit, 'Start chat', class: 'chat-profile-cta text-14' %>
-                            <% end %>
-                          </div>
-                        </div>
+                      <div>                    
+                        <p class="float-left"><small>
+                          <% if (crime.date - Date.today).to_i == 0 %>
+                            The event is <strong>today.</strong>
+                          <% elsif (crime.date - Date.today).to_i < 0 %>
+                            The event has passed.
+                          <% else %>
+                            In <%= (crime.date - Date.today).to_i %> days.
+                          <% end %>
+                        </small></p>
+                      </div>
+                      <div>
+                        <%= simple_form_for [ crime, @chatroom ], class: 'chat-profile-cta text-14' do |f| %>
+                        <%= f.hidden_field :name %>
+                        <%= f.button :submit, 'Go to chat' %>
+                        <% end %>
+                      </div>
+                  </div>
                     <% else %>
                       <p><small>
                         <% if (crime.date - Date.today).to_i == 0 %>
