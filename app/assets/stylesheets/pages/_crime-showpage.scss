@@ -19,16 +19,6 @@
   justify-content: space-between;
   margin-bottom: 50px;
 
-  .crime-reward {
-    color: $light-gold;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: $light-brown;
-    padding: 8px 50px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
 }
 
 .day-location-container {
@@ -161,9 +151,83 @@
 
 
 
+.cont-01 {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
+.box-1 {
+  // background-color: red;
+  width: 100%;
+  // height: 400px;
+  margin-bottom: 10px;
+}
 
+// NEW CODE HERE::
 
+.show-page-container {
+  background-color: grey;
+}
 
+.scrl-to-chart-arrow {
+  background-color: green;
+}
 
+.crime-new-cont {
+  background-color: red;
+}
+
+.photo-cont {
+  background-color: lightblue;
+}
+
+.crime-cont {
+  background-image: linear-gradient($dark-brown, $brown);
+  padding: 15px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.descr-cont {
+  width: 100%;
+}
+
+.reward-cont {
+  background-color: $brown;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 30px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  p {
+    color: $gold;
+    margin-bottom: 0;
+  }
+
+  .crime-reward {
+    color: $light-gold;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $light-brown;
+    padding: 8px 50px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}
+
+.crime-dtl {
+  margin-top: 40px;
+  margin-left: 35px;
+  margin-right: 35px;
+
+  h2 {
+    font-family: Raleway;
+    font-weight: 400;
+  }
+}
 
