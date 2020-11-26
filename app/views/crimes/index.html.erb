@@ -9,7 +9,7 @@
 <div class="crime-index-container">
   <div class="row">
     <div class="search-position">
-    
+
       <%= form_tag crimes_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -19,7 +19,7 @@
         %>
         <%= submit_tag "Search", class: "btn btn-search" %>
       <% end %>
-  
+
     </div>
   </div>
 
@@ -30,7 +30,12 @@
         <% how_many_days = crime.date - Date.today %>
         <div class="col-sm-offset-12 col-xl-offset-6">
           <%= link_to crime_path(crime) do  %>
+          <% if how_many_days <= 0 %>
+          <div class="crime-card-gone">
+            <!-- remove this if statement if you wish to keep the cards all the same. -->
+          <% else %>
           <div class="crime-card">
+            <% end %>
             <div class="card-head">
               <h2><%= crime.title %></h2>
               <% if how_many_days < 30 && how_many_days > 0 %>
