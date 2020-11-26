@@ -17,6 +17,7 @@
         <p><%= @crime.description %></p>
       </div>
 
+      <hr class="trans--grow hr0">
       <div class='actions-btn-container d-flex'>
         <%= link_to crimes_path do %>
           <div class="actions-btn"> Back </div>
@@ -32,6 +33,7 @@
               data: { confirm: 'Are you sure, mate?'}, class: 'actions-btn' %>
         <% end %>
       </div>
+
     </div>
 
     <div class='actions-container col-12 col-lg-5'>
@@ -70,15 +72,29 @@
         </div>
       <% end %>
       <% end %>
-
     </div>
   </div>
 </div>
 
+<!-- Team container -->
+<!-- <div class='d-none'> -->
 
-<div class='d-none'>
   <% if current_user.id == @crime.boss_id || current_user.id == @crime.right_hand_id %>
-    <div class='members-container'>
+
+  <div class="nav tabs">
+    <a href="#active-members" class="tab active">Team members</a>
+    <a href="#pending-members" class="tab">Pending members</a>
+  </div>
+
+  <div id="active-members" class="toggle" style="display:show">
+    <p>Test 1</p> <!-- aqui por entao o container com a lista de membros activos-->
+  </div>
+
+   <div id="pending-members" class="toggle" style="display:none">
+    <p>Test 2</p> <!-- aqui por entao o container com a lista de membros pending -->
+  </div>
+
+    <div class='members-container col-12 col-lg-6 mb-5'>
       <div class='team-list'>
         <h2>Current squad</h2>
         <% @current_teams.each do |current_team| %>
@@ -109,8 +125,9 @@
         <% end %>
       </div>
     </div>
+
   <% end %>
-</div>
+<!-- </div> -->
 <%# This is used to pass the crime's id to the chart %>
 <p id='paramsId' style="visibility: hidden;"><%= @crime.id %></p>
 
