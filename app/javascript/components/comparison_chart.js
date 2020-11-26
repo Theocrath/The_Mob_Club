@@ -19,8 +19,8 @@ const crimeC = (userStats, crimeStats) => {
           userStats.lockpicking,
           userStats.seduction
         ],
-        backgroundColor: ['rgba(219, 159, 61, 0.5)'],
-        borderColor: ['rgba(219, 159, 61, 1)'],
+        backgroundColor: ['rgba(223, 57, 32, 0.6)'],
+        borderColor: ['rgba(223, 57, 32, 0.9)'],
         borderWidth: 1
       },
       {
@@ -35,8 +35,8 @@ const crimeC = (userStats, crimeStats) => {
           crimeStats.lockpicking,
           crimeStats.seduction
         ],
-        backgroundColor: ['rgba(222, 54, 2, 0.7)'],
-        borderColor: ['rgba(222, 54, 2, 1)'],
+        backgroundColor: ['rgba(219, 159, 61, 0.5)'],
+        borderColor: ['rgba(219, 159, 61, 1)'],
         borderWidth: 1
       }],
     },
