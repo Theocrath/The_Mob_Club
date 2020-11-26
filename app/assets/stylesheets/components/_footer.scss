@@ -10,11 +10,13 @@
 .footer a {
   color: #413D3A;
   font-size: 15px;
+  text-shadow:1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .footer a:hover {
-  color: #E8CDA2;
+  color: $very-light-ruby;
   font-size: 15px;
+  text-shadow:  rgba(227, 188, 125, 0.7);
 }
 
 .footer p {
