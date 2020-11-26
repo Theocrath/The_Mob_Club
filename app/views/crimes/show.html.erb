@@ -53,6 +53,7 @@
             <% @current_teams.each do |current_team| %>
               <% if current_team.status == true %>
                 <p><%= current_team.user.username %></p>
+
                 <% if current_team.present? == false %>
                 <p>There are no members in your squad yet.</p>
                 <% end %>
