@@ -17,7 +17,6 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-CLOUDINARY_URL=cloudinary://521265281417248:jBwH03AHEfZi4sIGDINJVF53eSc@chocalho
 
 # Ignore uploaded files in development.
 /storage/*

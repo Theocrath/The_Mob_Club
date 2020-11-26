@@ -11,10 +11,12 @@
         <% end %>
         <div class='day-location-container'>
           <p>In <%= (@crime.date - Date.today).to_i %> days</p>
+          <p> <%= @crime.date %></p>
           <p><i class="far fa-compass"></i><%= @crime.location %></p>
         </div>
         <p><%= @crime.description %></p>
       </div>
+
       <div class='actions-btn-container d-flex'>
         <%= link_to crimes_path do %>
           <div class="actions-btn"> Back </div>
@@ -34,19 +36,21 @@
 
     <div class='actions-container col-12 col-lg-5'>
       <div class='plan-container'>
-        <% if current_user.id == @crime.boss_id %>
-        <% unless @crime.photo.attached? %>
-          <%= simple_form_for @crime do |f| %>
-            <%= f.input :photo, as: :file %>
-            <%= f.submit 'Upload photo' %>
+        <div class='plan-photo'>
+          <% if current_user.id == @crime.boss_id %>
+          <% unless @crime.photo.attached? %>
+            <%= simple_form_for @crime do |f| %>
+              <%= f.input :photo, as: :file %>
+              <%= f.submit 'Upload photo' %>
+            <% end %>
+          <% else %>
+            <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>
           <% end %>
-        <% else %>
-          <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <% else %>
-        <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill if @crime.photo.attached? %>
-        <p>There are no added attachments for this crime.</p>
-        <% end %>
+          <% else %>
+          <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill if @crime.photo.attached? %>
+          <p style="font-weight:200">There are no added attachments for this crime.</p>
+          <% end %>
+        </div>
       </div>
 
       <% if current_user.id == @crime.boss_id %>
@@ -59,7 +63,7 @@
       <% end %>
       <% else %>
         <% if @crime.skillset.nil? %>
-        <p style="text-align: center"> The stats needed for this crime have not been defined yet.</p>
+        <p style="margin-top:20px;"><small>The stats needed for this crime have not been defined yet.</small></p>
       <% else %>
         <div class='chart'>
           <canvas id="myCrimeChart"></canvas>
@@ -71,8 +75,9 @@
   </div>
 </div>
 
-<div>
-  <% if current_user.id == @crime.boss_id || current_user.id ==@crime.right_hand_id %>
+
+<div class='d-none'>
+  <% if current_user.id == @crime.boss_id || current_user.id == @crime.right_hand_id %>
     <div class='members-container'>
       <div class='team-list'>
         <h2>Current squad</h2>
