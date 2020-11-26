@@ -20,8 +20,10 @@
         </div>
 
         <div class="links-container">
-          <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
-          <hr class="trans--grow hr0">
+          <% unless @user_has_skillset.nil? %>
+            <p><a href="#" id="dashboard-btn" class="color-gold">Dashboard</p>
+            <hr class="trans--grow hr0">
+          <% end %>
           <p><%= link_to 'Edit profile', edit_user_registration_path, class: "color-gold" %></p>
           <hr class="trans--grow hr0">
           <p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "color-gold" %></p>
@@ -120,11 +122,6 @@
                         In <%= (job.crime.date - Date.today).to_i %> days.
                       <% end %>
                     </small></p>
-                    <% unless job.crime.chatroom.nil? %>
-                      <%= link_to crime_chatroom_path(job.crime, job.crime.chatroom) do %>
-                        <span class="chat-profile-cta"><small>Go to chat</small></span>
-                      <% end %>
-                    <% end %>
                   </div>
                 </li>
               <% end %>
@@ -155,10 +152,12 @@
                         </small></p>
                       </div>
                       <div>
-                        <%= simple_form_for [ crime, @chatroom ], class: 'chat-profile-cta text-14' do |f| %>
+                        <small>
+                        <%= simple_form_for [ crime, @chatroom ], class: 'chat-profile-cta' do |f| %>
                         <%= f.hidden_field :name %>
-                        <%= f.button :submit, 'Go to chat' %>
+                        <%= f.button :submit, 'Go to chat', class: 'text-white-ruby  text-13' %>
                         <% end %>
+                        </small>
                       </div>
                   </div>
                     <% else %>
@@ -171,7 +170,7 @@
                           In <%= (crime.date - Date.today).to_i %> days.
                         <% end %>
                       </small></p>
-                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom), class: 'text-14' do %>
+                      <%= link_to crime_chatroom_path(crime.id, crime.chatroom), class: ' text-13 text-white-ruby' do %>
                         <span class="chat-profile-cta"><small>Go to chat</small></span>
                       <% end %>
                     <% end %>
