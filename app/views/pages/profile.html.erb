@@ -6,7 +6,7 @@
       <div class="profile-info">
         <div class="user-info">
           <div class="avatar-container">
-            <%= image_tag 'avatar-mob-placeholder.png', class: 'profile-avatar' %>
+            <%= image_tag 'avatar.jpg', class: 'profile-avatar' %>
           </div>
           <p id="username"><%= current_user.username %></p>
             <div>
@@ -46,8 +46,8 @@
             <p class="text-sm">Your ranking</p>
             <p><%= @ranking %></p>
             <p class="text-sm"><strong><%= @until_next_ranking %></strong>
-              <%= @until_next_ranking == 1 ? 'pt' : 'pts '%>
-              until <%= @next_ranking %></span></p>
+              <%= @until_next_ranking == 1 ? 'point' : 'points' %>
+              until <br><strong><%= @next_ranking %></strong></span></p>
           </div>
         </div>
       <% end %>

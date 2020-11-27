@@ -40,6 +40,7 @@ import { arrowToChart } from "../components/showpage_arrow";
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
   arrowToChart();
   homeToLogin();
   expandLines();
@@ -52,7 +53,6 @@ document.addEventListener('turbolinks:load', () => {
   toggleCrimeFormCard();
   toggleSkillsetFormCard();
   crimeChart();
-  initChatroomCable();
   homeToP2();
   p2toHome();
   p2ToP3();
