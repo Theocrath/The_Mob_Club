@@ -7,7 +7,9 @@
           <h2><%= @crime.reward %>$</h2>
         </div>
         <div class="crime-dtl">
+          <div class="title-width">
           <h2><%= @crime.title %></h2>
+          </div>
           <% unless @crime.right_hand.nil? %>
             <p><%= @crime.right_hand.username %></p>
           <% end %>
