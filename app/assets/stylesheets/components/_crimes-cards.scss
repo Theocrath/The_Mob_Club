@@ -50,7 +50,7 @@
 .card-head p {
   font-size: 16px;
   font-weight: 200;
-  color: $very-light-ruby;
+  color: $ruby;
 }
 
 .card-head p i {
@@ -66,15 +66,15 @@
 @keyframes bling {
   0% {
     text-shadow: 0 2px 3px rgba(0,0,0,0.5);
-    color: $light-gold;
+    color: $very-light-ruby;
   }
   50% {
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    color: $white;
+    color: $ruby;
   }
   100% {
     text-shadow: 0 2px 3px rgba(0,0,0,0.5);
-    color: $light-gold;
+    color: $very-light-ruby;
   }
 }
 

@@ -78,6 +78,16 @@ class CrimesController < ApplicationController
     @crime = Crime.find(params[:id])
   end
 
+  # def reward_lenght
+  #   n_to_k = @crime.reward.to_s.length
+  #   if n_to_k >= 5
+  #     n_to_k[-1, -2, -3].gsub
+  #   # new var  = count of digits
+  #   # if new var >= 5
+  #   # new var =
+  #   # gsub last 3 digits to k;
+  # end
+
   # def permitted_skillset_attributes
   #   @attributes = ['id', 'created_at', 'updated_at', 'user_id', 'crime_id']
   # end
