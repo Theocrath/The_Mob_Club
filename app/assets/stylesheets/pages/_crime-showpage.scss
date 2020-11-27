@@ -113,8 +113,7 @@
 }
 
 .crime-new-cont {
-  padding-left: 25px;
-  padding-right: 25px;
+padding: 0 45px;
 }
 
 .photo-cont {
@@ -175,7 +174,7 @@
 }
 
 .crime-dtl {
-  margin-top: 40px;
+  margin-top: 35px;
   margin-left: 35px;
   margin-right: 35px;
 
@@ -191,7 +190,7 @@
   border-radius: 15px;
   // background-image: linear-gradient($dark-brown, $brown);
   background-image: linear-gradient(rgb(31,29,27), $dark-brown);
-  padding: 15px;
+  padding: 20px 45px;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 
   h3 {
@@ -231,6 +230,3 @@
 .cht-cont-1 {
   height: 100vh;
 }
-
-
-
