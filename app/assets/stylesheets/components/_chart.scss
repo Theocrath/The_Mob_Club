@@ -2,12 +2,13 @@
   height: 60%;
   width: 90%;
   margin: 0 auto;
-  padding-top: 10%;
+  padding-top: 5%;
 
 }
 
 .chart-container {
   height: 100vh;
+  padding-top: 5%;
 }
 
 .ranking {
@@ -18,9 +19,9 @@
   align-items: center;
   width: 30%;
   min-height: 12%;
-  margin: 36px auto;
+  margin: 10px auto;
   padding: 16px;
-  border-radius: 5px;
+  border-radius: 15px;
   // background-color: rgb(31,29,27);
   background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);

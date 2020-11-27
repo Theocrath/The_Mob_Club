@@ -134,7 +134,7 @@
         <% if @crime.skillset.nil? %>
         <p style="margin-top:20px;"><small>The stats needed for this crime have not been defined yet.</small></p>
       <% else %>
-        <div class='chart'>
+        <div class='chart' id='crime-chart-container'>
           <canvas id="myCrimeChart"></canvas>
         </div>
       <% end %>
