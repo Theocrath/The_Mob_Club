@@ -99,6 +99,7 @@
   // background-color: grey;
   margin-left: 20px;
   margin-right: 20px;
+  height: 100vh;
 }
 
 .scrl-to-chart-arrow {
@@ -224,6 +225,10 @@
 #chart-arrow-dwn:hover {
   color: $very-light-ruby;
   transition: 0.2s ease-in;
+}
+
+.cht-cont-1 {
+  height: 100vh;
 }
 
 

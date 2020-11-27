@@ -50,10 +50,12 @@
 .card-head p {
   font-size: 16px;
   font-weight: 200;
+  color: $very-light-ruby;
 }
 
 .card-head p i {
   animation: bling 1s infinite;
+  color: $very-light-ruby;
 }
 
 .card-head h2:hover {
