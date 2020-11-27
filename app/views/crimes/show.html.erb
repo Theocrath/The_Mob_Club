@@ -4,7 +4,7 @@
       <div class="crime-cont">
         <div class="reward-cont">
           <p>Reward<br></p>
-          <h2><%= @crime.reward %>$</h2>
+          <h2><%= number_to_human @crime.reward %>$</h2>
         </div>
         <div class="crime-dtl">
           <h2><%= @crime.title %></h2>
