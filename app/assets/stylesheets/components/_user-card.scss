@@ -1,7 +1,7 @@
 // Main container
 #profile-container {
   background-color: rgba(0, 0, 0, 0)!important;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .links-container {
@@ -21,7 +21,7 @@
   background-color:rgba(72, 64, 61, 0.1);
   background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   padding: 0 30px 26px 30px;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: $box-medium;
 }
 
@@ -118,5 +118,5 @@ hr {
 }
 
 .grow{
-  width:90%;
+  width:100%;
 }
