@@ -13,13 +13,18 @@
           <% end %>
           <div class='day-location-container'>
             <% days_until = (@crime.date - Date.today).to_i %>
-
-            <p>In <%= days_until %> days</p>
+            <% if days_until == 0 %>
+              <p>This event is today.</p>
+            <% elsif days_until > 0 %>
+              <p>In <%= days_until %> days</p>
+            <% elsif days_until < 0 %>
+              <p>Time out - this crime has expired.</p>
+            <% end %>
             <p> <%= @crime.date %></p>
             <p><i class="far fa-compass"></i><%= @crime.location %></p>
           </div>
           <div class="descr-cont">
-          <p><%= @crime.description %></p>
+            <p><%= @crime.description %></p>
           </div>
           <hr class="trans--grow hr0">
 
@@ -39,7 +44,6 @@
             <% end %>
           </div>
         </div>
-
       </div>
       <div class="tabs-cont">
         <% if current_user.id == @crime.boss_id || current_user.id == @crime.right_hand_id %>
@@ -81,8 +85,7 @@
             <% end %> <!-- aqui por entao o container com a lista de membros pending -->
         </div>
         <% else %>
-
-  <% end %>
+          <% end %>
 
       </div>
 
@@ -118,7 +121,7 @@
 </div>
 
 <!-- CHART -->
-<div class="cht-cont-1">
+<div class="cht-cont-1" id="the-chart">
   <% if current_user.id == @crime.boss_id %>
       <% if @crime.skillset.nil? %>
         <p> You need to add a skillset to your crime!</p>

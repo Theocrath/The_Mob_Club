@@ -18,7 +18,7 @@
       <%= f.input :reward %>
       <%= f.input :photo, as: :file %>
       <span>Do you agree with the <a href="#"><small>terms of service</small></a>?</span>
-      <%= f.button :submit, 'I agree', class: 'nav-text very-light-ruby' %></small>
+      <%= f.button :submit, 'I agree', class: 'nav-text very-light-ruby', id: 'agree-link' %></small>
       <% end %>
       <div class="nav-btn-container">
         <a href="#" class="crime-form-btn nav-text">Back</a>
@@ -39,7 +39,7 @@
       <%= f.input :seduction, as: :range %>
       <div class="nav-btn-container">
         <a href="#" class="skillset-form-btn nav-text">Back</a>
-        <%= f.button :submit, 'Create Crime', class: 'nav-test create-event', id: 'create-crime' %>
+        <%= f.button :submit, 'Create Crime', class: 'nav-test submit-crime-skillset', id: 'create-crime' %>
         <% end %>
       </div>
   </div>

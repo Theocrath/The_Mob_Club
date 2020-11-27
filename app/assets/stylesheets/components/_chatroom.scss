@@ -1,18 +1,33 @@
-.chatroom-details {
+.chatroom-main {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+}
+
+.chatroom-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55%;
+    padding-left: 340px;
 }
 
 .chatroom-container {
   margin: auto;
-  width: 80%;
+  width: 50%;
+  min-height: 100vh;
+  // box-shadow: $box-medium;
 }
 
 .talk-container {
-  background-image: linear-gradient($brown, $dark-brown);;
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   padding: 20px 30px;
   border-radius: 15px;
+  box-shadow: $box-medium;
+}
+
+.chat-btn-container {
+  margin-top: 16px;
+  height: 36px;
 }
 
 .cht-button-back {
@@ -23,18 +38,22 @@
 
 .msgess-button {
   display: inline;
+  margin-left: 77%;;
   background-color: $gold;
   color: $black;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 30px;
   font-weight: bold;
   padding: 5px 10px;
-  border: 2px solid $gold;
+  border: 1px solid $gold;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .msgess-button:hover {
   display: inline;
   background-color: $light-gold;
-  border: 2px solid $light-gold;
+  border: 1px solid $light-gold;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
+
 

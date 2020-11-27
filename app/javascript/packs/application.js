@@ -35,11 +35,13 @@ import { toggleTabs, activateTab } from '../components/toggle_tabs';
 import { toggleCrimeFormCard, toggleSkillsetFormCard } from "../components/form_progression";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { toggleForm } from "../components/toggle_form";
-
+import { arrowToChart } from "../components/showpage_arrow";
 
 // let paramsId = document.getElementById("paramsId").innerHTML;
 
 document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
+  arrowToChart();
   homeToLogin();
   expandLines();
   toggleForm();
@@ -51,7 +53,6 @@ document.addEventListener('turbolinks:load', () => {
   toggleCrimeFormCard();
   toggleSkillsetFormCard();
   crimeChart();
-  initChatroomCable();
   homeToP2();
   p2toHome();
   p2ToP3();

@@ -1,34 +1,30 @@
-<div class=chatroom-details>
-  <div>
-    <h1>#<%= @chatroom.name %></h1>
-    <p>This is a safe place to discuss your masterplan.</p>
+<div class="chatroom-main">
+  <div class=chatroom-details>
+    <div>
+      <h1>#<%= @chatroom.name %></h1>
+      <p>This is a safe place to discuss your masterplan.</p>
+    </div>
   </div>
-  <div>
-    <%= link_to profile_path do %>
-      <p class="cancel-button">Back</p>
-    <% end %>
-  </div>
-</div>
 
-<div class="chatroom-container">
-  <div class="talk-container">
-    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <div class="chatroom-container">
+    <div class="talk-container">
+      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
 
-      <% @chatroom.messages.each do |message| %>
-        <%= render 'messages/message', message: message %>
+        <% @chatroom.messages.each do |message| %>
+          <%= render 'messages/message', message: message %>
+        <% end %>
+      </div>
+
+      <%= simple_form_for [ @crime, @chatroom, @message ] do |f| %>
+        <%= f.input :content, label: false, autofocus: false, placeholder: "Message ##{@chatroom.name}" %>
+        <%= f.submit 'Message away', class: 'msgess-button'  %>
+      <% end %>
+
+    </div>
+    <div class="chat-btn-container">
+      <%= link_to profile_path do %>
+        <p class="cancel-button">Back</p>
       <% end %>
     </div>
-
-    <%= simple_form_for [ @crime, @chatroom, @message ] do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-      <%= f.submit 'Message away', class: 'msgess-button'  %>
-    <% end %>
-
-  </div>
-
-  <div class="cht-button-back">
-    <%= link_to profile_path do %>
-    <p class="cancel-button">Back to Dashboard</p>
-    <% end %>
   </div>
 </div>

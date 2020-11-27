@@ -1,21 +1,29 @@
 .crime-form-container {
   // background-color: rgba(241, 241, 241, 0.2);
   height: 65vh;
-  background-color: rgb(36,32,30);
+  // background-color: rgb(36,32,30);
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   color: $medium-gold;
   padding: 40px 70px 40px 70px;
-  border-radius: 30px;
+  border-radius: 15px;
   max-width: 50%;
   margin: 0 auto;
-  box-shadow: 1px 1px 4px rgba(241, 241, 241, 0.1);
+  box-shadow: $box-medium;
 }
 
 #crime-form-1, #crime-form-2 {
   max-height: 60vh;
+  //  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#agree-link {
+  margin: 0;
+  padding: 0 0 3px 16px;
 }
 
 .nav-text {
-  font-size: 20px;
+  margin-top: 16px;
+  font-size: 18px;
 }
 
 .nav-text:hover {
@@ -50,6 +58,7 @@
 
 #crime-form-skillset {
   max-height: 65vh;
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
 }
 
 #crime-form-skillset form {
@@ -81,6 +90,11 @@
   padding: 0 12px;
   height: 45px;
   margin-top: 7px;
+  vertical-align: middle;
+  right: 2px;
+  color: #1f1d1b;
+  font-size: 16px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 // Scrollbar

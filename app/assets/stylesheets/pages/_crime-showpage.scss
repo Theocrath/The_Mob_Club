@@ -99,6 +99,7 @@
   // background-color: grey;
   margin-left: 20px;
   margin-right: 20px;
+  height: 100vh;
 }
 
 .scrl-to-chart-arrow {
@@ -136,7 +137,8 @@
 }
 
 .crime-cont {
-  background-image: linear-gradient($dark-brown, $brown);
+  // background-image: linear-gradient($dark-brown, $brown);
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   padding: 15px;
   border-radius: 15px;
   position: relative;
@@ -188,7 +190,7 @@
   margin-top: 20px;
   border-radius: 15px;
   // background-image: linear-gradient($dark-brown, $brown);
-  background: rgba(72,64,61,0.1);
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   padding: 15px;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 
@@ -211,9 +213,9 @@
   }
 }
 
-.arrow-cont {
-  // background-color: rgba(0,0,0,0.2);
-}
+// .arrow-cont {
+//   // background-color: rgba(0,0,0,0.2);
+// }
 
 #chart-arrow-dwn {
   font-size: 30px;
@@ -224,6 +226,10 @@
 #chart-arrow-dwn:hover {
   color: $very-light-ruby;
   transition: 0.2s ease-in;
+}
+
+.cht-cont-1 {
+  height: 100vh;
 }
 
 

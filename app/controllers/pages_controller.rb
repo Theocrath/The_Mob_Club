@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   def profile
     @skillset = Skillset.new
     @crime = Crime.new
-    @crimes = Crime.where(boss_id: current_user.id)
+    @crimes = Crime.where(boss_id: current_user.id).sort_by(&:date)
     @chatroom = Chatroom.new
     @user_has_skillset = Skillset.find_by(user_id: current_user.id)
   end
