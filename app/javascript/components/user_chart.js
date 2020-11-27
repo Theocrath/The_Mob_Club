@@ -20,7 +20,7 @@ const userC = (userStats) => {
           userStats.seduction
         ],
         backgroundColor: ['rgba(223, 57, 32, 0.6)'],
-        borderColor: ['rgba(223, 57, 32, 0.9)'],
+        borderColor: ['rgba(223, 57, 32, 0.6)'],
         borderWidth: 1
       }],
     },

@@ -20,7 +20,7 @@ const crimeC = (userStats, crimeStats) => {
           userStats.seduction
         ],
         backgroundColor: ['rgba(223, 57, 32, 0.6)'],
-        borderColor: ['rgba(223, 57, 32, 0.9)'],
+        borderColor: ['rgba(223, 57, 32, 0.6)'],
         borderWidth: 1
       },
       {
@@ -36,7 +36,7 @@ const crimeC = (userStats, crimeStats) => {
           crimeStats.seduction
         ],
         backgroundColor: ['rgba(219, 159, 61, 0.5)'],
-        borderColor: ['rgba(219, 159, 61, 1)'],
+        borderColor: ['rgba(219, 159, 61, 0.5)'],
         borderWidth: 1
       }],
     },
