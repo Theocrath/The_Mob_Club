@@ -19,6 +19,7 @@
   min-height: 80vh;
   text-align: center;
   background-color:rgba(72, 64, 61, 0.1);
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   padding: 0 30px 26px 30px;
   border-radius: 10px;
   box-shadow: $box-medium;
@@ -26,6 +27,7 @@
 
 #dashboard-main {
   background-color:rgba(72, 64, 61, 0.1);
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
   border-radius: 10px;
 }
 
@@ -96,6 +98,7 @@
   border-radius: 50%;
   max-width: 150%;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  background-image: linear-gradient(rgb(31,29,27), $dark-brown);
 }
 
 // horizontal rules
