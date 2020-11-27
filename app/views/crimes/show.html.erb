@@ -98,7 +98,7 @@
             <% unless @crime.photo.attached? %>
               <%= simple_form_for @crime do |f| %>
               <%= f.input :photo, as: :file %>
-              <%= f.submit 'Upload photo' %>
+              <%= f.submit 'Upload photo', class: "upload-style" %>
             <% end %>
           <% else %>
             <%= cl_image_tag @crime.photo.key, height: 300, width: 400, crop: :fill %>
