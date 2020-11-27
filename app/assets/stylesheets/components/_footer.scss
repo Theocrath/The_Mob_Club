@@ -1,17 +1,26 @@
 .footer {
   background-color: $dark-brown;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1px;
   position: absolute;
   width: 100%;
   margin-top: 40px;
 
 }
 
+.footer a {
+  color: #413D3A;
+  font-size: 15px;
+  text-shadow:1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.footer a:hover {
+  color: $very-light-ruby;
+  font-size: 15px;
+  text-shadow:  rgba(227, 188, 125, 0.7);
+}
+
 .footer p {
-  color: black;
+  color: #E8CDA2;
   font-size: 12px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }

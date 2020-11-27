@@ -1,36 +1,5 @@
 // Details
 
-.details-container {
-  background-image: linear-gradient($dark-brown, $brown);
-  border-radius: 15px;
-  position: relative;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.crime-details-container {
-  padding: 30px 55px;
-  flex-grow: 4;
-}
-
-.reward-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
-
-  .crime-reward {
-    color: $light-gold;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: $light-brown;
-    padding: 8px 50px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-}
-
 .day-location-container {
   display: flex;
   justify-content: space-between;
@@ -79,9 +48,9 @@
 
 .actions-btn:hover {
   // margin-right: 20px;
-  color: $pale-grey;
+  color: $very-light-ruby;
   // border-left: 1px solid $gold;
-  padding: 0 30px;
+  padding: 0 auto;
   text-align: center;
 }
 
@@ -99,57 +68,22 @@
   padding: 0;
 }
 
-.plan-container {
-  background-image: linear-gradient($dark-brown, $brown);
-  border-radius: 15px;
-  text-align: center;
-  height: 45%;
-  display: flex; //
-  align-items: center; //
-  justify-content: center;
-  // overflow: auto;
-  width: fit-content;
-  height: fit-content;
-}
-
-.plan-photo {
-  background-color: rgba(0,0,0,0.3);
-  border-radius: 15px;
-  padding: 40px 30px;
-}
-
-.plan-photo img {
-  border-radius: 15px;
-}
-
-.plan-photo img:hover {
-  border-radius: 2px;
-}
 
 .crime-chart {
   margin: 10px 0;
 }
 
-.members-container {
-  display: flex;
-  justify-content: space-between;
-  background-image: linear-gradient($dark-brown, $brown);
-  padding: 30px;
-  border-radius: 15px;
-  width: 100%;
-  height: 45%;
-}
 
-.team-list {
-  background: rgba(0,0,0,0.2);
-  width: 45%;
-  border-radius: 15px;
-  padding: 15px;
+// .team-list {
+//   background: rgba(0,0,0,0.2);
+//   width: 45%;
+//   border-radius: 15px;
+//   padding: 15px;
 
-  h2{
-    text-align: center;
-  }
-}
+//   h2{
+//     text-align: center;
+//   }
+// }
 
 .team-list-members {
   display: flex;
@@ -159,11 +93,143 @@
 // Down, all things related to the
 // toggle team members divs
 
+// NEW CODE HERE::
 
+.show-page-container {
+  // background-color: grey;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100vh;
+}
 
+.scrl-to-chart-arrow {
+  background-color: none;
+  margin-top: 20px;
+  text-align: center;
 
+  p {
+    margin-bottom: 40px;
+  }
+}
 
+.crime-new-cont {
+  padding-left: 25px;
+  padding-right: 25px;
+}
 
+.photo-cont {
+  min-height: 200px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  // margin-top: 20px;
+
+  img {
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+
+  p {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
+.crime-cont {
+  background-image: linear-gradient($dark-brown, $brown);
+  padding: 15px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.descr-cont {
+  width: 100%;
+}
+
+.reward-cont {
+  background-color: $brown;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 30px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  p {
+    color: $gold;
+    margin-bottom: 0;
+  }
+
+  .crime-reward {
+    color: $light-gold;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $light-brown;
+    padding: 8px 50px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}
+
+.crime-dtl {
+  margin-top: 40px;
+  margin-left: 35px;
+  margin-right: 35px;
+
+  h2 {
+    font-family: Raleway;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+.tabs-cont {
+  margin-top: 20px;
+  border-radius: 15px;
+  // background-image: linear-gradient($dark-brown, $brown);
+  background: rgba(72,64,61,0.1);
+  padding: 15px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+
+  h3 {
+    font-family: Raleway;
+    font-weight: 300;
+    font-size: 14px;
+    color: $pale-grey;
+  }
+
+  i:hover {
+    color: $pale-grey;
+    transition: 0.2s ease-in;
+  }
+
+  p {
+    // border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.arrow-cont {
+  // background-color: rgba(0,0,0,0.2);
+}
+
+#chart-arrow-dwn {
+  font-size: 30px;
+  color: $light-gold;
+  animation: float 2s ease-in-out infinite;
+}
+
+#chart-arrow-dwn:hover {
+  color: $very-light-ruby;
+  transition: 0.2s ease-in;
+}
+
+.cht-cont-1 {
+  height: 100vh;
+}
 
 
 

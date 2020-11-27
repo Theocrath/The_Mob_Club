@@ -55,18 +55,19 @@
       <div id="dashboard-main" style="display:none">
 
         <div class="nav tabs">
-          <a href="#jobs" class="tab active">Current jobs</a>
-          <a href="#pending" class="tab">Pending requests</a>
-          <a href="#event-manager" class="tab">Event manager</a>
+          <a href="#jobs" class="tab active">Current crimes</a>
+          <a href="#pending" class="tab">Pending invitations</a>
+          <a href="#event-manager" class="tab">Crime manager</a>
           <button class="create-event" id="create-event-btn">Organize Crime</button>
         </div>
 
         <div id="jobs" class="toggle" style="display:show">
           <div class="dashboard">
+            <p><small>This is where you can keep track of all the crimes, felonies and misdeeds you have been applying for.</small></p>
             <% if @current_jobs.empty? %>
               <div class="empty-dash">
-                <p class="op-9">You don't have any scheduled jobs.</p>
-                <p><%= link_to 'Search Criminal Events', crimes_path, class: 'text-white-ruby' %></p>
+                <p class="op-9">You are currently not part of any Mob.</p>
+                <p><%= link_to 'Search for Crimes', crimes_path, class: 'text-white-ruby' %></p>
               </div>
             <% else %>
             <ul>
@@ -78,9 +79,9 @@
                   <div class="li-dash-org">
                   <p><small>
                       <% if (job.crime.date - Date.today).to_i == 0 %>
-                        The event is <strong>today.</strong>
+                        The crime is due <strong>today.</strong>
                       <% elsif (job.crime.date - Date.today).to_i < 0 %>
-                        The event has passed.
+                        This crime has expired.
                       <% else %>
                         In <%= (job.crime.date - Date.today).to_i %> days.
                       <% end %>
@@ -100,10 +101,11 @@
 
         <div id="pending" class="toggle" style="display:none">
           <div class="dashboard">
+            <p><small>Waiting to get hired by these mobsters? Meanwhile, see how you can improve your general stats.</small></p>
             <% if @pending_requests.empty? %>
               <div class="empty-dash">
-                <p class="op-9">You don't have any pending requests.</p>
-                <p><%= link_to 'Search Criminal Events', crimes_path, class: 'text-white-ruby' %></p>
+                <p class="op-9">You haven't applied for any crime yet.</p>
+                <p><%= link_to 'Search for Crimes', crimes_path, class: 'text-white-ruby' %></p>
               </div>
             <% else %>
               <ul>
@@ -115,9 +117,9 @@
                   <div class="li-dash-org">
                     <p><small>
                       <% if (job.crime.date - Date.today).to_i == 0 %>
-                        The event is <strong>today.</strong>
+                        The crime is due <strong>today.</strong>
                       <% elsif (job.crime.date - Date.today).to_i < 0 %>
-                        The event has passed.
+                        This crime has expired.
                       <% else %>
                         In <%= (job.crime.date - Date.today).to_i %> days.
                       <% end %>
@@ -132,6 +134,7 @@
 
         <div id="event-manager" class="toggle" style="display:none">
           <div class="dashboard">
+            <p><small>Here you can keep track of all your most ingenous, inspired felonies. Access the details of your crimes and plan away!</small></p>
             <ul>
               <% @crimes.to_a.each do |crime| %>
                 <li>
@@ -140,12 +143,12 @@
                   <% end %>
                   <div class="li-dash-org">
                     <% if crime.chatroom.nil? %>
-                      <div>                    
+                      <div>
                         <p class="float-left"><small>
                           <% if (crime.date - Date.today).to_i == 0 %>
-                            The event is <strong>today.</strong>
+                            This crime is due <strong>today.</strong>
                           <% elsif (crime.date - Date.today).to_i < 0 %>
-                            The event has passed.
+                            This crime has expired.
                           <% else %>
                             In <%= (crime.date - Date.today).to_i %> days.
                           <% end %>
@@ -163,9 +166,9 @@
                       <div>
                       <p><small>
                         <% if (crime.date - Date.today).to_i == 0 %>
-                          The event is <strong>today.</strong>
+                          This crime is due <strong>today.</strong>
                         <% elsif (crime.date - Date.today).to_i < 0 %>
-                          The event has passed.
+                          This crime has expired.
                         <% else %>
                           In <%= (crime.date - Date.today).to_i %> days.
                         <% end %>
