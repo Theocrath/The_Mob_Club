@@ -1,13 +1,19 @@
-.chatroom-details {
+.chatroom-main {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0 20px 80px;
+  flex-direction: column;
+}
+
+.chatroom-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55%;
+    padding-left: 340px;
 }
 
 .chatroom-container {
   margin: auto;
-  width: 80%;
+  width: 50%;
   min-height: 100vh;
   // box-shadow: $box-medium;
 }
@@ -48,4 +54,5 @@
   border: 1px solid $light-gold;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
+
 

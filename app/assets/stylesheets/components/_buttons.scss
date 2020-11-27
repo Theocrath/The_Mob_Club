@@ -22,7 +22,7 @@
 // below, use this as back or cancel button
 
 .cancel-button {
-  height: 36px;
+  height: 35px;
   display: inline;
   color: #D3AB6A;
   font-size: 16px;
@@ -41,7 +41,7 @@
   box-shadow: $box-dark;
 }
 
-.create-event {
+.submit-crime-skillset {
   height: 36px;
   display: inline;
   background-color: $gold;
@@ -55,6 +55,30 @@
   border: none;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transition: 0.05s ease-in-out;
+}
+
+.create-event {
+  height: 36px;
+  display: inline;
+  background-color: $gold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(115, 115, 115, 0.4);
+  opacity: 1;
+  font-size: 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 0 20px;
+  margin-top: 7px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.05s ease-in-out;
+}
+
+.submit-crime-skillset:hover {
+  text-decoration: none;
+  background-color: $medium-gold;
+  color: $white;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .create-event:hover {
