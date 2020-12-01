@@ -1,5 +1,5 @@
 <div class="devise-form-container">
-  <h2 class="pb-3">Edit Account</h2>
+  <h2 class="pb-4">Edit Account</h2>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
@@ -34,11 +34,11 @@
                   class: "mb-5 pb-5" %>
     </div>
 
-    <div class="nav-btn-container mt-4">
-      <%= link_to "Back", :back, class: "devise-btn-sign-up" %>
+    <div class="nav-btn-container mt-4 mb-3">
+      <%= link_to "Back", profile_path, class: "devise-btn-sign-up" %>
       <%= f.button :submit, 'Update', class: "devise-btn" %>
     </div>
   <% end %>
 
-  <p class="pt-4 mb-0"><small>Unhappy? <%= link_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></small></p>
+  <p class="pt-4 mb-0"><small>Unhappy?</small><%= link_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "pl-3" %></p>
 </div>
